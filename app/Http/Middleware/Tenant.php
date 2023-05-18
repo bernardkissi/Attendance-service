@@ -18,13 +18,17 @@ class Tenant
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $tenant = ResolveTenant::resolve();
+        if (auth()->check() && (bool) !auth()->user()->super_admin) {
+            $tenant = ResolveTenant::resolve();
 
-        if (! $tenant instanceof Branch) {
-            dd('No branch found');
+            if (!$tenant instanceof Branch) {
+                abort(403, 'Invalid tenant');
+            }
+
+            app(TenantManager::class)->setTenant($tenant);
+
+            return $next($request);
         }
-
-        app(TenantManager::class)->setTenant($tenant);
 
         return $next($request);
     }
