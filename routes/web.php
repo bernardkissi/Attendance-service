@@ -1,11 +1,11 @@
 <?php
 
-use App\Models\User;
-use App\Models\Service;
-use App\Models\Configuration;
-use Illuminate\Support\Facades\Route;
 use App\Domain\Qrcodes\Generators\pdf\PDFGenerator;
 use App\Domain\Qrcodes\Generators\qrcode\ServiceQrcodeGenerator;
+use App\Models\Configuration;
+use App\Models\Service;
+use App\Models\User;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,14 +33,14 @@ Route::get('/configuration', function () {
 Route::get('/qrcode', function () {
     $model = User::find(1);
     (new ServiceQrcodeGenerator())->generate($model);
+
     return (new PDFGenerator())->generate($model);
 });
-
 
 // How to create a qrcode for a service
 //1. First create a service
 //2. now use the qrcode relation to create a qrcode
 //3. use the threshold in your config to set an expires_at
 // if the service does not have a service start day
-    // check if the service day is today and is within the set threshold
-    // if it has set the service date to the intended date from the service.
+// check if the service day is today and is within the set threshold
+// if it has set the service date to the intended date from the service.

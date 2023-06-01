@@ -13,13 +13,13 @@ trait Tenantable
         $tenant = app(TenantManager::class);
 
         // apply scope if user is not a super admin
-        if (auth()->check() && !(bool) auth()->user()->super_admin) {
+        if (auth()->check() && ! (bool) auth()->user()->super_admin) {
             static::addGlobalScope(new TenantScope($tenant->getTenant()));
         }
 
         // assign tenant's branch if not set already
         static::creating(function (Model $model) use ($tenant) {
-            if (!isset($model->branch_id)) {
+            if (! isset($model->branch_id)) {
                 $model->branch_id = $tenant->getTenant()->id;
             }
         });

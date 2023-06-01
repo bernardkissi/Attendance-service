@@ -1,11 +1,11 @@
 <?php
 
+use App\Actions\CreateServiceQrcode;
+use App\Domain\Support\DateManager;
+use App\Domain\Tenants\TenantManager;
 use App\Models\Member;
 use App\Models\Service;
 use Illuminate\Http\Request;
-use App\Domain\Support\DateManager;
-use App\Actions\CreateServiceQrcode;
-use App\Domain\Tenants\TenantManager;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +31,7 @@ Route::get('/members/{member}', function (Request $request, Member $member) {
 
 Route::get('/configuration', function () {
     $tenant = app(TenantManager::class);
+
     return $tenant = app(TenantManager::class)->getTenantConfig()->options;
     // Config::set('tenant.config', Configuration::find(5));
     // return Config::get('tenant.config.options');
@@ -55,8 +56,9 @@ Route::get('/qrcodes/create', function () {
     // dd($service);
     $qrcode = new CreateServiceQrcode($service, $config, $dateManager);
     $qrcode();
+
     return response()->json([
         'message' => 'Successfully created',
-        200
+        200,
     ]);
 });

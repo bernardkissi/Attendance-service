@@ -2,12 +2,10 @@
 
 namespace App\Providers;
 
-use App\Domain\Qrcodes\Generators\qrcode\ServiceQrcodeGenerator;
-use App\Models\User;
 use App\Domain\Support\DateManager;
-use Illuminate\Support\Facades\Auth;
 use App\Domain\Tenants\TenantManager;
-use App\Domain\Qrcodes\QrcodeGenerator;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,8 +19,8 @@ class AppServiceProvider extends ServiceProvider
             return new TenantManager();
         });
 
-        $this->app->singleton(QrcodeGenerator::class, function () {
-            return new ServiceQrcodeGenerator();
+        $this->app->singleton(DateManager::class, function () {
+            return new DateManager();
         });
     }
 

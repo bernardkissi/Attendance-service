@@ -28,7 +28,7 @@ class ServiceConfigObject
             'location' => $this->location,
             'verifiers' => $this->verifiers,
             'distance_threshold' => $this->distance_threshold,
-            'expiry_threshold' => $this->expiry_threshold
+            'expiry_threshold' => $this->expiry_threshold,
         ];
     }
 }

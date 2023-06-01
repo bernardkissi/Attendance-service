@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domain\Qrcodes\Generators\qrcode;
 
+use App\Domain\Qrcodes\QrcodeGenerator;
 use Illuminate\Database\Eloquent\Model;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use App\Domain\Qrcodes\QrcodeGenerator;
 
 class ServiceQrcodeGenerator implements QrcodeGenerator
 {
@@ -15,12 +15,12 @@ class ServiceQrcodeGenerator implements QrcodeGenerator
         QrCode::format('png')
             ->size(500)
             ->generate(
-                $model->uuid,
-                storage_path(config('qrcode.storage_path') . "{$model->service_date}.png")
+                $model->identifier,
+                storage_path(config('qrcode.storage_path')."{$model->service->name}-{$model->service_date}.png")
             );
 
         $model
-            ->addMedia(storage_path(config('qrcode.storage_path') . "{$model->service_date}.png"))
+            ->addMedia(storage_path(config('qrcode.storage_path')."{$model->service->name}-{$model->service_date}.png"))
             ->toMediaCollection('qrcodes');
     }
 }

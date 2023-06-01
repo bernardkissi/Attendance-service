@@ -18,10 +18,10 @@ class Tenant
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->check() && (bool) !auth()->user()->super_admin) {
+        if (auth()->check() && (bool) ! auth()->user()->super_admin) {
             $tenant = ResolveTenant::resolve();
 
-            if (!$tenant instanceof Branch) {
+            if (! $tenant instanceof Branch) {
                 abort(403, 'Invalid tenant');
             }
 

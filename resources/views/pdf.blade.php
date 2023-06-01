@@ -26,7 +26,7 @@
     <div class="center-div">
         <img src="data:image/png;base64,{{ base64_encode($url) }}" />
     </div>
-    <div style="color: #475569">
+    <div style="color: #475569">e
         SCAN QRCODE
     </div>
 </body>

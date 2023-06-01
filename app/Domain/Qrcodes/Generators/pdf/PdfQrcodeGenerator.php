@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Domain\Qrcodes\Generators\pdf;
 
-use Illuminate\Http\Response;
+use App\Domain\Qrcodes\PdfGenerator;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Response;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use App\Domain\Qrcodes\PdfGeneratorContract;
 
-class PdfGenerator implements PdfGeneratorContract
+class PdfQrcodeGenerator implements PdfGenerator
 {
     public function generate(Model $model): Response
     {
@@ -18,9 +18,10 @@ class PdfGenerator implements PdfGeneratorContract
             ->size(700)
             ->generate($model->name);
 
-        $filename = now()->format('Y-m-d_H-i-s') . '_qrcode-1.pdf';
+        $filename = now()->format('Y-m-d_H-i-s').'_qrcode-1.pdf';
 
         $pdf = Pdf::loadView('pdf', compact('url'));
+
         return $pdf->stream($filename);
     }
 }

@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace App\Actions;
 
-use App\Models\Service;
-use App\Enums\ServiceType;
-use App\Models\Configuration;
-use App\Domain\Support\DateManager;
-use App\Domain\Qrcodes\QrcodeGenerator;
 use App\DataObjects\ServiceConfigObject;
+use App\Domain\Qrcodes\QrcodeGenerator;
+use App\Domain\Support\DateManager;
+use App\Models\Configuration;
+use App\Models\Service;
 
 class CreateServiceQrcode implements Action
 {
@@ -21,47 +20,24 @@ class CreateServiceQrcode implements Action
     ) {
     }
 
-    public function __invoke()
+    public function __invoke(): void
     {
         // create qrcode model object
         $qrcode = $this->service->qrcodes()->create([
-            'expires_at' => $this->getExpiryTime($this->service),
-            'service_date' => $this->getServiceDate($this->service),
+            'expires_at' => $this->dateManager->getServiceExpiryTime($this->service),
+            'service_date' => $this->dateManager->getServiceDate($this->service),
             'location' => json_encode($this->getConfiguration()['location']),
             'distance_threshold' => $this->getConfiguration()['distance_threshold'],
             'verifiers' => json_encode($this->getConfiguration()['verifiers']),
         ]);
 
-        dd($qrcode);
-        // create qrcode
+        // create qrcode and store in media
         app(QrcodeGenerator::class)->generate($qrcode);
-
-        // and update qrcode
-    }
-
-    private function getServiceDate(Service $service): string
-    {
-        if ($service->type === ServiceType::NON_EXPIRABLE->value) {
-            return $this->dateManager->getExpiryDateForNonExpiryService($this->service->recurring_day);
-        }
-
-        if ($service->type === ServiceType::ONE_TIME->value) {
-            return $service->commence_date;
-        }
-
-        if ($service->type === ServiceType::RECURRING->value) {
-            return $this->dateManager->getExpiryDateForTimeBoundService($service->commence_date, $service->end_date);
-        }
-    }
-
-    private function getExpiryTime(Service $service): string
-    {
-        return $this->dateManager->addOnServiceExpiryTime($service->end_time, 3);
     }
 
     private function getConfiguration(): array
     {
-        if (!isset($this->config)) {
+        if (! isset($this->config)) {
             return $this->configuration->options;
         }
 

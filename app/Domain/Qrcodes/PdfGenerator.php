@@ -2,7 +2,7 @@
 
 namespace App\Domain\Qrcodes;
 
-interface PdfGeneratorContract
+interface PdfGenerator
 {
     //
 }

@@ -4,11 +4,33 @@ declare(strict_types=1);
 
 namespace App\Domain\Support;
 
+use App\Enums\ServiceType;
+use App\Models\Service;
 use Carbon\Carbon;
 
 class DateManager
 {
-    public function getExpiryDateForNonExpiryService(string $day): string
+    public function getServiceDate(Service $service): string
+    {
+        if ($service->type === ServiceType::NON_EXPIRABLE->value) {
+            return $this->getExpiryDateForNonExpiryService($service->recurring_day);
+        }
+
+        if ($service->type === ServiceType::ONE_TIME->value) {
+            return $service->commence_date;
+        }
+
+        if ($service->type === ServiceType::RECURRING->value) {
+            return $this->getExpiryDateForTimeBoundService($service->commence_date, $service->end_date);
+        }
+    }
+
+    public function getServiceExpiryTime(Service $service): string
+    {
+        return $this->addOnServiceExpiryTime($service->end_time, 3);
+    }
+
+    private function getExpiryDateForNonExpiryService(string $day): string
     {
         $currentDay = Carbon::now()->startOfDay();
         if (strtolower($currentDay->format('l')) === strtolower($day)) {
@@ -18,7 +40,23 @@ class DateManager
         return $currentDay->next($day)->format('Y-m-d');
     }
 
-    public function getExpiryDateForTimeBoundService(string $startDate, string $endDate): string
+    private function addOnServiceExpiryTime(string $time, int $hours): string
+    {
+        $carbonTime = Carbon::createFromFormat('H:i:s', $time);
+        $time = $carbonTime->addHours($hours)->format('H:i:s');
+
+        return $time;
+    }
+
+    private function subFromServiceExpiryTime(string $time, int $hours): string
+    {
+        $carbonTime = Carbon::createFromFormat('H:i:s', $time);
+        $time = $carbonTime->subHours($hours)->format('H:i:s');
+
+        return $time;
+    }
+
+    private function getExpiryDateForTimeBoundService(string $startDate, string $endDate): string
     {
         $today = Carbon::now()->startOfDay();
         $startDate = Carbon::parse($startDate)->startOfDay();
@@ -34,21 +72,5 @@ class DateManager
         }
         // returns the start date bt defualt
         return $startDate->format('Y-m-d');
-    }
-
-    public function addOnServiceExpiryTime(string $time, int $hours): string
-    {
-        $carbonTime = Carbon::createFromFormat('H:i:s', $time);
-        $time = $carbonTime->addHours($hours)->format('H:i:s');
-
-        return $time;
-    }
-
-    public function subFromServiceExpiryTime(string $time, int $hours): string
-    {
-        $carbonTime = Carbon::createFromFormat('H:i:s', $time);
-        $time = $carbonTime->subHours($hours)->format('H:i:s');
-
-        return $time;
     }
 }

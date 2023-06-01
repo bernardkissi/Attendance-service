@@ -25,7 +25,7 @@ class ServiceFactory extends Factory
             'start_time' => '08:30:00',
             'end_time' => '13:30:00',
             'recurring' => 1,
-            'recurring_day' => 'sunday'
+            'recurring_day' => 'sunday',
         ];
     }
 
@@ -39,7 +39,7 @@ class ServiceFactory extends Factory
                 'recurring_day' => 'null',
                 'expirable' => 1,
                 'commence_date' => '2023-05-26',
-                'end_date' => '2023-05-26'
+                'end_date' => '2023-05-26',
             ];
         });
     }
@@ -54,7 +54,7 @@ class ServiceFactory extends Factory
                 'recurring_day' => 'null',
                 'expirable' => 1,
                 'commence_date' => '2023-05-26',
-                'end_date' => '2023-05-29'
+                'end_date' => '2023-05-29',
             ];
         });
     }
