@@ -19,7 +19,7 @@ class Configuration extends Model
     public static function booted(): void
     {
         static::creating(function ($model) {
-            if (! isset($model->options)) {
+            if (!isset($model->options)) {
                 $model->options = [
                     'location' => [
                         'latitude' => null,

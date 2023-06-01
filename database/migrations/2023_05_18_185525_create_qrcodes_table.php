@@ -13,16 +13,22 @@ return new class extends Migration
     {
         Schema::create('qrcodes', function (Blueprint $table) {
             $table->id();
-
+            $table->uuid('identifier')->index();
             // foreign fields
-            $table->foreignId('service_id')->nullable()->index()->constrained('services')->cascadeOnDelete();
+            $table->foreignId('branch_id')->index()->constrained('branches')->cascadeOnDelete();
+            $table->foreignId('service_id')->index()->constrained('services')->cascadeOnDelete();
 
             // qrcode expiration related fields
-            $table->dateTime('expires_at')->nullable();
-            $table->dateTime('expired_on')->nullable();
+            $table->time('expires_at')->nullable();
+            $table->time('expired_on')->nullable();
+            $table->date('service_date')->nullable();
+            $table->text('qrcode_image_string')->nullable();
+            // location related fields
+            $table->json('location')->nullable();
+            $table->float('distance_threshold')->nullable();
+            $table->json('verifiers')->nullable();
 
             // qrcode related fields
-            $table->string('qrcode_data')->nullable();
             $table->string('content_hash')->nullable();
 
             $table->timestamps();

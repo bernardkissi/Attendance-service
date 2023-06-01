@@ -13,24 +13,27 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-
             //foreign fields
             $table->foreignId('branch_id')->index()->constrained('branches')->cascadeOnDelete();
             $table->foreignId('user_id')->nullable()->index()->constrained('users');
 
             //local fields
             $table->string('name')->unique();
-            $table->dateTime('start_time')->nullable();
-            $table->dateTime('end_time')->nullable();
+            $table->string('type');
+
+            //time and date fields
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
+            $table->date('commence_date')->nullable();
+            $table->date('end_date')->nullable();
+
+            // expiration fields
+            $table->tinyInteger('expirable')->default(0);
+            $table->dateTime('expired_at')->nullable();
 
             // re-occuring fields
-            $table->tinyInteger('reoccurring')->default(0);
-            $table->string('service_reoccuring_period')->nullable();
-
-            // service expiration fields
-            $table->tinyInteger('expirable')->default(0);
-            $table->dateTime('service_active_date')->nullable();
-            $table->dateTime('service_expiry_date')->nullable();
+            $table->tinyInteger('recurring')->default(0);
+            $table->string('recurring_day')->nullable();
 
             $table->timestamps();
         });

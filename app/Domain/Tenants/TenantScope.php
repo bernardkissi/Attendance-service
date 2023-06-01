@@ -15,9 +15,7 @@ class TenantScope implements Scope
         // initialized
     }
 
-    /**
-     * Apply the scope to a given Eloquent query builder.
-     */
+    // Apply the scope to a given Eloquent query builder.
     public function apply(Builder $builder, Model $model): void
     {
         $builder->where($this->branch->getForeignKey(), '=', $this->branch->id);

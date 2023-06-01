@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
-use App\Domain\Tenants\TenantManager;
+use App\Domain\Qrcodes\Generators\qrcode\ServiceQrcodeGenerator;
 use App\Models\User;
+use App\Domain\Support\DateManager;
 use Illuminate\Support\Facades\Auth;
+use App\Domain\Tenants\TenantManager;
+use App\Domain\Qrcodes\QrcodeGenerator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(TenantManager::class, function () {
             return new TenantManager();
         });
+
+        $this->app->singleton(QrcodeGenerator::class, function () {
+            return new ServiceQrcodeGenerator();
+        });
     }
 
     /**
@@ -25,9 +32,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Find the user you want to stimulate login
-        //$user = User::find(2);
+        $user = User::find(2);
 
         // Set the user as the authenticated user
-        // Auth::setUser($user);
+        Auth::setUser($user);
     }
 }
