@@ -16,11 +16,11 @@ class PdfQrcodeGenerator implements PdfGenerator
     {
         $url = QrCode::format('png')
             ->size(700)
-            ->generate($model->name);
+            ->generate($model->identifier);
 
         $filename = now()->format('Y-m-d_H-i-s').'_qrcode-1.pdf';
 
-        $pdf = Pdf::loadView('pdf', compact('url'));
+        $pdf = Pdf::loadView('pdf', compact('url', 'model'));
 
         return $pdf->stream($filename);
     }

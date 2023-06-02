@@ -21,12 +21,12 @@
 
 <body class="bg-red">
     <div>
-        Sunday Service, 27.08.2023
+        {{ $model->service->name }} - {{ $model->service_date }}
     </div>
     <div class="center-div">
         <img src="data:image/png;base64,{{ base64_encode($url) }}" />
     </div>
-    <div style="color: #475569">e
+    <div style="color: #475569">
         SCAN QRCODE
     </div>
 </body>

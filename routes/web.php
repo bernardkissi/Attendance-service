@@ -30,12 +30,12 @@ Route::get('/configuration', function () {
     // return Config::get('tenant.config.options');
 });
 
-Route::get('/qrcode', function () {
-    $model = User::find(1);
-    (new ServiceQrcodeGenerator())->generate($model);
+// Route::get('/qrcode', function () {
+//     $model = User::find(1);
+//     (new ServiceQrcodeGenerator())->generate($model);
 
-    return (new PDFGenerator())->generate($model);
-});
+//     return (new PDFGenerator())->generate($model);
+// });
 
 // How to create a qrcode for a service
 //1. First create a service

@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use App\Domain\Qrcodes\PdfGenerator;
 use App\Models\Qrcode;
 use Illuminate\Http\Response;
 

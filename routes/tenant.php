@@ -1,9 +1,17 @@
 <?php
 
+use App\Actions\CreateService;
 use App\Actions\CreateServiceQrcode;
+use App\Actions\GenerateServiceQrcodePdf;
 use App\Domain\Support\DateManager;
 use App\Domain\Tenants\TenantManager;
+use App\DTOs\NonExpirableServiceDTO;
+use App\DTOs\OneTimeServiceDTO;
+use App\DTOs\RecurringServiceDTO;
+use App\DTOs\ServiceQrcodeDTO;
+use App\Enums\ServiceType;
 use App\Models\Member;
+use App\Models\Qrcode;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -41,21 +49,34 @@ Route::get('/services', function () {
     return Service::query()->get();
 });
 
-Route::get('/services/create', function () {
+Route::get('/services/create', function (Request $request) {
 
-    $service = Service::first();
-    // return (new ServiceQrcodeGenerator())->generate($service);
+    $serviceDTO = match ($request->type) {
+        ServiceType::NON_EXPIRABLE->value => NonExpirableServiceDTO::fromRequest($request),
+        ServiceType::ONE_TIME->value => OneTimeServiceDTO::fromRequest($request),
+        ServiceType::RECURRING->value => RecurringServiceDTO::fromRequest($request),
+        default => throw new \InvalidArgumentException('Service type is not supported')
+    };
+
+    $service = new CreateService($serviceDTO);
+
+    return $service->exec();
 });
 
-Route::get('/qrcodes/create', function () {
+Route::post('qrcodes/pdf', function () {
+    $qrcode = Qrcode::first();
+    $generator = new GenerateServiceQrcodePdf($qrcode);
 
-    $tenant = app(TenantManager::class);
-    $config = $tenant->getTenantConfig();
+    return $generator->exec();
+});
+
+Route::get('/qrcodes/create', function (Request $request) {
+
     $dateManager = app(DateManager::class);
-    $service = Service::first();
-    // dd($service);
-    $qrcode = new CreateServiceQrcode($service, $config, $dateManager);
-    $qrcode();
+    $serviceQrCodeDTO = ServiceQrCodeDTO::fromRequest($dateManager, $request);
+
+    $qrcode = new CreateServiceQrcode($serviceQrCodeDTO);
+    $qrcode->exec();
 
     return response()->json([
         'message' => 'Successfully created',

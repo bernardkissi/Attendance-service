@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('service_id')->index()->constrained('services')->cascadeOnDelete();
 
             // qrcode expiration related fields
+            $table->time('active_at')->nullable();
             $table->time('expires_at')->nullable();
             $table->time('expired_on')->nullable();
             $table->date('service_date')->nullable();
