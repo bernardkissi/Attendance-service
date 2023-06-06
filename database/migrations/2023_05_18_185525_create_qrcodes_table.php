@@ -27,7 +27,7 @@ return new class extends Migration
             // location related fields
             $table->json('location')->nullable();
             $table->float('distance_threshold')->nullable();
-            $table->json('verifiers')->nullable();
+            $table->json('checks')->nullable();
 
             // qrcode related fields
             $table->string('content_hash')->nullable();

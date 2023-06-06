@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
+            $table->uuid('identifier')->index();
 
             //foreign field
             $table->foreignId('branch_id')->index()->constrained('branches')->cascadeOnDelete();
@@ -21,7 +22,7 @@ return new class extends Migration
             $table->string('memberId');
             $table->string('name');
             $table->string('phone');
-            $table->integer('pin');
+            $table->integer('pin', 4);
             $table->timestamps();
         });
     }

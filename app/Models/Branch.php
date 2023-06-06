@@ -21,7 +21,7 @@ class Branch extends Model
 
     public function services(): HasMany
     {
-        return $this->hasMany(Services::class);
+        return $this->hasMany(Service::class);
     }
 
     public function qrcodes(): HasManyThrough

@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
+            //primary key
             $table->id();
 
             //foreign field
@@ -20,7 +21,7 @@ return new class extends Migration
             //local fields
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('pin');
+            $table->integer('pin', 4);
             $table->tinyInteger('super_admin')->default(0);
             $table->string('password');
 

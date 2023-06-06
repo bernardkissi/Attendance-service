@@ -15,16 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware(['auth:sanctum', 'member'])->get('/user', function (Request $request) {
+    $branch = request()->member->branch;
+    $service = $branch->services()->select('id', 'name')->whereId(1)->first();
+
+    return [
+        'branch' => $branch,
+        'service' => $service,
+    ];
 });
 
-Route::get('/members', function (Request $request) {
-    $members = Member::all();
+Route::post('/login', function (Request $request) {
 
-    return $members;
-})->middleware('tenant');
+    $member = Member::wherePin($request->pin)->first();
+    $token = $member->createToken('member')->plainTextToken;
 
-Route::get('/members/{member}', function (Request $request, Member $member) {
-    return $member->name;
-})->middleware('tenant');
+    return response()->json(['token' => $token]);
+});

@@ -23,6 +23,11 @@ class Qrcode extends Model implements HasMedia
         });
     }
 
+    protected $casts = [
+        'location' => 'array',
+        'verifiers' => 'array',
+    ];
+
     public function service(): BelongsTo
     {
         return $this->belongsTo(Service::class);
