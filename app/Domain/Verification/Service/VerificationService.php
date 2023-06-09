@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace App\Domain\Verification\Service;
 
 use App\Domain\Verification\Checks\Checker;
-use App\DTOs\VerificationDTO;
-use Illuminate\Support\Collection;
-use App\Domain\Verification\Checks\TimeCheck;
 use App\Domain\Verification\Checks\LocationCheck;
 use App\Domain\Verification\Checks\MembershipCheck;
 
