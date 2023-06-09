@@ -14,9 +14,9 @@ class ServiceQrcodeDTO
         public readonly Service $service,
         public readonly string $active_at,
         public readonly string $expires_at,
-        public readonly string $service_date,
+        public readonly string|array $service_date,
         public readonly array $location,
-        public readonly float $distance_threshold,
+        public readonly ?float $distance_threshold,
         public readonly array $verifiers
     ) {
     }
@@ -57,7 +57,7 @@ class ServiceQrcodeDTO
             return $service;
         }
 
-        throw new ModelNotFoundException('The service with id '.$serviceId.' does not exist');
+        throw new ModelNotFoundException('The service with id ' . $serviceId . ' does not exist');
     }
 
     private static function getConfiguration(array $config): array

@@ -11,79 +11,40 @@ use Exception;
 
 class DateManager
 {
-    public function getServiceDate(Service $service): string
+    public function getServiceDate(Service $service): string|array
     {
         return match ($service->type) {
-            ServiceType::NON_EXPIRABLE->value => $this->getExpiryDateForNonExpiryService($service->recurring_day, $service->end_time),
+            ServiceType::NON_EXPIRABLE->value => $this->getDateForNonExpiryService($service->recurring_day, $service->end_time),
             ServiceType::ONE_TIME->value => $service->commence_date,
-            ServiceType::RECURRING->value => $this->getExpiryDateForTimeBoundService($service->commence_date, $service->end_date, $service->end_time),
+            ServiceType::RECURRING->value => $this->getDatesForRecurringService($service->commence_date, $service->end_date),
             default => throw new Exception('Service type is not supported')
         };
     }
 
-    public function getServiceExpiryTime(Service $service): string
+    private function getDateForNonExpiryService(string $day, string $endTime): string
     {
-        return $this->addOnServiceExpiryTime($service->end_time, 3);
+        if (!now()->is($day) || now()->gt($endTime)) {
+            return now()->next($day)->format('Y-m-d');
+        }
+        return now()->format('Y-m-d');
     }
 
-    public function getServiceActiveTime(Service $service): string
+    private function getDatesForRecurringService(string $startDate, string $endDate): array
     {
-        return $this->subOnServiceStartTime($service->start_time, 2);
+        $dates = Carbon::parse("{$startDate}")->toPeriod("{$endDate}", '1 days');
+        $dates = $dates->map(fn ($date) => $date->format('Y-m-d'));
+        return iterator_to_array($dates);
     }
 
-    private function getExpiryDateForNonExpiryService(string $day, string $endTime): string
+    public function getServiceExpiryTime(Service $service, int $hours = 3): string
     {
-        $currentDay = Carbon::now()->startOfDay();
-
-        return match (true) {
-            // if today and  the service end time is not passed
-            $currentDay->is($day) && ! $this->hasEventTimePassed($endTime) => $currentDay->format('Y-m-d'),
-            // if today and the service has passed the end time to the next service day
-            $currentDay->is($day) && $this->hasEventTimePassed($endTime) => $currentDay->next($day)->format('Y-m-d'),
-            // set date to the next service day
-            default => $currentDay->next($day)->format('Y-m-d'),
-        };
+        return Carbon::parse($service->end_time)->addHours($hours)
+            ->format('H:i:s');
     }
 
-    private function addOnServiceExpiryTime(string $time, int $hours): string
+    public function getServiceActiveTime(Service $service, int $hours = 2): string
     {
-        $carbonTime = Carbon::createFromFormat('H:i:s', $time);
-        $time = $carbonTime->addHours($hours)->format('H:i:s');
-
-        return $time;
-    }
-
-    private function subOnServiceStartTime(string $time, int $hours): string
-    {
-        $carbonTime = Carbon::createFromFormat('H:i:s', $time);
-        $time = $carbonTime->subHours($hours)->format('H:i:s');
-
-        return $time;
-    }
-
-    private function getExpiryDateForTimeBoundService(string $startDate, string $endDate, string $endTime): string
-    {
-        $today = Carbon::now()->startOfDay();
-        $startDate = Carbon::parse($startDate)->startOfDay();
-        $endDate = Carbon::parse($endDate)->startOfDay();
-
-        return match (true) {
-            // checks if today is before the start date
-            $today->lte($startDate) => $startDate->format('Y-m-d'),
-            //checks if the event end date has passed
-            $today->gt($endDate) => throw new Exception('Service has expired'),
-            // returns today or the next day if falls between the start and end date
-            $today->gte($startDate) && $today->lte($endDate) && $this->hasEventTimePassed($endTime) => $today->addDay(1)->format('Y-m-d'),
-            // returns the start date bt defualt
-            default => $today->format('Y-m-d')
-        };
-    }
-
-    private function hasEventTimePassed(string $endTime): bool
-    {
-        $currentTime = Carbon::now();
-        $endTime = Carbon::parse($endTime);
-
-        return $currentTime->gt($endTime);
+        return Carbon::parse($service->start_time)->addHours($hours)
+            ->format('H:i:s');
     }
 }
