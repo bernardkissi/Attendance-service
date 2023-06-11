@@ -17,11 +17,11 @@ class ServiceQrcodeGenerator implements QrcodeGenerator
             ->size(500)
             ->generate(
                 $model->identifier,
-                storage_path(config('qrcode.storage_path') . "{$model->service->name}-{$model->service_date}.png")
+                storage_path(config('qrcode.storage_path')."{$model->service->name}-{$model->service_date}.png")
             );
 
         $model
-            ->addMedia(storage_path(config('qrcode.storage_path') . "{$model->service->name}-{$model->service_date}.png"))
+            ->addMedia(storage_path(config('qrcode.storage_path')."{$model->service->name}-{$model->service_date}.png"))
             ->toMediaCollection('qrcodes');
     }
 
@@ -32,11 +32,11 @@ class ServiceQrcodeGenerator implements QrcodeGenerator
                 ->size(500)
                 ->generate(
                     $model->identifier,
-                    storage_path(config('qrcode.storage_path') . "{$model->service->name}-{$model->service_date}.png")
+                    storage_path(config('qrcode.storage_path')."{$model->service->name}-{$model->service_date}.png")
                 );
 
             $model
-                ->addMedia(storage_path(config('qrcode.storage_path') . "{$model->service->name}-{$model->service_date}.png"))
+                ->addMedia(storage_path(config('qrcode.storage_path')."{$model->service->name}-{$model->service_date}.png"))
                 ->toMediaCollection('qrcodes');
         });
     }

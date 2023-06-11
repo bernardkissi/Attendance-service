@@ -13,7 +13,7 @@ trait Tenantable
         $tenant = app(TenantManager::class);
 
         // apply scope if user is not a super admin
-        if (auth()->check() && ! (bool) auth()->user()->super_admin) {
+        if (auth()->check() && auth()->user()->super_admin === false) {
             static::addGlobalScope(new TenantScope($tenant->getTenant()));
         }
 

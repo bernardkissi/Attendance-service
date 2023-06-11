@@ -44,6 +44,7 @@ class User extends Authenticatable implements HasMedia
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'super_admin' => 'boolean',
     ];
 
     public function branch(): BelongsTo

@@ -3,6 +3,7 @@
 use App\Domain\Qrcodes\Generators\pdf\PDFGenerator;
 use App\Domain\Qrcodes\Generators\qrcode\ServiceQrcodeGenerator;
 use App\Models\Configuration;
+use App\Models\Qrcode;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,14 @@ Route::get('/configuration', function () {
     return $cfg;
     // Config::set('tenant.config', Configuration::find(5));
     // return Config::get('tenant.config.options');
+});
+
+Route::get('/services/filter', function () {
+    return Service::isActive()->get();
+});
+
+Route::get('/qrcodes/filter', function () {
+    return Qrcode::isExpired()->get();
 });
 
 // Route::get('/qrcode', function () {

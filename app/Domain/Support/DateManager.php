@@ -23,9 +23,10 @@ class DateManager
 
     private function getDateForNonExpiryService(string $day, string $endTime): string
     {
-        if (!now()->is($day) || now()->gt($endTime)) {
+        if (! now()->is($day) || now()->gt($endTime)) {
             return now()->next($day)->format('Y-m-d');
         }
+
         return now()->format('Y-m-d');
     }
 
@@ -33,6 +34,7 @@ class DateManager
     {
         $dates = Carbon::parse("{$startDate}")->toPeriod("{$endDate}", '1 days');
         $dates = $dates->map(fn ($date) => $date->format('Y-m-d'));
+
         return iterator_to_array($dates);
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Domain\Qrcodes\Traits\IsTrackable;
 use App\Domain\Tenants\Tenantable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +13,10 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Qrcode extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, Tenantable;
+    use HasFactory,
+        InteractsWithMedia,
+        Tenantable,
+        IsTrackable;
 
     protected $guarded = [];
 

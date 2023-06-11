@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Actions;
 
+use App\Domain\Qrcodes\QrcodeGenerator;
 use App\DTOs\ServiceQrcodeDTO;
 use Illuminate\Support\Collection;
-use App\Domain\Qrcodes\QrcodeGenerator;
 
 class CreateServiceQrcode implements Action
 {

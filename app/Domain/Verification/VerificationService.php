@@ -7,6 +7,9 @@ namespace App\Domain\Verification\Service;
 use App\Domain\Verification\Checks\Checker;
 use App\Domain\Verification\Checks\LocationCheck;
 use App\Domain\Verification\Checks\MembershipCheck;
+use App\Domain\Verification\Checks\TimeCheck;
+use App\DTOs\VerificationDTO;
+use Illuminate\Support\Collection;
 
 class VerificationService implements Verification
 {
@@ -37,6 +40,6 @@ class VerificationService implements Verification
 
         return collect($this->dto->qrcode->checks)
             ->filter(fn ($check) => $check)
-            ->map(fn ($check, $key) => new $this->checks[$key]);
+            ->map(fn ($check, $key) => new $this->checks[$key]());
     }
 }
