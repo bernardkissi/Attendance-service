@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Verification\Service;
+namespace App\Domain\Verification;
 
 use App\Domain\Verification\Checks\Checker;
 use App\Domain\Verification\Checks\LocationCheck;
@@ -24,14 +24,14 @@ class VerificationService implements Verification
     ) {
     }
 
-    public function check(): bool
+    public function runChecks(): bool
     {
         return $this->getActiveChecks()
             ->map(fn (Checker $check) => $check->verify($this->dto))
             ->every(fn ($result) => $result === true);
     }
 
-    public function getActiveChecks(): Collection
+    private function getActiveChecks(): Collection
     {
         if (empty($this->dto->qrcode->checks)) {
             return collect($this->checks)

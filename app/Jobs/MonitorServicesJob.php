@@ -2,6 +2,9 @@
 
 namespace App\Jobs;
 
+use App\Actions\CreateServiceQrcode;
+use App\DTOs\ServiceQrcodeDTO;
+use App\Models\Service;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -25,16 +28,14 @@ class MonitorServicesJob implements ShouldQueue
      */
     public function handle(): void
     {
-        // Get all QR codes running today
-        // $qrcodes = Qrcode::whereDate('start_date', '<=', now())
-        //     ->whereDate('end_date', '>=', $currentDate)
-        //     ->get();
+        // Get all non-expiry recurring services happening to day
+        $recurringServices = Service::nonExpiryServicesActiveToday()->get();
 
-        // // Check and mark expired QR codes
-        // foreach ($qrcodes as $qrcode) {
-        //     if (Carbon::parse($qrcode->end_date . ' ' . $qrcode->end_time)->isPast()) {
-        //         $qrcode->update(['expired' => true]);
-        //     }
-        // }
+        // Automatically generate qrcode for each service
+        $recurringServices->map(function (Service $service) {
+            $serviceQrcodeDTO = ServiceQrcodeDTO::fromModel($service);
+            $qrcode = new CreateServiceQrcode($serviceQrcodeDTO);
+            $qrcode->exec();
+        });
     }
 }

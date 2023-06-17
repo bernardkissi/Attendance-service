@@ -71,9 +71,7 @@ Route::post('qrcodes/pdf', function () {
 });
 
 Route::get('/qrcodes/create', function (Request $request) {
-
-    $dateManager = app(DateManager::class);
-    $serviceQrCodeDTO = ServiceQrCodeDTO::fromRequest($dateManager, $request);
+    $serviceQrCodeDTO = ServiceQrCodeDTO::fromRequest($request);
 
     $qrcode = new CreateServiceQrcode($serviceQrCodeDTO);
     $qrcode->exec();

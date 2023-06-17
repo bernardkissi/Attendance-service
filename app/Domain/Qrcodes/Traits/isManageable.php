@@ -20,6 +20,11 @@ trait isManageable
             ->orWhere('end_date', '=', null);
     }
 
+    public function scopeNonExpiryServicesActiveToday(Builder $query): void
+    {
+        $query->where('recurring_day', '=', now()->format('l'));
+    }
+
     // model properties
     public function getIsEndingInDaysAttribute(): ?string
     {

@@ -13,34 +13,48 @@ class VerificationDTO
     public function __construct(
         public readonly ServiceQrcode $qrcode,
         public readonly Member $member,
-        public readonly string $verficationtype,
+        public readonly string $verificationType,
         public readonly array $memberLocation = []
     ) {
     }
 
     public static function fromRequest(Request $request): static
     {
-        $serviceQrcode = static::resolveServiceQrcode($request->serviceCodeUuid);
-        $member = static::resolveMember($request->verificationType, $request->verifyingForMemberUuid);
+        $qrcode = static::resolveServiceQrcode($request->qrcodeIdentifier);
+
+        $member = match (true) {
+            isset($request->verifiyingForMemberWithIdentifier) => static::resolveMember($request->verificationType, $request->verifiyingForMemberWithIdentifier),
+            default => static::resolveMember($request->verificationType)
+        };
 
         return new static(
-            $serviceQrcode,
+            $qrcode,
             $member,
             $request->verificationType,
-            $request->memberLocation
+            $request->location
         );
     }
 
-    private static function resolveMember(string $verficationtype, string $verifyingForMemberWithUuid): Member
+    private static function resolveMember(string $verficationtype, ?string $verifyingForMemberWithIdentifier = null): Member
     {
         return match ($verficationtype) {
-            'service_verfication' => request()->member,
-            'member_verification' => Member::whereUuid($verifyingForMemberWithUuid)->first(),
+            'service_verification' => request()->member,
+            'member_verification' => Member::whereIdentifier($verifyingForMemberWithIdentifier)->first(),
         };
     }
 
-    private static function resolveServiceQrcode(string $serviceCodeUuid): ServiceQrcode
+    private static function resolveServiceQrcode(string $serviceCodeIdentifier): ServiceQrcode
     {
-        return ServiceQrcode::whereUuid($serviceCodeUuid)->first();
+        return ServiceQrcode::whereIdentifier($serviceCodeIdentifier)->first();
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'qrcode' => $this->qrcode->identifier,
+            'member' => $this->member->id,
+            'verification_type' => $this->verificationType,
+            'location' => gettype($this->memberLocation)
+        ];
     }
 }

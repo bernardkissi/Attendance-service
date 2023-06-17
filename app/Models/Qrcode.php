@@ -29,7 +29,7 @@ class Qrcode extends Model implements HasMedia
 
     protected $casts = [
         'location' => 'array',
-        'verifiers' => 'array',
+        'checks' => 'array',
     ];
 
     public function service(): BelongsTo

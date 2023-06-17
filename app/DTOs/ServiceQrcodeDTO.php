@@ -21,8 +21,9 @@ class ServiceQrcodeDTO
     ) {
     }
 
-    public static function fromRequest(DateManager $dateManager, Request $request): static
+    public static function fromRequest(Request $request): static
     {
+        $dateManager = app(DateManager::class);
         $service = static::resolveService($request->serviceId);
         $configuration = static::getConfiguration($request->config);
 
@@ -37,15 +38,30 @@ class ServiceQrcodeDTO
         );
     }
 
+    public static function fromModel(Service $service): static
+    {
+        $dateManager = app(DateManager::class);
+
+        return new static(
+            $service,
+            $dateManager->getServiceActiveTime($service),
+            $dateManager->getServiceExpiryTime($service),
+            $dateManager->getServiceDate($service),
+            $service->branch->configuration->options['location'],
+            $service->branch->configuration->options['distance_threshold'],
+            $service->branch->configuration->options['verifiers']
+        );
+    }
+
     public function toArray(): array
     {
         return [
             'active_at' => $this->active_at,
             'expires_at' => $this->expires_at,
             'service_date' => $this->service_date,
-            'location' => json_encode($this->location),
+            'location' => $this->location,
             'distance_threshold' => $this->distance_threshold,
-            'verifiers' => json_encode($this->verifiers),
+            'checks' => $this->verifiers,
         ];
     }
 
@@ -57,10 +73,10 @@ class ServiceQrcodeDTO
             return $service;
         }
 
-        throw new ModelNotFoundException('The service with id '.$serviceId.' does not exist');
+        throw new ModelNotFoundException('The service with id ' . $serviceId . ' does not exist');
     }
 
-    private static function getConfiguration(array $config): array
+    private static function getConfiguration(array $config = null): array
     {
         if (empty($config)) {
             return app(TenantManager::class)->getTenantConfig()->options;

@@ -25,7 +25,7 @@ class Configuration extends Model
                         'latitude' => null,
                         'longitude' => null,
                     ],
-                    'distance_threshold' => null,
+                    'distance_threshold' => 4.0,
                     'verifiers' => [
                         'location' => true,
                         'time' => true,

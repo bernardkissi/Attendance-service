@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Domain\Verification\Service;
+namespace App\Domain\Verification;
 
 interface Verification
 {
-    public function check(): bool;
+    public function runChecks(): bool;
 }

@@ -26,7 +26,7 @@ class CreateServiceQrcode implements Action
         }
         // create a single qrcode for a service
         if (is_string($this->serviceQrcodeDTO->service_date)) {
-            $qrcode = $serviceQrcode->create($this->serviceQrcodeDTO->toArray());
+            $qrcodes = $serviceQrcode->create($this->serviceQrcodeDTO->toArray());
         }
 
         $qrcodeGenerator = app(QrcodeGenerator::class);
@@ -34,7 +34,7 @@ class CreateServiceQrcode implements Action
         // create qrcode(s) and store in media
         $qrcodes instanceof Collection ?
             $qrcodeGenerator->generateMultiple($qrcodes) :
-            $qrcodeGenerator->generate($qrcode);
+            $qrcodeGenerator->generate($qrcodes);
     }
 
     private function createManyQrcodes(): Collection

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('memberId');
             $table->string('name');
             $table->string('phone');
-            $table->integer('pin', 4);
+            $table->integer('pin');
             $table->timestamps();
         });
     }

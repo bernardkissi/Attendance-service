@@ -1,8 +1,15 @@
 <?php
 
 use App\Models\Member;
+use App\Models\Attendance;
+use App\DTOs\AttendanceDTO;
 use Illuminate\Http\Request;
+use App\DTOs\VerificationDTO;
 use Illuminate\Support\Facades\Route;
+use App\Domain\Verification\Checks\TimeCheck;
+use App\Domain\Verification\VerificationService;
+use App\Domain\Verification\Checks\LocationCheck;
+use App\Domain\Verification\Checks\MembershipCheck;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +31,41 @@ Route::middleware(['auth:sanctum', 'member'])->get('/user', function (Request $r
         'service' => $service,
     ];
 });
+
+Route::get('/record', function (Request $request) {
+    $attendance = AttendanceDTO::fromRequest($request)->toArray();
+    $recorded = Attendance::create($attendance);
+
+    return $recorded;
+})->middleware(['auth:sanctum', 'member', 'qrcode']);
+
+Route::get('/checks', function (Request $request) {
+
+    $verificationDto = VerificationDTO::fromRequest($request);
+
+    $locationCheck = new LocationCheck();
+    $timeCheck = new TimeCheck();
+    $memberCheck = new MembershipCheck();
+
+    $locationStatus = $locationCheck->verify($verificationDto);
+    $timeStatus =   $timeCheck->verify($verificationDto);
+    $memberStatus = $memberCheck->verify($verificationDto);
+
+    return [
+        'locationCheck' => $locationStatus ? 'passed' : 'failed',
+        'timeStatus' => $timeStatus ? 'passed' : 'failed',
+        'memberStatus' => $memberStatus ? 'passed' : 'failed'
+    ];
+})->middleware(['auth:sanctum', 'member', 'qrcode']);
+
+
+Route::get('/verification', function (Request $request) {
+    $verificationDto = VerificationDTO::fromRequest($request);
+
+    $checks = new VerificationService($verificationDto);
+    return $checks->runChecks();
+})->middleware(['auth:sanctum', 'member', 'qrcode']);;
+
 
 Route::post('/login', function (Request $request) {
 

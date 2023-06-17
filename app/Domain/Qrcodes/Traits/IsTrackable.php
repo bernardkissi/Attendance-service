@@ -8,18 +8,21 @@ use Illuminate\Database\Eloquent\Builder;
 trait IsTrackable
 {
     // Model scopes for fitering qrcodes
-    public function scopeIsActiveToday(Builder $query): void
+    public function scopeIsCurrentlyRunning(Builder $query): void
     {
         $query->whereDate('service_date', '=', Carbon::today())
             ->where('active_at', '<=', now()->format('H:i:s'))
             ->where('expires_at', '>=', now()->format('H:i:s'));
     }
 
+    public function scopeisValid(Builder $query): void
+    {
+        $query->whereDate('service_date', '>', Carbon::today());
+    }
+
     public function scopeIsActiveTomorrow(Builder $query): void
     {
-        $query->whereDate('service_date', '=', Carbon::tomorrow())
-            ->where('active_at', '<=', now()->format('H:i:s'))
-            ->where('expires_at', '>=', now()->format('H:i:s'));
+        $query->whereDate('service_date', '=', Carbon::tomorrow());
     }
 
     public function scopeIsExpired(Builder $query): void
@@ -61,11 +64,12 @@ trait IsTrackable
 
     public function getIsNotActiveAttribute(): bool
     {
-        return !$this->isActive();
+        return ! $this->isActive();
     }
 
-    public function getIsExpiredAttribute(): bool
+    public function getServiceClosedAttribute(): bool
     {
-        return Carbon::parse("{$this->service_date} {$this->expires_at}")->isPast();
+        return Carbon::parse("{$this->service_date} {$this->expires_at}")
+            ->isPast();
     }
 }

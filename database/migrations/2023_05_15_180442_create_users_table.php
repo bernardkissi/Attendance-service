@@ -21,7 +21,7 @@ return new class extends Migration
             //local fields
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('pin', 4);
+            $table->integer('pin');
             $table->tinyInteger('super_admin')->default(0);
             $table->string('password');
 

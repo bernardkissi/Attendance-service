@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Qrcode;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -26,6 +27,11 @@ class MonitorQrcodesJob implements ShouldQueue
     public function handle(): void
     {
         // this job will get all qrcodes runing today
-        // and check if they are expired and mark them expired
+        $serviceQrsRunning = Qrcode::isCurrentlyRunning()->get();
+
+        // and check if they service is closed and mark them as expired
+        $serviceQrsRunning->filter(function (Qrcode $qrcode) {
+            return $qrcode->serviceClosed;
+        })->update(['expired_on' => now()]);
     }
 }
