@@ -51,3 +51,5 @@ class AttendanceDTO
         ];
     }
 }
+
+// allow other members when joint is enabled

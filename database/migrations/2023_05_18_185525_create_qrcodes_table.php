@@ -31,6 +31,7 @@ return new class extends Migration
 
             // qrcode related fields
             $table->string('content_hash')->nullable();
+            $table->string('visited_branch_id')->nullable();
 
             $table->timestamps();
         });

@@ -54,7 +54,7 @@ class VerificationDTO
             'qrcode' => $this->qrcode->identifier,
             'member' => $this->member->id,
             'verification_type' => $this->verificationType,
-            'location' => gettype($this->memberLocation)
+            'location' => $this->memberLocation,
         ];
     }
 }

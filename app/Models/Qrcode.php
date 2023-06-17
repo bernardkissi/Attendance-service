@@ -13,7 +13,8 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Qrcode extends Model implements HasMedia
 {
-    use HasFactory,
+    use
+        HasFactory,
         InteractsWithMedia,
         Tenantable,
         IsTrackable;

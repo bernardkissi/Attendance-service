@@ -73,7 +73,7 @@ class ServiceQrcodeDTO
             return $service;
         }
 
-        throw new ModelNotFoundException('The service with id ' . $serviceId . ' does not exist');
+        throw new ModelNotFoundException('The service with id '.$serviceId.' does not exist');
     }
 
     private static function getConfiguration(array $config = null): array

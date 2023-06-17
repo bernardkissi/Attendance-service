@@ -13,7 +13,7 @@ class LocationCheck extends Checker
         $branchLatitude = $dto->qrcode->location['latitude'];
         $branchLongitude = $dto->qrcode->location['longitude'];
 
-        if (!isset($dto->memberLocation)) {
+        if (! isset($dto->memberLocation)) {
             throw new InvalidArgumentException('Member location must not be empty.');
         }
 

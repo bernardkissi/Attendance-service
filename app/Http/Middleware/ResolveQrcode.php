@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Attendance;
 use App\Models\Qrcode;
 use Closure;
 use Illuminate\Http\Request;
@@ -24,6 +25,16 @@ class ResolveQrcode
 
         if (!$qrcode) {
             abort(404, 'This qrcode does not exist for any service');
+        }
+
+        // this check ensures idempotency
+        $alreadyRecorded = Attendance::where('qrcode_id', $qrcode->id)
+            ->where('member_id', $request->member->id)
+            ->exists();
+
+        // return immediately if attendance has already been recorded
+        if ($alreadyRecorded) {
+            return response()->json(['message' => 'You have already recorded your attendance']);
         }
 
         $request->merge(['qrcode' => $qrcode]);

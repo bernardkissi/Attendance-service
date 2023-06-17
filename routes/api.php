@@ -1,15 +1,16 @@
 <?php
 
-use App\Models\Member;
-use App\Models\Attendance;
-use App\DTOs\AttendanceDTO;
-use Illuminate\Http\Request;
-use App\DTOs\VerificationDTO;
-use Illuminate\Support\Facades\Route;
-use App\Domain\Verification\Checks\TimeCheck;
-use App\Domain\Verification\VerificationService;
+use App\Actions\Attendance\RecordMemberAttendance;
 use App\Domain\Verification\Checks\LocationCheck;
 use App\Domain\Verification\Checks\MembershipCheck;
+use App\Domain\Verification\Checks\TimeCheck;
+use App\Domain\Verification\VerificationService;
+use App\DTOs\AttendanceDTO;
+use App\DTOs\VerificationDTO;
+use App\Models\Attendance;
+use App\Models\Member;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,24 +49,30 @@ Route::get('/checks', function (Request $request) {
     $memberCheck = new MembershipCheck();
 
     $locationStatus = $locationCheck->verify($verificationDto);
-    $timeStatus =   $timeCheck->verify($verificationDto);
+    $timeStatus = $timeCheck->verify($verificationDto);
     $memberStatus = $memberCheck->verify($verificationDto);
 
     return [
         'locationCheck' => $locationStatus ? 'passed' : 'failed',
         'timeStatus' => $timeStatus ? 'passed' : 'failed',
-        'memberStatus' => $memberStatus ? 'passed' : 'failed'
+        'memberStatus' => $memberStatus ? 'passed' : 'failed',
     ];
 })->middleware(['auth:sanctum', 'member', 'qrcode']);
-
 
 Route::get('/verification', function (Request $request) {
     $verificationDto = VerificationDTO::fromRequest($request);
 
     $checks = new VerificationService($verificationDto);
-    return $checks->runChecks();
-})->middleware(['auth:sanctum', 'member', 'qrcode']);;
 
+    return $checks->runChecks();
+})->middleware(['auth:sanctum', 'member', 'qrcode']);
+
+
+Route::get('/workflow', function (Request $request) {
+    $verificationDto = VerificationDTO::fromRequest($request);
+    $attendanceDto = AttendanceDTO::fromRequest($request);
+    return RecordMemberAttendance::record($verificationDto, $attendanceDto);
+})->middleware(['auth:sanctum', 'member', 'qrcode']);
 
 Route::post('/login', function (Request $request) {
 

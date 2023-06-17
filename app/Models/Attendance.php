@@ -10,4 +10,8 @@ class Attendance extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    protected $casts = [
+        'location' => 'array',
+    ];
 }
