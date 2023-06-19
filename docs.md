@@ -7,19 +7,21 @@ members
     [] import members from csv file
 
 service
-    [] create, 
+    [X] create, 
     [] update, 
     [] delete
     [] create service from csv file
 
 qrcodes
-    [] create, 
+    [X] create, 
     [] modify, 
     [] delete
 
 logins
     [] session login  [ super admin, branch login]
-    [] api login
+    [X] api login
+    [] api logout
+    [] session logout
 
 data analytics
    [] 

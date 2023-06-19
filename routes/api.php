@@ -3,6 +3,7 @@
 use App\Actions\Attendance\RecordMemberAttendance;
 use App\Domain\Verification\Checks\LocationCheck;
 use App\Domain\Verification\Checks\MembershipCheck;
+use App\Domain\Verification\Checks\ServiceCheck;
 use App\Domain\Verification\Checks\TimeCheck;
 use App\Domain\Verification\VerificationService;
 use App\DTOs\AttendanceDTO;
@@ -25,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum', 'member'])->get('/user', function (Request $request) {
     $branch = request()->member->branch;
-    $service = $branch->services()->select('id', 'name')->whereId(1)->first();
+    $service = $branch->services()->get();
 
     return [
         'branch' => $branch,
@@ -47,15 +48,17 @@ Route::get('/checks', function (Request $request) {
     $locationCheck = new LocationCheck();
     $timeCheck = new TimeCheck();
     $memberCheck = new MembershipCheck();
+    $serviceCheck = new ServiceCheck();
 
     $locationStatus = $locationCheck->verify($verificationDto);
     $timeStatus = $timeCheck->verify($verificationDto);
     $memberStatus = $memberCheck->verify($verificationDto);
-
+    $serviceStatus = $serviceCheck->verify($verificationDto);
     return [
-        'locationCheck' => $locationStatus ? 'passed' : 'failed',
-        'timeStatus' => $timeStatus ? 'passed' : 'failed',
-        'memberStatus' => $memberStatus ? 'passed' : 'failed',
+        'locationCheck' => [$locationStatus->status, $locationStatus->reason],
+        'timeStatus' => [$timeStatus->status, $timeStatus->reason],
+        'memberStatus' => [$memberStatus->status, $memberStatus->reason],
+        'serviceStatus' => [$serviceStatus->status, $serviceStatus->reason],
     ];
 })->middleware(['auth:sanctum', 'member', 'qrcode']);
 

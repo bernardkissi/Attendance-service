@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use App\Domain\Qrcodes\Traits\IsTrackable;
-use App\Domain\Tenants\Tenantable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
+use App\Domain\Tenants\Tenantable;
+use Illuminate\Database\Eloquent\Model;
+use App\Domain\Qrcodes\Traits\IsTrackable;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 class Qrcode extends Model implements HasMedia
 {
@@ -30,6 +31,8 @@ class Qrcode extends Model implements HasMedia
     protected $casts = [
         'location' => 'array',
         'checks' => 'array',
+        'is_a_joint_service' => 'bool',
+        'allow_visiting_members' => 'bool',
     ];
 
     public function service(): BelongsTo

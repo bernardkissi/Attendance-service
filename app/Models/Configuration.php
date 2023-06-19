@@ -22,8 +22,8 @@ class Configuration extends Model
             if (! isset($model->options)) {
                 $model->options = [
                     'location' => [
-                        'latitude' => null,
-                        'longitude' => null,
+                        'latitude' => 50.9406717, // for demo purposes
+                        'longitude' => 7.0623543, // for demo purposes
                     ],
                     'distance_threshold' => 4.0,
                     'allow_visiting_members' => false,

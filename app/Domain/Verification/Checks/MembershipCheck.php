@@ -21,12 +21,11 @@ class MembershipCheck extends Checker
         }
 
         $isAMemberOfBranch = $dto->member->branch_id === $branchId;
-        $isAJointService = $dto->qrcode->is_a_joint_service;
         $allowVisitingMember = $dto->qrcode->allow_visiting_members;
 
         // checks if user is not a member of the branch but of another branch
         // and if is a joint service or is allowed for visiting members to record their attendance
-        if (! $isAMemberOfBranch && $isAJointService || $allowVisitingMember) {
+        if (! $isAMemberOfBranch && $allowVisitingMember) {
             $result = Branch::where('id', $dto->member->branch_id)->exists();
 
             return match ($result) {
@@ -40,5 +39,6 @@ class MembershipCheck extends Checker
             true => new Result($isAMemberOfBranch),
             false => new Result($isAMemberOfBranch, 'You cant record your attenance here'),
         };
+
     }
 }

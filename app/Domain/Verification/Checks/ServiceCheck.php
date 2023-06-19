@@ -13,12 +13,12 @@ class ServiceCheck extends Checker
     {
         $result = Service::query()
             ->where('id', $dto->qrcode->service_id)
-            ->where('branch', $dto->qrcode->branch_id)
+            ->where('branch_id', $dto->qrcode->branch_id)
             ->exists();
 
         return match ($result) {
             true => new Result($result),
-            false => new Result($result, 'Service does not exist'),
+            false => new Result($result, 'Service does not exist for your branch'),
         };
     }
 }
