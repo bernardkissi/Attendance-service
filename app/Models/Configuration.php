@@ -26,14 +26,16 @@ class Configuration extends Model
                         'longitude' => null,
                     ],
                     'distance_threshold' => 4.0,
-                    'verifiers' => [
+                    'allow_visiting_members' => false,
+                    'checks' => [
                         'location' => true,
                         'time' => true,
                         'membership' => true,
+                        'service' => true,
                     ],
                     'generate_report' => 'monthly',
                     'generate_qrcode' => 'manually',
-                    'verification_type' => 'qrcode',
+                    'verification_type' => 'all',
                 ];
             }
         });

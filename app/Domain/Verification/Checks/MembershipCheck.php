@@ -4,41 +4,41 @@ declare(strict_types=1);
 
 namespace App\Domain\Verification\Checks;
 
+use App\DTOs\VerificationDTO;
 use App\Models\Branch;
 use App\Models\Member;
-use App\DTOs\VerificationDTO;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MembershipCheck extends Checker
 {
-    public function verify(VerificationDTO $dto): bool
+    public function verify(VerificationDTO $dto): Result
     {
         $branchId = $dto->qrcode->branch_id;
 
-        if (!$dto->member || !$dto->member instanceof Member) {
+        // checks user is member
+        if (! $dto->member || ! $dto->member instanceof Member) {
             throw new ModelNotFoundException('No Member was found');
         }
 
-        $isAVisitingMember = $dto->member->branch_id === $branchId;
-        $isAJointService = $dto->qrcode->is_joint_service;
+        $isAMemberOfBranch = $dto->member->branch_id === $branchId;
+        $isAJointService = $dto->qrcode->is_a_joint_service;
+        $allowVisitingMember = $dto->qrcode->allow_visiting_members;
 
-        if (!isAVisitingMemeber && $isAVisitingMemeber) {
-            return true;
+        // checks if user is not a member of the branch but of another branch
+        // and if is a joint service or is allowed for visiting members to record their attendance
+        if (! $isAMemberOfBranch && $isAJointService || $allowVisitingMember) {
+            $result = Branch::where('id', $dto->member->branch_id)->exists();
+
+            return match ($result) {
+                true => new Result($result),
+                false => new Result($result, 'You dont belong to any branch'),
+            };
         }
 
-        if () {
-            return Branch::where('id', $dto->member->branch_id)->exists();
-        }
+        // checks if user is a member of the branch if not he/she can record his/her attendance
+        return match ($isAMemberOfBranch) {
+            true => new Result($isAMemberOfBranch),
+            false => new Result($isAMemberOfBranch, 'You cant record your attenance here'),
+        };
     }
-
-    // checks if the service is a joint service or allow vistiong members is turned on
-    // if the member is a member of the  branch handle it normally
-    //1.  if the member branchId is the same as the qrcode branch id
-
-    // if is a member of another branch
-    // check if the member branch id belongs to any branch ids
-
-
-    //Service
-    // checks if the qrcode branch exists and the branch has the service in quesion.
 }

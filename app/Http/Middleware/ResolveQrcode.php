@@ -17,13 +17,13 @@ class ResolveQrcode
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!isset($request->qrcodeIdentifier)) {
+        if (! isset($request->qrcodeIdentifier)) {
             abort(403, 'No identifier is provided');
         }
 
         $qrcode = Qrcode::whereIdentifier($request->qrcodeIdentifier)->first();
 
-        if (!$qrcode) {
+        if (! $qrcode) {
             abort(404, 'This qrcode does not exist for any service');
         }
 

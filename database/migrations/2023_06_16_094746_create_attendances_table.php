@@ -24,6 +24,7 @@ return new class extends Migration
             $table->json('location')->nullable();
             $table->string('recorded_by_user_id')->nullable();
             $table->string('ip_address')->nullable();
+            $table->integer('visitor_branch_id')->nullable();
             $table->timestamps();
         });
     }

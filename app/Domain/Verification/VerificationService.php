@@ -7,6 +7,8 @@ namespace App\Domain\Verification;
 use App\Domain\Verification\Checks\Checker;
 use App\Domain\Verification\Checks\LocationCheck;
 use App\Domain\Verification\Checks\MembershipCheck;
+use App\Domain\Verification\Checks\Result;
+use App\Domain\Verification\Checks\ServiceCheck;
 use App\Domain\Verification\Checks\TimeCheck;
 use App\DTOs\VerificationDTO;
 use Illuminate\Support\Collection;
@@ -17,6 +19,7 @@ class VerificationService implements Verification
         'time' => TimeCheck::class,
         'location' => LocationCheck::class,
         'membership' => MembershipCheck::class,
+        'service' => ServiceCheck::class,
     ];
 
     public function __construct(
@@ -24,13 +27,18 @@ class VerificationService implements Verification
     ) {
     }
 
-    public function runChecks(): bool
+    /**
+     * Run all checks .
+     *
+     * @return Collection<Result>
+     */
+    public function runChecks(): Collection
     {
         return $this->getActiveChecks()
-            ->map(fn (Checker $check) => $check->verify($this->dto))
-            ->every(fn ($result) => $result === true);
+            ->map(fn (Checker $check) => $check->verify($this->dto));
     }
 
+    // Get checks that needs to be applied before verification.
     private function getActiveChecks(): Collection
     {
         if (empty($this->dto->qrcode->checks)) {

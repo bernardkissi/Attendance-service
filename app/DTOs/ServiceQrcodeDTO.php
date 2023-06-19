@@ -17,7 +17,9 @@ class ServiceQrcodeDTO
         public readonly string|array $service_date,
         public readonly array $location,
         public readonly ?float $distance_threshold,
-        public readonly array $verifiers
+        public readonly array $checks,
+        public readonly bool $is_a_joint_service = false,
+        public readonly bool $allow_visiting_members,
     ) {
     }
 
@@ -34,7 +36,9 @@ class ServiceQrcodeDTO
             $request->service_date ?? $dateManager->getServiceDate($service),
             $configuration['location'],
             $configuration['distance_threshold'],
-            $configuration['verifiers']
+            $configuration['checks'],
+            false,
+            $configuration['allow_visiting_members']
         );
     }
 
@@ -49,7 +53,9 @@ class ServiceQrcodeDTO
             $dateManager->getServiceDate($service),
             $service->branch->configuration->options['location'],
             $service->branch->configuration->options['distance_threshold'],
-            $service->branch->configuration->options['verifiers']
+            $service->branch->configuration->options['checks'],
+            false,
+            $service->branch->configuration->options['allow_visiting_members']
         );
     }
 
@@ -61,7 +67,9 @@ class ServiceQrcodeDTO
             'service_date' => $this->service_date,
             'location' => $this->location,
             'distance_threshold' => $this->distance_threshold,
-            'checks' => $this->verifiers,
+            'checks' => $this->checks,
+            'is_a_joint_service' => $this->is_a_joint_service,
+            'allow_visiting_members' => $this->allow_visiting_members,
         ];
     }
 

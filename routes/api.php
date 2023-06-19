@@ -67,10 +67,10 @@ Route::get('/verification', function (Request $request) {
     return $checks->runChecks();
 })->middleware(['auth:sanctum', 'member', 'qrcode']);
 
-
 Route::get('/workflow', function (Request $request) {
     $verificationDto = VerificationDTO::fromRequest($request);
     $attendanceDto = AttendanceDTO::fromRequest($request);
+
     return RecordMemberAttendance::record($verificationDto, $attendanceDto);
 })->middleware(['auth:sanctum', 'member', 'qrcode']);
 

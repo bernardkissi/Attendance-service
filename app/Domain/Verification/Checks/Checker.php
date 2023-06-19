@@ -8,5 +8,5 @@ use App\DTOs\VerificationDTO;
 
 abstract class Checker
 {
-    abstract public function verify(VerificationDTO $dto): bool;
+    abstract public function verify(VerificationDTO $dto): Result;
 }
