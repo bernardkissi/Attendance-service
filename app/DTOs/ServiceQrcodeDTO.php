@@ -18,7 +18,7 @@ class ServiceQrcodeDTO
         public readonly array $location,
         public readonly ?float $distance_threshold,
         public readonly array $checks,
-        public readonly bool $is_a_joint_service = false,
+        public readonly bool $is_a_joint_service,
         public readonly bool $allow_visiting_members,
     ) {
     }

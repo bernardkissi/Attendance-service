@@ -54,6 +54,7 @@ Route::get('/checks', function (Request $request) {
     $timeStatus = $timeCheck->verify($verificationDto);
     $memberStatus = $memberCheck->verify($verificationDto);
     $serviceStatus = $serviceCheck->verify($verificationDto);
+
     return [
         'locationCheck' => [$locationStatus->status, $locationStatus->reason],
         'timeStatus' => [$timeStatus->status, $timeStatus->reason],

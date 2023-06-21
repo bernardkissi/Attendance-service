@@ -26,7 +26,7 @@ class AttendanceDTO
     {
         $device = (new Agent([$request->userAgent()]))->deviceType();
         $isAVisitor = $request->member->branch_id !== $request->qrcode->branch_id;
-        
+
         return new static(
             $request->qrcode->id,
             $request->qrcode->branch_id,
@@ -55,4 +55,3 @@ class AttendanceDTO
         ];
     }
 }
-
