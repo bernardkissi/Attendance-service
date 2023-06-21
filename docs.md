@@ -24,19 +24,14 @@ logins
     [] session logout
 
 data analytics
-   [] 
+    [] reports statistics
+notification
+    [] Branch Notifications
+    
 end to end
-
-    [] attendance recording flow
-     - cover all edge cases
-     
-    <!-- record attendance webflow -->
-    1. member login -> 
-    2. send payload to api endpoint -> 
-    3. payload goes through verfication channel -> 
-    4. passed -> 
-    5. attendance is recorded 
-    <!-- end of webflow -->
+    [X] attendance recording flow
+    [] user testing edge cases
+    
     
 
 
