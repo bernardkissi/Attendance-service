@@ -14,15 +14,17 @@ return new class extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->uuid('identifier')->index();
-
+            $table->softDeletes();
             //foreign field
-            $table->foreignId('branch_id')->index()->constrained('branches')->cascadeOnDelete();
+            $table->foreignId('branch_id')->index()
+                ->constrained('branches')
+                ->cascadeOnDelete();
 
             //local fields
-            $table->string('memberId');
+            $table->string('memberId')->unique();
             $table->string('name');
             $table->string('phone');
-            $table->integer('pin');
+            $table->integer('pin')->unique();
             $table->timestamps();
         });
     }
