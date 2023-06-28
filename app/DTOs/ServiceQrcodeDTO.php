@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class ServiceQrcodeDTO
 {
     public function __construct(
-        public readonly Service $service,
+        public readonly ?Service $service,
         public readonly string $active_at,
         public readonly string $expires_at,
         public readonly string|array $service_date,
@@ -56,6 +56,21 @@ class ServiceQrcodeDTO
             $service->branch->configuration->options['checks'],
             false,
             $service->branch->configuration->options['allow_visiting_members']
+        );
+    }
+
+    public static function fromModificationRequest(Request $request): static
+    {
+        return new static(
+            null,
+            $request->active_at,
+            $request->expires_at,
+            $request->service_date,
+            $request->location,
+            $request->distanceThreshold,
+            $request->checks,
+            $request->isAJointService,
+            $request->allowVisitingMembers
         );
     }
 

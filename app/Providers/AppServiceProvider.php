@@ -30,9 +30,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Find the user you want to stimulate login
-        //$user = User::find(1);
+        $user = User::find(1);
 
         // Set the user as the authenticated user
-        //Auth::setUser($user);
+        Auth::setUser($user);
     }
 }

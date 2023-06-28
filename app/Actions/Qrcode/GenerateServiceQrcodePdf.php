@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Qrcode;
 
+use App\Actions\Action;
 use App\Domain\Qrcodes\PdfGenerator;
 use App\Models\Qrcode;
 use Illuminate\Http\Response;

@@ -2,12 +2,14 @@
 
 use App\Domain\Qrcodes\Generators\pdf\PDFGenerator;
 use App\Domain\Qrcodes\Generators\qrcode\ServiceQrcodeGenerator;
+use App\Imports\MembersImport;
 use App\Models\Configuration;
 use App\Models\Qrcode;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,11 @@ Route::get('/services/filter', function () {
 Route::get('/qrcodes/filter', function (Request $request) {
     return Qrcode::isActiveTomorrow()->get();
 });
+
+// Route::get('/members/import', function (Request $request) {
+//     dd($request->user);
+//     //Excel::toCollection(new MembersImport, filePath: $request->file, readerType: 'csv');
+// });
 
 // Route::get('/qrcode', function () {
 //     $model = User::find(1);

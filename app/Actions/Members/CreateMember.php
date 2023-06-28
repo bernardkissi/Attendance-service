@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Actions\Members;
 
-use App\Models\Member;
 use App\Actions\Action;
 use App\DTOs\MemberDTO;
 use App\Imports\MembersImport;
+use App\Models\Member;
 use Illuminate\Http\UploadedFile;
 
 class CreateMember implements Action

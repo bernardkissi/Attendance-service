@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Actions;
+namespace App\Actions\Qrcode;
 
+use App\Actions\Action;
 use App\Domain\Qrcodes\QrcodeGenerator;
 use App\DTOs\ServiceQrcodeDTO;
 use Illuminate\Support\Collection;

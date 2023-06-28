@@ -3,12 +3,15 @@
 use App\Actions\CreateService;
 use App\Actions\CreateServiceQrcode;
 use App\Actions\GenerateServiceQrcodePdf;
+use App\Actions\Members\CreateMember;
 use App\Domain\Tenants\TenantManager;
+use App\DTOs\MemberDTO;
 use App\DTOs\NonExpirableServiceDTO;
 use App\DTOs\OneTimeServiceDTO;
 use App\DTOs\RecurringServiceDTO;
 use App\DTOs\ServiceQrcodeDTO;
 use App\Enums\ServiceType;
+use App\Imports\MembersImport;
 use App\Models\Member;
 use App\Models\Qrcode;
 use App\Models\Service;
@@ -80,3 +83,18 @@ Route::get('/qrcodes/create', function (Request $request) {
         200,
     ]);
 });
+
+Route::get('/member/create', function (Request $request) {
+    $memberDto = MemberDTO::fromRequest($request);
+
+    return CreateMember::create($memberDto);
+    //Excel::toCollection(new MembersImport, filePath: $request->file, readerType: 'csv');
+});
+
+Route::post('/member/import', function (Request $request) {
+    dd($request->file('file'));
+    //Excel::toCollection(new MembersImport, filePath: $request->file, readerType: 'csv');
+});
+// Route::('/members/import', function (Request $request) {
+//     return (new MembersImport)->toCollection($request->file);
+// });

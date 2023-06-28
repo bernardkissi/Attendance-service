@@ -10,14 +10,14 @@ use App\Models\Member;
 
 class ManageMember implements Action
 {
-    public static function modify(Member $member, MemberDTO $memberDto): void
+    public static function modify(Member $member, MemberDTO $memberDto): bool
     {
-        $member->update($memberDto->toArray());
+        return $member->updateOrFail($memberDto->toArray());
     }
 
-    public static function remove(Member $member): void
+    public static function remove(Member $member): bool
     {
-        $member->delete();
+        return $member->deleteOrFail();
     }
 
     public static function removeMany(array $ids): void

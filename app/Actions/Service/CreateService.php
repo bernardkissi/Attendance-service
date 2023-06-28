@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Actions;
+namespace App\Actions\Service;
 
+use App\Actions\Action;
 use App\DTOs\NonExpirableServiceDTO;
 use App\DTOs\OneTimeServiceDTO;
 use App\DTOs\RecurringServiceDTO;

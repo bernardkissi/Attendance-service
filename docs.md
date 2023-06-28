@@ -1,21 +1,21 @@
 # Features
-
+[] protect actions with policies in request form or policies
 members
-    [] create,
-    [] update,
-    [] delete members
-    [] import members from csv file
+    [x] create,
+    [x] update,
+    [x] delete members
+    [x] import members from csv file
 
 service
     [X] create, 
     [] update, 
-    [] delete
-    [] create service from csv file
+    [x] delete
+    [?] create service from csv file
 
 qrcodes
     [X] create, 
-    [] modify, 
-    [] delete
+    [x] modify, 
+    [x] delete
 
 logins
     [] session login  [ super admin, branch login]

@@ -1,6 +1,7 @@
 <?php
 
 use App\Actions\Attendance\RecordMemberAttendance;
+use App\Actions\Members\CreateMember;
 use App\Domain\Verification\Checks\LocationCheck;
 use App\Domain\Verification\Checks\MembershipCheck;
 use App\Domain\Verification\Checks\ServiceCheck;
@@ -8,10 +9,12 @@ use App\Domain\Verification\Checks\TimeCheck;
 use App\Domain\Verification\VerificationService;
 use App\DTOs\AttendanceDTO;
 use App\DTOs\VerificationDTO;
+use App\Imports\MembersImport;
 use App\Models\Attendance;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,4 +87,9 @@ Route::post('/login', function (Request $request) {
     $token = $member->createToken('member')->plainTextToken;
 
     return response()->json(['token' => $token]);
+});
+
+Route::post('/member/import', function (Request $request) {
+    CreateMember::importMembersFromCsv($request->file('file'));
+    // return Excel::toCollection(new MembersImport, filePath: $request->file, readerType: \Maatwebsite\Excel\Excel::CSV);
 });
