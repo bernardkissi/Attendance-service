@@ -14,7 +14,7 @@ class ServiceQrcodeDTO
         public readonly ?Service $service,
         public readonly string $active_at,
         public readonly string $expires_at,
-        public readonly string|array $service_date,
+        public string|array $service_date,
         public readonly array $location,
         public readonly ?float $distance_threshold,
         public readonly array $checks,

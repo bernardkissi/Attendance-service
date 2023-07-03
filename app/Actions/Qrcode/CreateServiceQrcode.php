@@ -11,23 +11,18 @@ use Illuminate\Support\Collection;
 
 class CreateServiceQrcode implements Action
 {
-    public function __construct(
-        public ServiceQrcodeDTO $serviceQrcodeDTO,
-    ) {
-    }
-
-    public function exec(): void
+    public static function create(ServiceQrcodeDTO $serviceQrcodeDTO): void
     {
         // service-qrcode relation
-        $serviceQrcode = $this->serviceQrcodeDTO->service->qrcodes();
+        $serviceQrcode = $serviceQrcodeDTO->service->qrcodes();
 
         // create qrcodes for a service
-        if (is_array($this->serviceQrcodeDTO->service_date)) {
-            $qrcodes = $serviceQrcode->createMany($this->createManyQrcodes()->toArray());
+        if (is_array($serviceQrcodeDTO->service_date)) {
+            $qrcodes = $serviceQrcode->createMany(static::createManyQrcodes($serviceQrcodeDTO)->toArray());
         }
         // create a single qrcode for a service
-        if (is_string($this->serviceQrcodeDTO->service_date)) {
-            $qrcodes = $serviceQrcode->create($this->serviceQrcodeDTO->toArray());
+        if (is_string($serviceQrcodeDTO->service_date)) {
+            $qrcodes = $serviceQrcode->create($serviceQrcodeDTO->toArray());
         }
 
         $qrcodeGenerator = app(QrcodeGenerator::class);
@@ -38,11 +33,11 @@ class CreateServiceQrcode implements Action
             $qrcodeGenerator->generate($qrcodes);
     }
 
-    private function createManyQrcodes(): Collection
+    private static function createManyQrcodes(ServiceQrcodeDTO $serviceQrcodeDTO): Collection
     {
-        $qrcodes = collect($this->serviceQrcodeDTO->service_date)
-            ->map(function (string $date) {
-                return [...$this->serviceQrcodeDTO->toArray(), 'service_date' => $date];
+        $qrcodes = collect($serviceQrcodeDTO->service_date)
+            ->map(function (string $date) use ($serviceQrcodeDTO) {
+                return [...$serviceQrcodeDTO->toArray(), 'service_date' => $date];
             });
 
         return $qrcodes;

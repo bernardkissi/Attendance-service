@@ -25,6 +25,12 @@ trait IsTrackable
         $query->whereDate('service_date', '=', Carbon::tomorrow());
     }
 
+    public function scopeIsNotwithinServiceDate(Builder $query, string $startDate, string $endDate): void
+    {
+        $query->whereDate('service_date', '<', $startDate)
+            ->orWhereDate('service_date', '>', $endDate);
+    }
+
     public function scopeIsExpired(Builder $query): void
     {
         $query->whereDate('service_date', '<', now())

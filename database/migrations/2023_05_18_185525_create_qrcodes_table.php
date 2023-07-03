@@ -21,7 +21,7 @@ return new class extends Migration
             // qrcode expiration related fields
             $table->time('active_at')->nullable();
             $table->time('expires_at')->nullable();
-            $table->time('expired_on')->nullable();
+            $table->dateTime('expired_on')->nullable();
             $table->date('service_date')->nullable();
             $table->text('qrcode_image_string')->nullable();
             // location related fields

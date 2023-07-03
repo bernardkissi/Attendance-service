@@ -1,9 +1,10 @@
 <?php
 
 use App\Actions\CreateService;
-use App\Actions\CreateServiceQrcode;
-use App\Actions\GenerateServiceQrcodePdf;
 use App\Actions\Members\CreateMember;
+use App\Actions\Qrcode\CreateServiceQrcode;
+use App\Actions\Qrcode\GenerateServiceQrcodePdf;
+use App\Actions\Service\CreateService;
 use App\Domain\Tenants\TenantManager;
 use App\DTOs\MemberDTO;
 use App\DTOs\NonExpirableServiceDTO;
@@ -14,7 +15,6 @@ use App\Enums\ServiceType;
 use App\Imports\MembersImport;
 use App\Models\Member;
 use App\Models\Qrcode;
-use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
