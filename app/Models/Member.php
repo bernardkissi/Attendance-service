@@ -22,7 +22,6 @@ class Member extends Authenticatable
     public static function booted(): void
     {
         static::creating(function ($model) {
-            dd('called');
             $model->identifier = Str::uuid()->toString();
         });
     }

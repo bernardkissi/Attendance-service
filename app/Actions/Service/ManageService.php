@@ -18,10 +18,13 @@ class ManageService implements Action
         Service $service,
         NonExpirableServiceDTO|OneTimeServiceDTO|RecurringServiceDTO $dto
     ): void {
-
+        // dd($service->qrcodes()->isCurrentlyRunning()->count());
+        if ($service->hasEnded) {
+            throw new \Exception('Service is already expired.');
+        }
         // checks if any of the service qrcodes is currently running
         // if any is currently running we cant contiune with the update.
-        if ($service->qrcodes->isCurrentlyRunning()->count() > 0) {
+        if ($service->qrcodes()->isCurrentlyRunning()->count() > 0) {
             throw new \Exception('Service cannot be updated because it is currently running');
         }
 
@@ -61,12 +64,12 @@ class ManageService implements Action
         //recurring type
         $serviceQrCodeDTO = ServiceQrcodeDTO::fromModel($service);
         // check if any the qrcodes is already within the service dates range
-        $activeQrcodes = $service->qrcodes()?->isWithinServiceDate($service->commence_date, $service->end_date);
+        $activeQrcodes = $service->qrcodes()->isWithinServiceDate($service->commence_date, $service->end_date);
         // Action: Soft deletes the qrcode
-        $inactiveQrcodes = $service->qrcodes()?->isNotWithinServiceDate($service->commence_date, $service->end_date);
+        $inactiveQrcodes = $service->qrcodes()->isNotWithinServiceDate($service->commence_date, $service->end_date);
 
         if ($inactiveQrcodes) {
-            $inactiveQrcodes->toQuery()->update(['expired_on' => now()]);
+            $inactiveQrcodes->update(['expired_on' => now()]);
         }
         // generate the service dates
         $dates = $serviceQrCodeDTO->service_date;
@@ -75,7 +78,7 @@ class ManageService implements Action
         // only udpate timestamp if the active qrcodes
         $missingQrcodeDates = collect($dates)->diff($qrcodesDates);
         // generate qrcodes for missing dates
-        $serviceQrCodeDTO->service_date = $missingQrcodeDates;
+        $serviceQrCodeDTO->service_date = $missingQrcodeDates->toArray();
 
         CreateServiceQRCode::create($serviceQrCodeDTO);
     }
