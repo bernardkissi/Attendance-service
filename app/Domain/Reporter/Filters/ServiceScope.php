@@ -14,6 +14,7 @@ class ServiceScope implements FilterQuery
         if (is_string($services)) {
             return $builder->whereServiceId($services);
         }
+
         return $builder->whereIn('service_id', $services);
     }
 }

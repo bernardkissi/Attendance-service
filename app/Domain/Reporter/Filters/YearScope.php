@@ -14,6 +14,7 @@ class YearScope implements FilterQuery
         if (is_string($year)) {
             return $builder->whereYear('recorded_at', $year);
         }
+
         return $builder;
     }
 }

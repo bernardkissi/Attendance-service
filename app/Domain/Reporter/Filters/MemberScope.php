@@ -14,6 +14,7 @@ class MemberScope implements FilterQuery
         if (is_string($members)) {
             return $builder->whereMemberId($members);
         }
+
         return $builder->whereIn('member_id', $members);
     }
 }

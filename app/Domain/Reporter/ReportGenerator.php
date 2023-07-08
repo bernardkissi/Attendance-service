@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domain\Reporter;
 
-use Illuminate\Support\Arr;
 use App\DTOs\FilterQueryDTO;
-use App\Domain\Reporter\FilterQuery;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Arr;
 
 class ReportGenerator
 {

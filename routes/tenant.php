@@ -1,29 +1,30 @@
 <?php
 
-use App\Models\Member;
-use App\Models\Qrcode;
-use App\DTOs\MemberDTO;
-use App\Models\Service;
-use App\Enums\ServiceType;
-use App\DTOs\FilterQueryDTO;
-use Illuminate\Http\Request;
-use App\DTOs\ServiceQrcodeDTO;
-use App\Imports\MembersImport;
-use App\DTOs\OneTimeServiceDTO;
-use App\DTOs\RecurringServiceDTO;
-use App\DTOs\NonExpirableServiceDTO;
 use App\Actions\Members\CreateMember;
-use App\Domain\Tenants\TenantManager;
-use Illuminate\Support\Facades\Route;
+use App\Actions\Qrcode\CreateServiceQrcode;
+use App\Actions\Qrcode\GenerateServiceQrcodePdf;
 use App\Actions\Service\CreateService;
 use App\Actions\Service\ManageService;
 use App\Domain\Reporter\Filters\DateScope;
-use App\Domain\Reporter\Filters\YearScope;
-use App\Actions\Qrcode\CreateServiceQrcode;
-use App\Domain\Reporter\Filters\MonthScope;
 use App\Domain\Reporter\Filters\MemberScope;
-use App\Actions\Qrcode\GenerateServiceQrcodePdf;
+use App\Domain\Reporter\Filters\MonthScope;
+use App\Domain\Reporter\Filters\YearScope;
+use App\Domain\Tenants\TenantManager;
+use App\DTOs\FilterQueryDTO;
+use App\DTOs\MemberDTO;
+use App\DTOs\NonExpirableServiceDTO;
+use App\DTOs\OneTimeServiceDTO;
+use App\DTOs\RecurringServiceDTO;
+use App\DTOs\ServiceQrcodeDTO;
+use App\Enums\ServiceType;
+use App\Imports\MembersImport;
 use App\Models\Attendance;
+use App\Models\Member;
+use App\Models\Qrcode;
+use App\Models\Service;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,6 +119,7 @@ Route::get('/services/{service}', function (Request $request, Service $service) 
 
 Route::get('report', function (Request $request) {
     $queryDTO = FilterQueryDTO::fromRequest($request);
+
     return $queryDTO->toArray();
 });
 
@@ -132,3 +134,26 @@ Route::get('generate/report', function (Request $request) {
     return Attendance::withFilter($scopes)->get();
 });
 
+Route::get('aggregator', function (Request $request) {
+    $scopes = [
+        'year' => new YearScope(),
+        'month' => new MonthScope(),
+        'members' => new MemberScope(),
+        'date' => new DateScope(),
+    ];
+
+    // generate count per month
+    // return Attendance::query()
+    //     ->withFilter($scopes)
+    //     ->select(DB::raw('MONTH(recorded_at) as month, COUNT(*) as count'))
+    //     ->whereYear('recorded_at', $request->year)
+    //     ->groupBy('month')
+    //     ->get();
+
+    return Attendance::query()
+        ->withFilter($scopes)
+        ->select(DB::raw('MONTH(recorded_at) as month, COUNT(*) as attendance, member_id'))
+        ->with('member:id,name')
+        ->groupBy('month', 'member_id')
+        ->get();
+});
