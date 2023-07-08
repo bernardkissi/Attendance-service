@@ -76,7 +76,7 @@ trait IsTrackable
 
     public function getIsNotActiveAttribute(): bool
     {
-        return !$this->isActive();
+        return ! $this->isActive();
     }
 
     public function getServiceClosedAttribute(): bool

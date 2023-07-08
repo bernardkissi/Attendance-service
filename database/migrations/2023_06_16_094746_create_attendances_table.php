@@ -17,8 +17,9 @@ return new class extends Migration
             $table->foreignId('qrcode_id')->index()->constrained()->cascadeOnDelete();
             $table->foreignId('branch_id')->index()->constrained()->cascadeOnDelete();
             $table->foreignId('member_id')->index()->constrained()->cascadeOnDelete();
+            $table->foreignId('service_id')->index()->constrained()->cascadeOnDelete();
             //local fields
-            $table->datetime('recorded_at');
+            $table->datetime('recorded_at')->index();
             $table->string('device')->nullable();
             $table->string('user_agent')->nullable();
             $table->json('location')->nullable();

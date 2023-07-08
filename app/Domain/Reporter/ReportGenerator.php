@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Domain\Reporter;
+
+use Illuminate\Support\Arr;
+use App\DTOs\FilterQueryDTO;
+use App\Domain\Reporter\FilterQuery;
+use Illuminate\Database\Eloquent\Builder;
+
+class ReportGenerator
+{
+    public function __construct(
+        public FilterQueryDTO $filterDTO
+    ) {
+    }
+
+    public function apply(Builder $builder, array $scopes): Builder
+    {
+        foreach ($this->limitscopes($scopes) as $key => $scope) {
+            if (! $scope instanceof FilterQuery) {
+                continue;
+            }
+
+            $scope->apply($builder, $this->filterDTO->{$key});
+        }
+
+        return $builder;
+    }
+
+    protected function limitscopes(array $scopes): array
+    {
+        return Arr::only($scopes, array_keys($this->filterDTO->toArray()));
+    }
+}

@@ -46,9 +46,10 @@ trait isManageable
 
     public function getHasEndedAttribute(): bool
     {
-        if (!empty($this->end_date) && Carbon::parse($this->end_date) < Carbon::today()) {
+        if (! empty($this->end_date) && Carbon::parse($this->end_date) < Carbon::today()) {
             return true;
         }
+
         return false;
     }
 }

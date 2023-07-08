@@ -5,6 +5,7 @@ use App\Models\Qrcode;
 use App\DTOs\MemberDTO;
 use App\Models\Service;
 use App\Enums\ServiceType;
+use App\DTOs\FilterQueryDTO;
 use Illuminate\Http\Request;
 use App\DTOs\ServiceQrcodeDTO;
 use App\Imports\MembersImport;
@@ -15,9 +16,14 @@ use App\Actions\Members\CreateMember;
 use App\Domain\Tenants\TenantManager;
 use Illuminate\Support\Facades\Route;
 use App\Actions\Service\CreateService;
-use App\Actions\Qrcode\CreateServiceQrcode;
-use App\Actions\Qrcode\GenerateServiceQrcodePdf;
 use App\Actions\Service\ManageService;
+use App\Domain\Reporter\Filters\DateScope;
+use App\Domain\Reporter\Filters\YearScope;
+use App\Actions\Qrcode\CreateServiceQrcode;
+use App\Domain\Reporter\Filters\MonthScope;
+use App\Domain\Reporter\Filters\MemberScope;
+use App\Actions\Qrcode\GenerateServiceQrcodePdf;
+use App\Models\Attendance;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,3 +115,20 @@ Route::get('/services/{service}', function (Request $request, Service $service) 
 
     return response()->json(['message' => 'hello world']);
 });
+
+Route::get('report', function (Request $request) {
+    $queryDTO = FilterQueryDTO::fromRequest($request);
+    return $queryDTO->toArray();
+});
+
+Route::get('generate/report', function (Request $request) {
+    $scopes = [
+        'year' => new YearScope(),
+        'month' => new MonthScope(),
+        'members' => new MemberScope(),
+        'date' => new DateScope(),
+    ];
+
+    return Attendance::withFilter($scopes)->get();
+});
+

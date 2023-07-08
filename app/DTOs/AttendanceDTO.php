@@ -13,6 +13,7 @@ class AttendanceDTO
         public readonly int $qrcodeId,
         public readonly int $branchId,
         public readonly int $memberId,
+        public readonly int $serviceId,
         public readonly string $device,
         public readonly string $userAgent,
         public readonly string $ip_address,
@@ -30,6 +31,7 @@ class AttendanceDTO
         return new static(
             $request->qrcode->id,
             $request->qrcode->branch_id,
+            $request->qrcode->service_id,
             $request->member->id,
             $device,
             $request->userAgent(),
@@ -44,6 +46,7 @@ class AttendanceDTO
         return [
             'qrcode_id' => $this->qrcodeId,
             'branch_id' => $this->branchId,
+            'service_id' => $this->serviceId,
             'member_id' => $this->memberId,
             'visitor_branch_id' => $this->visitorBranchId,
             'device' => $this->device,

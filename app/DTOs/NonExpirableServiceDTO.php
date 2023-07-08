@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace App\DTOs;
 
-use App\Models\Service;
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Model;
 
 final class NonExpirableServiceDTO
 {
