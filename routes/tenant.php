@@ -143,17 +143,20 @@ Route::get('aggregator', function (Request $request) {
     ];
 
     // generate count per month
-    // return Attendance::query()
-    //     ->withFilter($scopes)
-    //     ->select(DB::raw('MONTH(recorded_at) as month, COUNT(*) as count'))
-    //     ->whereYear('recorded_at', $request->year)
-    //     ->groupBy('month')
-    //     ->get();
-
     return Attendance::query()
         ->withFilter($scopes)
-        ->select(DB::raw('MONTH(recorded_at) as month, COUNT(*) as attendance, member_id'))
-        ->with('member:id,name')
-        ->groupBy('month', 'member_id')
+        ->selectRaw('YEAR(recorded_at) AS year, MONTH(recorded_at) AS month')
+        ->selectRaw('COUNT(member_id) AS attendance')
+        ->selectRaw('(SELECT COUNT(id) FROM members) - COUNT(member_id) AS absence')
+        ->groupBy('year','month')
         ->get();
+
+    // return Attendance::query()
+    //     ->withFilter($scopes)
+    //     ->selectRaw('YEAR(recorded_at) AS year, MONTH(recorded_at) AS month, qrcode_id, service_id')
+    //     ->selectRaw('COUNT(member_id) AS attendance')
+    //     ->selectRaw('(SELECT COUNT(id) FROM members) - COUNT(member_id) AS absence')
+    //     ->with('service:id,name')
+    //     ->groupBy('year', 'month', 'qrcode_id', 'service_id')
+    //     ->get();
 });
