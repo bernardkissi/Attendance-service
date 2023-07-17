@@ -1,0 +1,29 @@
+_id: req_71e5a2bd85854cedaf791507d176d9f5
+type: Request
+parentId: fld_2ece74e473024b5394f697fe6d42a330
+modified: 1689523377452
+created: 1689522374752
+url: http://localhost/services/1/attendees
+name: Get eligible attendees
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"groupIds": [2],
+    	"tagIds": [1, 2]
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1687157575656.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

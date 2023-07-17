@@ -1,0 +1,37 @@
+_id: req_eb3e4e5340fa45c097839944a26895c5
+type: Request
+parentId: fld_cf9f5f519c174128ba644c9600461784
+modified: 1687159232640
+created: 1687157525383
+url: http://localhost/qrcodes/create
+name: create one-time-service qrcodes
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"serviceId": 5,
+    	"active_at": "",
+    	"expires_at": "",
+    	"service_date": "",
+    	"config": []
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_dc8e9509561c458b8792bdbeb677b06c
+  - id: pair_af36a8c7441a4b24805236653f8129db
+    name: Accept
+    value: application/json
+    description: ""
+authentication: {}
+metaSortKey: -1687157525383
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

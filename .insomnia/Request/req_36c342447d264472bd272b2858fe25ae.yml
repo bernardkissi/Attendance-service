@@ -1,0 +1,28 @@
+_id: req_36c342447d264472bd272b2858fe25ae
+type: Request
+parentId: fld_ed8c0f5f4a554142a53de22a8980e1d6
+modified: 1689518333338
+created: 1689517169755
+url: http://localhost/group/assign/tags/2
+name: Assign members to group through tags
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"tags": [1, 2]
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1688975383389
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

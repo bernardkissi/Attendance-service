@@ -1,0 +1,36 @@
+_id: req_67b9b9875240459c83692e7d226cd954
+type: Request
+parentId: fld_48f2ca0fc6e346fd96694abf48b8c8a2
+modified: 1687598606880
+created: 1687596408765
+url: http://localhost/member/create
+name: Create Member
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	 "name": "Madgalena",
+    	 "email": "test@gmail.com",
+    	 "phone": "015215670994",
+    	 "pin": 1234,
+    	 "memberId": "68688"
+    }
+parameters: []
+headers:
+  - id: pair_fc30e0ea360c47de875a95b32e52493b
+    name: Accept
+    value: application/json
+    description: ""
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1687375422015
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

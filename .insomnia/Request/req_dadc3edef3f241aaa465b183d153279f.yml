@@ -1,0 +1,38 @@
+_id: req_dadc3edef3f241aaa465b183d153279f
+type: Request
+parentId: fld_48f2ca0fc6e346fd96694abf48b8c8a2
+modified: 1687609639805
+created: 1687593251616
+url: http://localhost/api/member/import
+name: Import Members
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_2847fe825e0c42d390281c10e2be0e17
+      name: file
+      value: dgsfgfdsg
+      description: ""
+      type: file
+      fileName: /Users/nellysarpong/Downloads/members.csv
+    - id: pair_f4ae1d78bee541e2a83318df8d3b91f2
+      name: test
+      value: data
+      description: ""
+      disabled: true
+parameters: []
+headers:
+  - id: pair_3ea714db9a16434db89e3ebea98185c9
+    name: Accept
+    value: application/json
+    description: ""
+authentication: {}
+metaSortKey: -1687593251616
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

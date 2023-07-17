@@ -1,0 +1,32 @@
+_id: req_bd2553835fca4559be6736f6bbcc0ac0
+type: Request
+parentId: fld_cf9f5f519c174128ba644c9600461784
+modified: 1687160173773
+created: 1687160170873
+url: http://localhost/qrcodes/create
+name: delete qrcodes
+description: ""
+method: DELETE
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"serviceId": 6,
+    	"active_at": "",
+    	"expires_at": "",
+    	"service_date": "",
+    	"config": []
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1687157203333
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

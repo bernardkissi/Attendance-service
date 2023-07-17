@@ -1,0 +1,42 @@
+_id: req_43aa406476934066b8e31d7e2510033b
+type: Request
+parentId: fld_1506125e90ce4995bf94335a49672406
+modified: 1688819163287
+created: 1688792054353
+url: http://localhost/aggregator
+name: Query filter DTO
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"year": "2023"
+    }
+parameters:
+  - id: pair_cf7e4cf4cdbc428c8d7556d5f4c5749b
+    name: month
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_f0ab080b20044e81b4361486ef5f6b6c
+    name: year
+    value: "2023"
+    description: ""
+  - id: pair_edc6fefea49c41adae5a4fe94bffdcdf
+    name: month
+    value: 5,6
+    description: ""
+    disabled: false
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1688792054353
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

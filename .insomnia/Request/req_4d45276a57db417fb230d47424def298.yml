@@ -1,0 +1,33 @@
+_id: req_4d45276a57db417fb230d47424def298
+type: Request
+parentId: fld_0557f69ff0584699a98e30ad0355987f
+modified: 1687161930487
+created: 1687156485273
+url: http://localhost/api/login
+name: member login
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"pin": 1316
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_1cebfcf46bb346d788ac2acd5abfede1
+  - id: pair_37181f7cc8604457b7e3f16e9c5a34f7
+    name: "Accept "
+    value: application/json
+    description: ""
+authentication: {}
+metaSortKey: -1687156485273
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

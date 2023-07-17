@@ -1,0 +1,28 @@
+_id: req_552528b9168c446f8a9c090f75474b27
+type: Request
+parentId: fld_49f6eef280b74157b2a80d92b3cde900
+modified: 1689517945328
+created: 1689515706084
+url: http://localhost/tags/assign/15
+name: Assign members with a tag
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"tag_id": 2
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1689514430291
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

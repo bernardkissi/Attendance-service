@@ -1,0 +1,32 @@
+_id: req_3b0ee66a3e6b4b02a65a36a140dbfc74
+type: Request
+parentId: fld_cf9f5f519c174128ba644c9600461784
+modified: 1687160141220
+created: 1687160136674
+url: http://localhost/qrcodes/create
+name: update qrcodes
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"serviceId": 6,
+    	"active_at": "",
+    	"expires_at": "",
+    	"service_date": "",
+    	"config": []
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1687157224803
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

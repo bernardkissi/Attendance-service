@@ -1,0 +1,28 @@
+_id: req_8157f7ee3f9746fea63d92fde897c084
+type: Request
+parentId: fld_ed8c0f5f4a554142a53de22a8980e1d6
+modified: 1689515593147
+created: 1689514600002
+url: http://localhost/groups/assign/15
+name: Assign members to group
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"group_id": 1
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1689155062734
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

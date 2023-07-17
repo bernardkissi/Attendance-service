@@ -1,0 +1,23 @@
+_id: req_1553ae49e092458998a8e89c20b652aa
+type: Request
+parentId: fld_bf52dd4900a54c29926d8a46f477ca31
+modified: 1687157282098
+created: 1687157282098
+url: http://localhost/api/checks
+name: location check
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: 1|IADw8mpL9xDuuTL3CDE6i8nncZLTCL4B3QOPRWoz
+metaSortKey: -1687156572346.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

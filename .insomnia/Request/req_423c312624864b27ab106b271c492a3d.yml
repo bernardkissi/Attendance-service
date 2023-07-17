@@ -1,0 +1,21 @@
+_id: req_423c312624864b27ab106b271c492a3d
+type: Request
+parentId: fld_49f6eef280b74157b2a80d92b3cde900
+modified: 1689517247084
+created: 1689517240261
+url: http://localhost/tags
+name: Update Tags
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1689514432507.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

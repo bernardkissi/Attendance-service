@@ -1,0 +1,21 @@
+_id: req_a56c804f106143a4b686c5224e5c5691
+type: Request
+parentId: fld_ed8c0f5f4a554142a53de22a8980e1d6
+modified: 1689517272946
+created: 1689517267851
+url: http://localhost/groups
+name: Update Groups
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1689334742079
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,36 @@
+_id: req_00e909cfbfcf4fa4a6b045b1f582aa47
+type: Request
+parentId: fld_bf52dd4900a54c29926d8a46f477ca31
+modified: 1687183876256
+created: 1687157181863
+url: http://localhost/api/checks
+name: full check run
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	
+    		"qrcodeIdentifier": "67fd18a1-5446-450b-8f38-2bcd5d3afd5f",
+    	  "verificationType": "service_verification",
+    	  "location": {
+    			 "latitude": "60.940696",
+    			 "longitude": "7.0537826"
+    		}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: 4|RP36kLEtj0UuZ1RZRSCu2Tjm1hBoz2tMKLxyTe6q
+metaSortKey: -1687157181863
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

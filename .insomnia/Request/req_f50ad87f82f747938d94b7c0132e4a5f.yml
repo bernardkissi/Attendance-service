@@ -1,0 +1,33 @@
+_id: req_f50ad87f82f747938d94b7c0132e4a5f
+type: Request
+parentId: fld_2ece74e473024b5394f697fe6d42a330
+modified: 1687158428747
+created: 1687157761511
+url: http://localhost/services/create
+name: create non-expirying service
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Bible Studies",
+      "type": "non-expirable-service",
+      "start_time": "18:00",
+      "end_time": "19:30",
+      "recurring_day": "monday",
+      "recurring": 1
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1687157558898.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

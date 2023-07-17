@@ -1,0 +1,35 @@
+_id: req_daf1da6786134107a97fe7cb87d99299
+type: Request
+parentId: fld_2ece74e473024b5394f697fe6d42a330
+modified: 1687160103651
+created: 1687160096933
+url: http://localhost/services/create
+name: update service
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Summer Crusade",
+      "type": "recurring-service",
+      "start_time": "17:00",
+      "end_time": "18:00",
+      "commence_date": "2023-06-19",
+      "end_date": "2023-06-22",
+      "expirable": 1,
+    	"recurring": 1
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1687157533761.875
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

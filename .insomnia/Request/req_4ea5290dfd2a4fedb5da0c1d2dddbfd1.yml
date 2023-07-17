@@ -1,0 +1,27 @@
+_id: req_4ea5290dfd2a4fedb5da0c1d2dddbfd1
+type: Request
+parentId: fld_0557f69ff0584699a98e30ad0355987f
+modified: 1687162026995
+created: 1687156578915
+url: http://localhost/api/user
+name: fetch member
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: 2|fcpgJWwinSzT9w1wee5SpINgOT5Rr709vS0yBff3
+metaSortKey: -1687156451445.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

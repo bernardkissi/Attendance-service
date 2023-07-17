@@ -1,0 +1,34 @@
+_id: req_69a0d508035241a19ea04c8846fb99b5
+type: Request
+parentId: fld_2ece74e473024b5394f697fe6d42a330
+modified: 1687158016038
+created: 1687157592414
+url: http://localhost/services/create
+name: create one-time service
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Adom Praise 2023",
+      "type": "one-time-service",
+      "start_time": "11:00",
+      "end_time": "13:00",
+      "commence_date": "2023-06-19",
+      "end_date": "2023-06-19",
+      "expirable": 1
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1687157592414
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,21 @@
+_id: req_1ad1f1e0bd8f4fbc8b5eeae3a16c43ae
+type: Request
+parentId: fld_49f6eef280b74157b2a80d92b3cde900
+modified: 1689517254558
+created: 1689517227146
+url: http://localhost/tags
+name: Delete Tags
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1689514434724.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

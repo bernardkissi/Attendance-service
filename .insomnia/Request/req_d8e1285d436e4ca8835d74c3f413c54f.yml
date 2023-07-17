@@ -1,0 +1,21 @@
+_id: req_d8e1285d436e4ca8835d74c3f413c54f
+type: Request
+parentId: fld_49f6eef280b74157b2a80d92b3cde900
+modified: 1689514533554
+created: 1689514439158
+url: http://localhost/tags
+name: Get Tags
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1689514439158
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

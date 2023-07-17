@@ -1,0 +1,44 @@
+_id: req_af255b1d55ea4af8940b62b6519ceb6d
+type: Request
+parentId: fld_1506125e90ce4995bf94335a49672406
+modified: 1688795104799
+created: 1688793082672
+url: http://localhost/generate/report
+name: Generate Report
+description: ""
+method: GET
+body: {}
+parameters:
+  - id: pair_60ffa10e1c90451d8d972e4511abdc19
+    name: year
+    value: "2023"
+    description: ""
+  - id: pair_08dbc629225a4997a77219f73fca769e
+    name: month
+    value: "7"
+    description: ""
+    disabled: false
+  - id: pair_a65e8a860fe240fa8dd4ee21d2555f4a
+    name: service
+    value: 2,3,4
+    description: ""
+    disabled: true
+  - id: pair_c3292d69693142ccb64d20901e7ffb35
+    name: date
+    value: 2023-02-22
+    description: ""
+    disabled: true
+  - id: pair_866d40f12a1b40f6ac332fc04f439cd2
+    name: members
+    value: 10,14
+    description: ""
+headers: []
+authentication: {}
+metaSortKey: -1688192652984.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

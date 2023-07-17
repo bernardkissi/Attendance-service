@@ -1,0 +1,32 @@
+_id: req_615f4bb56b6d412dbc24e5f239581042
+type: Request
+parentId: fld_cf9f5f519c174128ba644c9600461784
+modified: 1687159327257
+created: 1687158603528
+url: http://localhost/qrcodes/create
+name: create non-expirable qrcodes
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"serviceId": 6,
+    	"active_at": "",
+    	"expires_at": "",
+    	"service_date": "",
+    	"config": []
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1687157267743
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
