@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service_group', function (Blueprint $table) {
+        Schema::create('serviceables', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('group_id')->index()->constrained('groups')->cascadeOnUpdate();
-            $table->foreignId('service_id')->index()->constrained('services')->cascadeOnUpdate();
+            $table->foreignId('service_id')->index()->constrained('services')->cascadeOnDelete();
+            $table->morphs('serviceable');
             $table->timestamps();
+
+            $table->index(['serviceable_id', 'serviceable_type']);
         });
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_group');
+        Schema::dropIfExists('serviceables');
     }
 };

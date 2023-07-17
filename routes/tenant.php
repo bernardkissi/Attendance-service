@@ -1,30 +1,33 @@
 <?php
 
+use App\Models\Tag;
+use App\Models\Group;
+use App\Models\Member;
+use App\Models\Qrcode;
+use App\DTOs\MemberDTO;
+use App\Models\Service;
+use App\Enums\ServiceType;
+use App\Models\Attendance;
+use App\DTOs\FilterQueryDTO;
+use Illuminate\Http\Request;
+use App\DTOs\ServiceQrcodeDTO;
+use App\Imports\MembersImport;
+use App\DTOs\OneTimeServiceDTO;
+use App\DTOs\RecurringServiceDTO;
+use Illuminate\Support\Facades\DB;
+use App\DTOs\NonExpirableServiceDTO;
 use App\Actions\Members\CreateMember;
-use App\Actions\Qrcode\CreateServiceQrcode;
-use App\Actions\Qrcode\GenerateServiceQrcodePdf;
+use App\Domain\Tenants\TenantManager;
+use Illuminate\Support\Facades\Route;
 use App\Actions\Service\CreateService;
 use App\Actions\Service\ManageService;
 use App\Domain\Reporter\Filters\DateScope;
-use App\Domain\Reporter\Filters\MemberScope;
-use App\Domain\Reporter\Filters\MonthScope;
 use App\Domain\Reporter\Filters\YearScope;
-use App\Domain\Tenants\TenantManager;
-use App\DTOs\FilterQueryDTO;
-use App\DTOs\MemberDTO;
-use App\DTOs\NonExpirableServiceDTO;
-use App\DTOs\OneTimeServiceDTO;
-use App\DTOs\RecurringServiceDTO;
-use App\DTOs\ServiceQrcodeDTO;
-use App\Enums\ServiceType;
-use App\Imports\MembersImport;
-use App\Models\Attendance;
-use App\Models\Member;
-use App\Models\Qrcode;
-use App\Models\Service;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Route;
+use App\Actions\Qrcode\CreateServiceQrcode;
+use App\Domain\Reporter\Filters\MonthScope;
+use App\Domain\Reporter\Filters\MemberScope;
+use App\Actions\Qrcode\GenerateServiceQrcodePdf;
+use Maatwebsite\Excel\Concerns\ToArray;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +76,14 @@ Route::get('/services/create', function (Request $request) {
     return $service->exec();
 });
 
+Route::get('/services/{service}/attendees', function (Request $request, Service $service) {
+
+    // $service->groups()->attach($request->groupIds);
+    // $service->tags()->attach($request->tagIds);
+
+    return $service->eligibleAttendees;
+});
+
 Route::post('qrcodes/pdf', function () {
     $qrcode = Qrcode::first();
     $generator = new GenerateServiceQrcodePdf($qrcode);
@@ -80,17 +91,17 @@ Route::post('qrcodes/pdf', function () {
     return $generator->exec();
 });
 
-Route::get('/qrcodes/create', function (Request $request) {
-    $serviceQrCodeDTO = ServiceQrCodeDTO::fromRequest($request);
+// Route::get('/qrcodes/create', function (Request $request) {
+//     $serviceQrCodeDTO = ServiceQrCodeDTO::fromRequest($request);
 
-    $qrcode = CreateServiceQrcode::create($serviceQrCodeDTO);
+//     $qrcode = CreateServiceQrcode::create($serviceQrCodeDTO);
 
-    return response()->json([
-        'message' => 'Successfully created',
-        'data' => $qrcode,
-        200,
-    ]);
-});
+//     return response()->json([
+//         'message' => 'Successfully created',
+//         'data' => $qrcode,
+//         200,
+//     ]);
+// });
 
 Route::get('/member/create', function (Request $request) {
     $memberDto = MemberDTO::fromRequest($request);
@@ -159,4 +170,36 @@ Route::get('aggregator', function (Request $request) {
     //     ->with('service:id,name')
     //     ->groupBy('year', 'month', 'qrcode_id', 'service_id')
     //     ->get();
+});
+
+Route::get('/groups', function() {
+    return Group::query()->get();
+});
+
+Route::get('/groups/assign/{member}', function(Request $request, Member $member) {
+    $member->groups()->attach($request->group_id);
+    return Group::find($request->group_id)->members()->get();
+});
+
+Route::get('/tags', function() {
+    return Tag::query()->get();
+});
+
+Route::get('/tags/assign/{member}', function(Request $request, Member $member) {
+    $member->tags()->attach($request->tag_id);
+    return Tag::find($request->tag_id)->members()->get();
+});
+
+Route::get('/group/assign/tags/{group}', function(Request $request, Group $group) {
+    $tags = Tag::whereIn('id', $request->tags)->get();
+
+    // get all members of the tags to be assigned
+    $members = $tags->map(fn (Tag $tag) => $tag->members->pluck('id'))
+        ->flatten()
+        ->unique()
+        ->toArray();
+
+    $group->members()->attach($members);
+
+    return $group->members->pluck('name')->unique();
 });

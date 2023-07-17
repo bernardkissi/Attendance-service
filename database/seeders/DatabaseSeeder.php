@@ -4,10 +4,12 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Tag;
+use App\Models\User;
+use App\Models\Group;
 use App\Models\Branch;
 use App\Models\Member;
 use App\Models\Service;
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,7 +24,17 @@ class DatabaseSeeder extends Seeder
         $branchB = Branch::factory()->create()->id;
         $branchC = Branch::factory()->create()->id;
 
-        // church members
+        //create groups for each branch
+        Group::factory(2)->create(['branch_id' => $branchA]);
+        Group::factory(2)->create(['branch_id' => $branchB]);
+        Group::factory(2)->create(['branch_id' => $branchA]);
+
+        //create tags for each branch
+        Tag::factory(2)->create(['branch_id' => $branchA]);
+        Tag::factory(2)->create(['branch_id' => $branchB]);
+        Tag::factory(2)->create(['branch_id' => $branchC]);
+
+        // church members for branches
         Member::factory(30)->create();
 
         // branch administrators

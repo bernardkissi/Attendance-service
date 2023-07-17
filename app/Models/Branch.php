@@ -28,4 +28,14 @@ class Branch extends Model
     {
         return $this->hasManyThrough(Service::class, Qrcode::class);
     }
+
+    public function groups(): HasMany
+    {
+        return $this->hasMany(Group::class);
+    }
+
+    public function tags(): HasMany
+    {
+        return $this->hasMany(Group::class);
+    }
 }

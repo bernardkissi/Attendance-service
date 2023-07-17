@@ -57,4 +57,5 @@ for joint service
         - how to we mark this as joint:
             - attendance will have a field called is jointService.
         - allow cross branch attendance
-        
+    
+

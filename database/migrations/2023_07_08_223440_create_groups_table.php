@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('branch_id')->index()->constrained()->cascadeOnDelete();
             $table->string('name');
-            $table->integer('total_member_count')->nullable()->default(0);
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
