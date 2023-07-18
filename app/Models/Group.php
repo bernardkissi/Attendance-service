@@ -9,9 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Group extends Model
 {
-    use
-    HasFactory,
-    Tenantable;
+    use HasFactory,
+        Tenantable;
 
     protected $guarded = [];
 

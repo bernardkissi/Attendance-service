@@ -4,12 +4,12 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Tag;
-use App\Models\User;
-use App\Models\Group;
 use App\Models\Branch;
+use App\Models\Group;
 use App\Models\Member;
 use App\Models\Service;
+use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

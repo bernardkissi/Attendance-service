@@ -1,33 +1,31 @@
 <?php
 
-use App\Models\Tag;
-use App\Models\Group;
-use App\Models\Member;
-use App\Models\Qrcode;
-use App\DTOs\MemberDTO;
-use App\Models\Service;
-use App\Enums\ServiceType;
-use App\Models\Attendance;
-use App\DTOs\FilterQueryDTO;
-use Illuminate\Http\Request;
-use App\DTOs\ServiceQrcodeDTO;
-use App\Imports\MembersImport;
-use App\DTOs\OneTimeServiceDTO;
-use App\DTOs\RecurringServiceDTO;
-use Illuminate\Support\Facades\DB;
-use App\DTOs\NonExpirableServiceDTO;
 use App\Actions\Members\CreateMember;
-use App\Domain\Tenants\TenantManager;
-use Illuminate\Support\Facades\Route;
+use App\Actions\Qrcode\CreateServiceQrcode;
+use App\Actions\Qrcode\GenerateServiceQrcodePdf;
 use App\Actions\Service\CreateService;
 use App\Actions\Service\ManageService;
 use App\Domain\Reporter\Filters\DateScope;
-use App\Domain\Reporter\Filters\YearScope;
-use App\Actions\Qrcode\CreateServiceQrcode;
-use App\Domain\Reporter\Filters\MonthScope;
 use App\Domain\Reporter\Filters\MemberScope;
-use App\Actions\Qrcode\GenerateServiceQrcodePdf;
-use Maatwebsite\Excel\Concerns\ToArray;
+use App\Domain\Reporter\Filters\MonthScope;
+use App\Domain\Reporter\Filters\YearScope;
+use App\Domain\Tenants\TenantManager;
+use App\DTOs\FilterQueryDTO;
+use App\DTOs\MemberDTO;
+use App\DTOs\NonExpirableServiceDTO;
+use App\DTOs\OneTimeServiceDTO;
+use App\DTOs\RecurringServiceDTO;
+use App\DTOs\ServiceQrcodeDTO;
+use App\Enums\ServiceType;
+use App\Imports\MembersImport;
+use App\Models\Attendance;
+use App\Models\Group;
+use App\Models\Member;
+use App\Models\Qrcode;
+use App\Models\Service;
+use App\Models\Tag;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,7 +79,14 @@ Route::get('/services/{service}/attendees', function (Request $request, Service 
     // $service->groups()->attach($request->groupIds);
     // $service->tags()->attach($request->tagIds);
 
-    return $service->eligibleAttendees;
+    return [
+        'expected' => $expected = $service->expectedAttendees,
+        'expected_count' => $expected->count(),
+        'absentees' => $absentees = $service->absentees,
+        'absentees_count' => $absentees->count(),
+        'attendees' => $attendees = $service->attendees,
+        'attendees_count' => $attendees->count(),
+    ];
 });
 
 Route::post('qrcodes/pdf', function () {
@@ -159,7 +164,7 @@ Route::get('aggregator', function (Request $request) {
         ->selectRaw('YEAR(recorded_at) AS year, MONTH(recorded_at) AS month')
         ->selectRaw('COUNT(member_id) AS attendance')
         ->selectRaw('(SELECT COUNT(id) FROM members) - COUNT(member_id) AS absence')
-        ->groupBy('year','month')
+        ->groupBy('year', 'month')
         ->get();
 
     // return Attendance::query()
@@ -172,25 +177,27 @@ Route::get('aggregator', function (Request $request) {
     //     ->get();
 });
 
-Route::get('/groups', function() {
+Route::get('/groups', function () {
     return Group::query()->get();
 });
 
-Route::get('/groups/assign/{member}', function(Request $request, Member $member) {
-    $member->groups()->attach($request->group_id);
+Route::get('/groups/assign/{member}', function (Request $request, Member $member) {
+    $member->groups()->syncWithoutDetaching($request->group_id);
+
     return Group::find($request->group_id)->members()->get();
 });
 
-Route::get('/tags', function() {
+Route::get('/tags', function () {
     return Tag::query()->get();
 });
 
-Route::get('/tags/assign/{member}', function(Request $request, Member $member) {
-    $member->tags()->attach($request->tag_id);
+Route::get('/tags/assign/{member}', function (Request $request, Member $member) {
+    $member->tags()->syncWithoutDetaching($request->tag_id);
+
     return Tag::find($request->tag_id)->members()->get();
 });
 
-Route::get('/group/assign/tags/{group}', function(Request $request, Group $group) {
+Route::get('/group/assign/tags/{group}', function (Request $request, Group $group) {
     $tags = Tag::whereIn('id', $request->tags)->get();
 
     // get all members of the tags to be assigned
@@ -199,7 +206,7 @@ Route::get('/group/assign/tags/{group}', function(Request $request, Group $group
         ->unique()
         ->toArray();
 
-    $group->members()->attach($members);
+    $group->members()->syncWithoutDetaching($members);
 
     return $group->members->pluck('name')->unique();
 });

@@ -9,9 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Tag extends Model
 {
-    use
-    HasFactory,
-    Tenantable;
+    use HasFactory,
+        Tenantable;
 
     protected $guarded = [];
 
