@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Domain\Support\DateManager;
 use App\Domain\Tenants\TenantManager;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
@@ -34,5 +35,11 @@ class AppServiceProvider extends ServiceProvider
 
         // Set the user as the authenticated user
         Auth::setUser($user);
+
+        Model::handleLazyLoadingViolationUsing(function (Model $model, string $relation) {
+            $class = get_class($model);
+
+            info("Attempted to lazy load [{$relation}] on model [{$class}].");
+        });
     }
 }
