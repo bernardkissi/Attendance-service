@@ -12,9 +12,9 @@ class ServiceScope implements FilterQuery
     public function apply(Builder $builder, string|array $services): Builder
     {
         if (is_string($services)) {
-            return $builder->whereServiceId($services);
+            return $builder->where('attendances.service_id', $services);
         }
 
-        return $builder->whereIn('service_id', $services);
+        return $builder->whereIn('attendances.service_id', $services);
     }
 }

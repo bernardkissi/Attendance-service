@@ -1,31 +1,32 @@
 <?php
 
-use App\Actions\Members\CreateMember;
-use App\Actions\Qrcode\CreateServiceQrcode;
-use App\Actions\Qrcode\GenerateServiceQrcodePdf;
-use App\Actions\Service\CreateService;
-use App\Actions\Service\ManageService;
-use App\Domain\Reporter\Filters\DateScope;
-use App\Domain\Reporter\Filters\MemberScope;
-use App\Domain\Reporter\Filters\MonthScope;
-use App\Domain\Reporter\Filters\YearScope;
-use App\Domain\Tenants\TenantManager;
-use App\DTOs\FilterQueryDTO;
-use App\DTOs\MemberDTO;
-use App\DTOs\NonExpirableServiceDTO;
-use App\DTOs\OneTimeServiceDTO;
-use App\DTOs\RecurringServiceDTO;
-use App\DTOs\ServiceQrcodeDTO;
-use App\Enums\ServiceType;
-use App\Imports\MembersImport;
-use App\Models\Attendance;
+use App\Models\Tag;
 use App\Models\Group;
 use App\Models\Member;
 use App\Models\Qrcode;
+use App\DTOs\MemberDTO;
 use App\Models\Service;
-use App\Models\Tag;
+use App\Enums\ServiceType;
+use App\Models\Attendance;
+use App\DTOs\FilterQueryDTO;
 use Illuminate\Http\Request;
+use App\DTOs\ServiceQrcodeDTO;
+use App\Imports\MembersImport;
+use App\DTOs\OneTimeServiceDTO;
+use App\DTOs\RecurringServiceDTO;
+use App\DTOs\NonExpirableServiceDTO;
+use App\Actions\Members\CreateMember;
+use App\Domain\Tenants\TenantManager;
 use Illuminate\Support\Facades\Route;
+use App\Actions\Service\CreateService;
+use App\Actions\Service\ManageService;
+use App\Domain\Reporter\Filters\DateScope;
+use App\Domain\Reporter\Filters\YearScope;
+use App\Actions\Qrcode\CreateServiceQrcode;
+use App\Domain\Reporter\Filters\MonthScope;
+use App\Domain\Reporter\Filters\MemberScope;
+use App\Domain\Reporter\Filters\ServiceScope;
+use App\Actions\Qrcode\GenerateServiceQrcodePdf;
 
 /*
 |--------------------------------------------------------------------------
@@ -156,15 +157,23 @@ Route::get('aggregator', function (Request $request) {
         'month' => new MonthScope(),
         'members' => new MemberScope(),
         'date' => new DateScope(),
+        'service' => new ServiceScope()
     ];
 
     // generate count per month
     return Attendance::query()
         ->withFilter($scopes)
-        ->selectRaw('YEAR(recorded_at) AS year, MONTH(recorded_at) AS month')
+        ->selectRaw('YEAR(recorded_at) AS year, attendances.service_id AS service')
         ->selectRaw('COUNT(member_id) AS attendance')
-        ->selectRaw('(SELECT COUNT(id) FROM members) - COUNT(member_id) AS absence')
-        ->groupBy('year', 'month')
+        ->selectRaw('COUNT(DISTINCT qrcode_id) AS service_occurences_per_month')
+        ->selectRaw('MAX(qrcodes.is_a_joint_service) AS expected_attendees_per_each_service')
+        ->selectRaw('CAST(SUM(CASE WHEN members.sex = "M" THEN 1 ELSE 0 END) AS SIGNED) AS male_count')
+        ->selectRaw('CAST(SUM(CASE WHEN members.sex = "F" THEN 1 ELSE 0 END) AS SIGNED) AS female_count')
+        ->selectRaw('(COUNT(DISTINCT qrcode_id) * MAX(qrcodes.is_a_joint_service)) AS expected_attendance_per_month') // Add the field from qrcode table you want to fetch
+        ->selectRaw('(COUNT(DISTINCT qrcode_id) * MAX(qrcodes.is_a_joint_service)) - COUNT(member_id) AS absentees_per_month')
+        ->join('qrcodes', 'qrcodes.id', '=', 'attendances.qrcode_id')
+        ->join('members', 'members.id', '=', 'attendances.member_id') // Join with members table
+        ->groupBy('year', 'service')
         ->get();
 
     // return Attendance::query()
