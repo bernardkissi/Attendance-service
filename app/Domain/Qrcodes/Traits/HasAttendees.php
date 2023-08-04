@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domain\Qrcodes\Traits;
 
-use App\Models\Tag;
 use App\Models\Group;
 use App\Models\Member;
+use App\Models\Tag;
 use Illuminate\Support\Collection;
 
 trait HasAttendees
@@ -24,6 +24,7 @@ trait HasAttendees
             ->sum();
 
         $totalAttendees = $taggedMembersCount + $groupedMembersCount;
+
         return $totalAttendees > 0 ? $totalAttendees : Member::count();
     }
 
@@ -51,10 +52,10 @@ trait HasAttendees
         $totalMembers = $taggedMembers->merge($groupedMembers);
 
         return $totalMembers->count() > 0 ? $totalMembers : Member::all()->map(fn ($member) => [
-                'id' => $member->id,
-                'identifier' => $member->identifier,
-                'name' => $member->name,
-            ]);;
+            'id' => $member->id,
+            'identifier' => $member->identifier,
+            'name' => $member->name,
+        ]);
     }
 
     // public function getAbsenteesCountAttribute(): int

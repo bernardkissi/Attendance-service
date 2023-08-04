@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Domain\Reporter\ReportGenerator;
+use App\Domain\Filters\AttendanceFilter;
 use App\DTOs\FilterQueryDTO;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -24,7 +24,7 @@ class Attendance extends Model
     {
         $queryDTO = FilterQueryDTO::fromRequest(request());
 
-        return (new ReportGenerator($queryDTO))->apply($builder, $filters);
+        return (new AttendanceFilter($queryDTO))->apply($builder, $filters);
     }
 
     public function member(): BelongsTo

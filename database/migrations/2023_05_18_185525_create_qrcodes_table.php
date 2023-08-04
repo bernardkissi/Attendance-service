@@ -30,7 +30,7 @@ return new class extends Migration
             $table->json('checks')->nullable();
 
             // qrcode related fields
-            $table->tinyInteger('is_a_joint_service')->default(0);
+            $table->integer('expected_attendees')->default(0);
             $table->tinyInteger('allow_visiting_members')->default(0);
 
             $table->timestamps();

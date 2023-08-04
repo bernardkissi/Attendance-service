@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Reporter;
+namespace App\Domain\Filters;
 
 use App\DTOs\FilterQueryDTO;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 
-class ReportGenerator
+class AttendanceFilter
 {
     public function __construct(
         public FilterQueryDTO $filterDTO

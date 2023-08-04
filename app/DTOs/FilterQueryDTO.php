@@ -6,14 +6,17 @@ namespace App\DTOs;
 
 use Illuminate\Http\Request;
 
-class FilterQueryDTO
+readonly class FilterQueryDTO
 {
     public function __construct(
-        public readonly string $year,
-        public readonly string|array|null $month,
-        public readonly string|array|null $dateRange,
-        public readonly string|array|null $service,
-        public readonly string|array|null $members,
+        public string $year,
+        public string|array|null $month,
+        public string|array|null $dateRange,
+        public string|array|null $service,
+        public string|array|null $members,
+        public ?string $filter,
+        public ?string $groupBy,
+
     ) {
     }
 
@@ -25,6 +28,8 @@ class FilterQueryDTO
             $request->missing('date') ? null : static::formatQuery($request->query('date')),
             $request->missing('service') ? null : static::formatQuery($request->query('service')),
             $request->missing('members') ? null : static::formatQuery($request->query('members')),
+            $request->missing('filter') ? null : static::formatQuery($request->query('filter')),
+            $request->missing('groupBy') ? null : static::formatQuery($request->query('groupBy')),
         );
     }
 

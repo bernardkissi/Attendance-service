@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
             // Foreign tables
-            $table->foreignId('qrcode_id')->index()->constrained()->cascadeOnDelete();
-            $table->foreignId('branch_id')->index()->constrained()->cascadeOnDelete();
-            $table->foreignId('member_id')->index()->constrained()->cascadeOnDelete();
-            $table->foreignId('service_id')->index()->constrained()->cascadeOnDelete();
+            $table->foreignId('qrcode_id')->index()->constrained('qrcodes')->cascadeOnDelete();
+            $table->foreignId('branch_id')->index()->constrained('branches')->cascadeOnDelete();
+            $table->foreignId('member_id')->index()->constrained('members')->cascadeOnDelete();
+            $table->foreignId('service_id')->index()->constrained('services')->cascadeOnDelete();
             //local fields
             $table->datetime('recorded_at')->index();
             $table->string('device')->nullable();

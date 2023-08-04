@@ -1,32 +1,35 @@
 <?php
 
-use App\Models\Tag;
+use App\Actions\Members\CreateMember;
+use App\Actions\Qrcode\CreateServiceQrcode;
+use App\Actions\Qrcode\GenerateServiceQrcodePdf;
+use App\Actions\Service\CreateService;
+use App\Actions\Service\ManageService;
+use App\Domain\Filters\Scopes\DateScope;
+use App\Domain\Filters\Scopes\MemberScope;
+use App\Domain\Filters\Scopes\MonthScope;
+use App\Domain\Filters\Scopes\YearScope;
+use App\Domain\Reporter\ReportingService;
+use App\Domain\Statistics\AttendanceStatistics;
+use App\Domain\Tenants\TenantManager;
+use App\DTOs\FilterQueryDTO;
+use App\DTOs\MemberDTO;
+use App\DTOs\NonExpirableServiceDTO;
+use App\DTOs\OneTimeServiceDTO;
+use App\DTOs\RecurringServiceDTO;
+use App\DTOs\ServiceQrcodeDTO;
+use App\Enums\ReportType;
+use App\Enums\ServiceType;
+use App\Imports\MembersImport;
+use App\Models\Attendance;
 use App\Models\Group;
 use App\Models\Member;
 use App\Models\Qrcode;
-use App\DTOs\MemberDTO;
 use App\Models\Service;
-use App\Enums\ServiceType;
-use App\Models\Attendance;
-use App\DTOs\FilterQueryDTO;
+use App\Models\Tag;
 use Illuminate\Http\Request;
-use App\DTOs\ServiceQrcodeDTO;
-use App\Imports\MembersImport;
-use App\DTOs\OneTimeServiceDTO;
-use App\DTOs\RecurringServiceDTO;
-use App\DTOs\NonExpirableServiceDTO;
-use App\Actions\Members\CreateMember;
-use App\Domain\Tenants\TenantManager;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-use App\Actions\Service\CreateService;
-use App\Actions\Service\ManageService;
-use App\Domain\Reporter\Filters\DateScope;
-use App\Domain\Reporter\Filters\YearScope;
-use App\Actions\Qrcode\CreateServiceQrcode;
-use App\Domain\Reporter\Filters\MonthScope;
-use App\Domain\Reporter\Filters\MemberScope;
-use App\Domain\Reporter\Filters\ServiceScope;
-use App\Actions\Qrcode\GenerateServiceQrcodePdf;
 
 /*
 |--------------------------------------------------------------------------
@@ -152,38 +155,45 @@ Route::get('generate/report', function (Request $request) {
 });
 
 Route::get('aggregator', function (Request $request) {
-    $scopes = [
-        'year' => new YearScope(),
-        'month' => new MonthScope(),
-        'members' => new MemberScope(),
-        'date' => new DateScope(),
-        'service' => new ServiceScope()
-    ];
+    //for home page grapgh
+    // $filterDTO = FilterQueryDTO::fromRequest($request);
+    // $summary = new AttendanceStatistics();
+    // return $summary->summarize($filterDTO);
 
-    // generate count per month
+    // for general reports
+    // $type = ReportType::MONTHLY;
+    // $report = new ReportingService($type);
+    // return $report->generateReport();
+
+    // return DB::table('members')
+    //     ->select('members.id AS member_id', 'members.name AS member_name', 'services.name AS service_name', DB::raw('COUNT(attendances.id) AS total_attendance'))
+    //     ->join('attendances', 'members.id', '=', 'attendances.member_id')
+    //     ->join('services', 'services.id', '=', 'attendances.service_id')
+    //     ->groupBy('members.id', 'services.id')
+    //     ->get();
+
+    // return  DB::table('services')
+    //             ->select(
+    //                 'services.id AS service_id',
+    //                 'services.name AS service_name',
+    //                 DB::raw('COUNT(qrcodes.id) AS total_service_occurrences'),
+    //                 DB::raw('MONTHNAME(qrcodes.created_at) AS month')
+    //             )
+    //             ->leftJoin('qrcodes', 'services.id', '=', 'qrcodes.service_id')
+    //             ->groupBy('services.id', 'month')
+    //             ->get();
     return Attendance::query()
-        ->withFilter($scopes)
-        ->selectRaw('YEAR(recorded_at) AS year, attendances.service_id AS service')
-        ->selectRaw('COUNT(member_id) AS attendance')
-        ->selectRaw('COUNT(DISTINCT qrcode_id) AS service_occurences_per_month')
-        ->selectRaw('MAX(qrcodes.is_a_joint_service) AS expected_attendees_per_each_service')
-        ->selectRaw('CAST(SUM(CASE WHEN members.sex = "M" THEN 1 ELSE 0 END) AS SIGNED) AS male_count')
-        ->selectRaw('CAST(SUM(CASE WHEN members.sex = "F" THEN 1 ELSE 0 END) AS SIGNED) AS female_count')
-        ->selectRaw('(COUNT(DISTINCT qrcode_id) * MAX(qrcodes.is_a_joint_service)) AS expected_attendance_per_month') // Add the field from qrcode table you want to fetch
-        ->selectRaw('(COUNT(DISTINCT qrcode_id) * MAX(qrcodes.is_a_joint_service)) - COUNT(member_id) AS absentees_per_month')
+        ->select(DB::raw('COUNT(attendances.member_id) AS total_attendance'))
+        ->selectRaw('GROUP_CONCAT(members.name) AS members')
+        ->selectRaw('GROUP_CONCAT(members.id) AS member_ids')
+        ->selectRaw('MAX(qrcodes.is_a_joint_service) AS expected_attendees')
+        ->selectRaw('MAX(qrcodes.is_a_joint_service) - COUNT(member_id) AS absentees_per_service')
+        ->join('members', 'members.id', '=', 'attendances.member_id')
         ->join('qrcodes', 'qrcodes.id', '=', 'attendances.qrcode_id')
-        ->join('members', 'members.id', '=', 'attendances.member_id') // Join with members table
-        ->groupBy('year', 'service')
+        ->where('attendances.qrcode_id', '=', 3)
+        ->groupBy('attendances.service_id')
         ->get();
 
-    // return Attendance::query()
-    //     ->withFilter($scopes)
-    //     ->selectRaw('YEAR(recorded_at) AS year, MONTH(recorded_at) AS month, qrcode_id, service_id')
-    //     ->selectRaw('COUNT(member_id) AS attendance')
-    //     ->selectRaw('(SELECT COUNT(id) FROM members) - COUNT(member_id) AS absence')
-    //     ->with('service:id,name')
-    //     ->groupBy('year', 'month', 'qrcode_id', 'service_id')
-    //     ->get();
 });
 
 Route::get('/groups', function () {
@@ -218,4 +228,8 @@ Route::get('/group/assign/tags/{group}', function (Request $request, Group $grou
     $group->members()->syncWithoutDetaching($members);
 
     return $group->members->pluck('name')->unique();
+});
+
+Route::get('/search', function (Request $request) {
+    return Member::search($request->search)->get();
 });

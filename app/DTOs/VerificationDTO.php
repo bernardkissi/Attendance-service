@@ -35,7 +35,7 @@ class VerificationDTO
         );
     }
 
-    private static function resolveMember(string $verficationtype, ?string $verifyingForMemberWithIdentifier = null): Member
+    private static function resolveMember(string $verficationtype, string $verifyingForMemberWithIdentifier = null): Member
     {
         return match ($verficationtype) {
             'service_verification' => request()->member,

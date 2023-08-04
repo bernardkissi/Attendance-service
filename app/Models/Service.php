@@ -9,12 +9,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Laravel\Scout\Searchable;
 
 class Service extends Model
 {
     use HasFactory,
         isManageable,
         HasAttendees,
+        Searchable,
         Tenantable;
 
     protected $guarded = [];
@@ -47,5 +49,18 @@ class Service extends Model
     public function attendances(): HasMany
     {
         return $this->hasMany(Attendance::class);
+    }
+
+    public function searchableAs(): string
+    {
+        return 'services_index';
+    }
+
+    public function toSearchableArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+        ];
     }
 }

@@ -1,0 +1,9 @@
+-[] change field in qrcode table to hold value from sevice table
+-[] improve check to factor in if you consider for the meeting  or a service.
+-[] factor in visitors count 
+-[] member statistics for each service
+-[x] Add member
+-[] General search
+-[] login   
+-[] api login
+-[] notifications

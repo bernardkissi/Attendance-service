@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Reporter\Filters;
+namespace App\Domain\Filters\Scopes;
 
-use App\Domain\Reporter\FilterQuery;
+use App\Domain\Filters\FilterQuery;
 use Illuminate\Database\Eloquent\Builder;
 
 class YearScope implements FilterQuery
