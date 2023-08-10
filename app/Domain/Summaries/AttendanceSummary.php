@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Statistics;
+namespace App\Domain\Summaries;
 
 use App\Domain\Filters\Scopes\DateScope;
 use App\Domain\Filters\Scopes\MemberScope;
@@ -33,12 +33,12 @@ class AttendanceSummary implements Statistics
         $this->filters = $filters;
     }
 
-    public function summarize(FilterQueryDTO $filter): Collection
+    public function summarize(FilterQueryDTO $filters = null): Collection
     {
-        return $this->buildQuery($filter)->get();
+        return $this->buildQuery($filters)->get();
     }
 
-    private function buildQuery(FilterQueryDTO $filter): Builder
+    public function buildQuery(FilterQueryDTO $filters = null): Builder
     {
         return Attendance::query()
             ->withFilter($this->scopes)
@@ -46,7 +46,7 @@ class AttendanceSummary implements Statistics
             /**
              * Attendances count query.
              */
-            ->when($filter->groupBy === 'year', function (Builder $query) {
+            ->when(isset($filters->groupBy) && $filters->groupBy === 'year', function (Builder $query) {
                 $query->selectRaw('YEAR(recorded_at) AS year, services.name AS service');
             }, fn (Builder $query) => $query->selectRaw('YEAR(recorded_at) AS year, MONTHNAME(recorded_at) AS month, services.name AS service'))
 
@@ -56,24 +56,24 @@ class AttendanceSummary implements Statistics
             /**
              * Absentees count query
              */
-            ->when($filter->filter === 'absentees', function ($query) {
-                $query->selectRaw('MAX(qrcodes.is_a_joint_service) AS expected_attendees_per_each_service')
-                    ->selectRaw('(COUNT(DISTINCT qrcode_id) * MAX(qrcodes.is_a_joint_service)) AS expected_attendance_per_month')
-                    ->selectRaw('(COUNT(DISTINCT qrcode_id) * MAX(qrcodes.is_a_joint_service)) - COUNT(member_id) AS absentees_per_month')
+            ->when(isset($filters->filter) && $filters->filter === 'absentees', function ($query) {
+                $query->selectRaw('MAX(qrcodes.expected_attendees) AS expected_attendees_per_each_service')
+                    ->selectRaw('(COUNT(DISTINCT qrcode_id) * MAX(qrcodes.expected_attendees)) AS expected_attendance_per_month')
+                    ->selectRaw('(COUNT(DISTINCT qrcode_id) * MAX(qrcodes.expected_attendees)) - COUNT(member_id) AS absentees_per_month')
                     ->join('qrcodes', 'qrcodes.id', '=', 'attendances.qrcode_id');
             })
 
             /**
              *  Gender count query
              */
-            ->when($filter->filter === 'gender', function ($query) {
+            ->when(isset($filters->filter) && $filters->filter === 'gender', function ($query) {
                 $query->selectRaw('CAST(SUM(CASE WHEN members.sex = "M" THEN 1 ELSE 0 END) AS SIGNED) AS male_count')
                     ->selectRaw('CAST(SUM(CASE WHEN members.sex = "F" THEN 1 ELSE 0 END) AS SIGNED) AS female_count')
                     ->join('members', 'members.id', '=', 'attendances.member_id');
             })
 
             // Grouping query
-            ->when($filter->groupBy === 'year', function ($query) {
+            ->when(isset($filters->groupBy) && $filters->groupBy === 'year', function ($query) {
                 $query->groupBy('year', 'service');
             }, fn (Builder $query) => $query->groupBy('year', 'month', 'service'));
 

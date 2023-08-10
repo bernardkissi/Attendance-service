@@ -18,7 +18,7 @@ class ServiceQrcodeDTO
         public readonly array $location,
         public readonly ?float $distance_threshold,
         public readonly array $checks,
-        public readonly bool $is_a_joint_service,
+        public readonly int $expected_attendees,
         public readonly bool $allow_visiting_members,
     ) {
     }
@@ -37,7 +37,7 @@ class ServiceQrcodeDTO
             $configuration['location'],
             $configuration['distance_threshold'],
             $configuration['checks'],
-            false,
+            $service->expectedAttendeesCount,
             $configuration['allow_visiting_members']
         );
     }
@@ -54,7 +54,7 @@ class ServiceQrcodeDTO
             $service->branch->configuration->options['location'],
             $service->branch->configuration->options['distance_threshold'],
             $service->branch->configuration->options['checks'],
-            false,
+            $service->expectedAttendeesCount,
             $service->branch->configuration->options['allow_visiting_members']
         );
     }
@@ -69,7 +69,7 @@ class ServiceQrcodeDTO
             $request->location,
             $request->distanceThreshold,
             $request->checks,
-            $request->isAJointService,
+            $request->expectedAttendeesCount,
             $request->allowVisitingMembers
         );
     }
@@ -83,7 +83,7 @@ class ServiceQrcodeDTO
             'location' => $this->location,
             'distance_threshold' => $this->distance_threshold,
             'checks' => $this->checks,
-            'is_a_joint_service' => $this->is_a_joint_service,
+            'expected_attendees' => $this->expected_attendees,
             'allow_visiting_members' => $this->allow_visiting_members,
         ];
     }

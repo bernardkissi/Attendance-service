@@ -10,14 +10,16 @@ use App\Domain\Filters\Scopes\MemberScope;
 use App\Domain\Filters\Scopes\MonthScope;
 use App\Domain\Filters\Scopes\YearScope;
 use App\Domain\Reporter\ReportingService;
-use App\Domain\Statistics\AttendanceStatistics;
+use App\Domain\Summaries\AttendanceSummary;
+use App\Domain\Summaries\MemberSummary;
+use App\Domain\Summaries\QrcodeSummary;
+use App\Domain\Summaries\ServiceOccurrenceSummary;
 use App\Domain\Tenants\TenantManager;
 use App\DTOs\FilterQueryDTO;
 use App\DTOs\MemberDTO;
 use App\DTOs\NonExpirableServiceDTO;
 use App\DTOs\OneTimeServiceDTO;
 use App\DTOs\RecurringServiceDTO;
-use App\DTOs\ServiceQrcodeDTO;
 use App\Enums\ReportType;
 use App\Enums\ServiceType;
 use App\Imports\MembersImport;
@@ -28,7 +30,6 @@ use App\Models\Qrcode;
 use App\Models\Service;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -157,7 +158,8 @@ Route::get('generate/report', function (Request $request) {
 Route::get('aggregator', function (Request $request) {
     //for home page grapgh
     // $filterDTO = FilterQueryDTO::fromRequest($request);
-    // $summary = new AttendanceStatistics();
+    // $summary = new AttendanceSummary();
+
     // return $summary->summarize($filterDTO);
 
     // for general reports
@@ -165,34 +167,22 @@ Route::get('aggregator', function (Request $request) {
     // $report = new ReportingService($type);
     // return $report->generateReport();
 
-    // return DB::table('members')
-    //     ->select('members.id AS member_id', 'members.name AS member_name', 'services.name AS service_name', DB::raw('COUNT(attendances.id) AS total_attendance'))
-    //     ->join('attendances', 'members.id', '=', 'attendances.member_id')
-    //     ->join('services', 'services.id', '=', 'attendances.service_id')
-    //     ->groupBy('members.id', 'services.id')
-    //     ->get();
+    // specific qrcode details
+    $qrcode = Qrcode::find(3);
+    $qrcodeSummary = new QrcodeSummary($qrcode);
 
-    // return  DB::table('services')
-    //             ->select(
-    //                 'services.id AS service_id',
-    //                 'services.name AS service_name',
-    //                 DB::raw('COUNT(qrcodes.id) AS total_service_occurrences'),
-    //                 DB::raw('MONTHNAME(qrcodes.created_at) AS month')
-    //             )
-    //             ->leftJoin('qrcodes', 'services.id', '=', 'qrcodes.service_id')
-    //             ->groupBy('services.id', 'month')
-    //             ->get();
-    return Attendance::query()
-        ->select(DB::raw('COUNT(attendances.member_id) AS total_attendance'))
-        ->selectRaw('GROUP_CONCAT(members.name) AS members')
-        ->selectRaw('GROUP_CONCAT(members.id) AS member_ids')
-        ->selectRaw('MAX(qrcodes.is_a_joint_service) AS expected_attendees')
-        ->selectRaw('MAX(qrcodes.is_a_joint_service) - COUNT(member_id) AS absentees_per_service')
-        ->join('members', 'members.id', '=', 'attendances.member_id')
-        ->join('qrcodes', 'qrcodes.id', '=', 'attendances.qrcode_id')
-        ->where('attendances.qrcode_id', '=', 3)
-        ->groupBy('attendances.service_id')
-        ->get();
+    return $qrcodeSummary->summarize();
+
+    //service occurences
+    // $service = Service::find(1);
+    // $serviceoccurences = new ServiceOccurrenceSummary($service);
+
+    // return $serviceoccurences->summarize();
+
+    //member summary
+    // $member = Member::find(3);
+    // $member = new MemberSummary();
+    // return $member->summarize();
 
 });
 
