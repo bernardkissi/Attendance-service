@@ -1,5 +1,6 @@
 <?php
 
+use App\Actions\Configuration\UpdateConfiguration;
 use App\Actions\Members\CreateMember;
 use App\Actions\Qrcode\CreateServiceQrcode;
 use App\Actions\Qrcode\GenerateServiceQrcodePdf;
@@ -15,6 +16,7 @@ use App\Domain\Summaries\MemberSummary;
 use App\Domain\Summaries\QrcodeSummary;
 use App\Domain\Summaries\ServiceOccurrenceSummary;
 use App\Domain\Tenants\TenantManager;
+use App\DTOs\ConfigurationDTO;
 use App\DTOs\FilterQueryDTO;
 use App\DTOs\MemberDTO;
 use App\DTOs\NonExpirableServiceDTO;
@@ -24,6 +26,7 @@ use App\Enums\ReportType;
 use App\Enums\ServiceType;
 use App\Imports\MembersImport;
 use App\Models\Attendance;
+use App\Models\Configuration;
 use App\Models\Group;
 use App\Models\Member;
 use App\Models\Qrcode;
@@ -156,6 +159,12 @@ Route::get('generate/report', function (Request $request) {
 });
 
 Route::get('aggregator', function (Request $request) {
+
+    $dto = ConfigurationDTO::fromRequest($request);
+
+    $config = new UpdateConfiguration();
+
+    return $config->update($dto);
     //for home page grapgh
     // $filterDTO = FilterQueryDTO::fromRequest($request);
     // $summary = new AttendanceSummary();
@@ -168,10 +177,9 @@ Route::get('aggregator', function (Request $request) {
     // return $report->generateReport();
 
     // specific qrcode details
-    $qrcode = Qrcode::find(3);
-    $qrcodeSummary = new QrcodeSummary($qrcode);
-
-    return $qrcodeSummary->summarize();
+    // $qrcode = Qrcode::find(3);
+    // $qrcodeSummary = new QrcodeSummary($qrcode);
+    // return $qrcodeSummary->summarize();
 
     //service occurences
     // $service = Service::find(1);
@@ -221,5 +229,5 @@ Route::get('/group/assign/tags/{group}', function (Request $request, Group $grou
 });
 
 Route::get('/search', function (Request $request) {
-    return Member::search($request->search)->get();
+    return Service::search($request->search)->get();
 });
