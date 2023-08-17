@@ -16,7 +16,7 @@ class UpdateConfiguration implements Action
         $configuration = $config->getTenantConfig();
         // get the existing configuration and update
         if ($dto->hasChanged($configuration)) {
-            return false; // throw an exceeption
+            return false;
         }
 
         $configuration->update(['options' => $dto->toArray()]);

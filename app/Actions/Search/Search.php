@@ -5,28 +5,23 @@ declare(strict_types=1);
 namespace App\Actions\Search;
 
 use App\Actions\Action;
+use App\DTOs\SearchResultDTO;
 use App\Models\Member;
 use App\Models\Service;
 
 class Search implements Action
 {
-    public static function members(string $query): array
+    public static function members(string $query): SearchResultDTO
     {
         $member = Member::search($query)->get();
 
-        return [
-            'id' => $member->identifier,
-            'name' => $member->name,
-        ];
+        return new SearchResultDTO($member->identifier, $member->name);
     }
 
-    public static function services(string $query): array
+    public static function services(string $query): SearchResultDTO
     {
         $service = Service::search($query)->get();
 
-        return [
-            'id' => $service->id,
-            'name' => $service->name,
-        ];
+        return new SearchResultDTO($service->id, $service->name);
     }
 }

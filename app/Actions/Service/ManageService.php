@@ -18,7 +18,7 @@ class ManageService implements Action
         Service $service,
         NonExpirableServiceDTO|OneTimeServiceDTO|RecurringServiceDTO $dto
     ): void {
-        // dd($service->qrcodes()->isCurrentlyRunning()->count());
+
         if ($service->hasEnded) {
             throw new \Exception('Service is already expired.');
         }

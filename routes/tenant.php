@@ -11,8 +11,6 @@ use App\Domain\Filters\Scopes\MemberScope;
 use App\Domain\Filters\Scopes\MonthScope;
 use App\Domain\Filters\Scopes\YearScope;
 use App\Domain\Reporter\ReportingService;
-use App\Domain\Summaries\AttendanceSummary;
-use App\Domain\Summaries\MemberSummary;
 use App\Domain\Summaries\QrcodeSummary;
 use App\Domain\Summaries\ServiceOccurrenceSummary;
 use App\Domain\Tenants\TenantManager;
@@ -160,16 +158,12 @@ Route::get('generate/report', function (Request $request) {
 
 Route::get('aggregator', function (Request $request) {
 
-    $dto = ConfigurationDTO::fromRequest($request);
+    // $dto = ConfigurationDTO::fromRequest($request);
 
-    $config = new UpdateConfiguration();
+    // $config = new UpdateConfiguration();
 
-    return $config->update($dto);
-    //for home page grapgh
-    // $filterDTO = FilterQueryDTO::fromRequest($request);
-    // $summary = new AttendanceSummary();
-
-    // return $summary->summarize($filterDTO);
+    // return $config->update($dto);
+    //for home page grapg
 
     // for general reports
     // $type = ReportType::MONTHLY;
@@ -182,16 +176,10 @@ Route::get('aggregator', function (Request $request) {
     // return $qrcodeSummary->summarize();
 
     //service occurences
-    // $service = Service::find(1);
-    // $serviceoccurences = new ServiceOccurrenceSummary($service);
+    $service = Service::find(1);
+    $serviceoccurences = new ServiceOccurrenceSummary($service);
 
-    // return $serviceoccurences->summarize();
-
-    //member summary
-    // $member = Member::find(3);
-    // $member = new MemberSummary();
-    // return $member->summarize();
-
+    dd($serviceoccurences->summarize());
 });
 
 Route::get('/groups', function () {
