@@ -3,7 +3,7 @@ import { createInertiaApp, Link, Head } from '@inertiajs/vue3'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 
 createInertiaApp({
-    progess: {
+    progress: {
         delay: 500,
         color: '#29d',
         showSpinner: true,

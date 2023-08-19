@@ -5,7 +5,7 @@
         <BuildingOffice2Icon class="h-12 w-12 text-blue-500" />
         <h1 class="text-3xl font-bold text-center">Attendanc</h1>
       </div>
-      <div class="flex">
+      <div class="flex shadow-sm">
         <div class="basis-2/3 bg-white rounded-l-md px-8 py-12">
           <h4 class="text-2xl font-semibold pb-3">Welcome Back !</h4>
           <p class="pb-4">Enter your credentials to login into your account</p>
