@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Dashboard\DashboardController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Tenant Routes
@@ -10,3 +13,5 @@
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('home');
