@@ -123,6 +123,23 @@
             <PlusCircleIcon class="h-6 w-6 text-gray-400" />
             <span>Create Qrcode</span>
           </div>
+          <div class="flex items-center justify-between mt-8">
+            <div class="flex items-center space-x-2">
+              <div class="relative rounded-full h-4 w-4 bg-green-200">
+                <div
+                  class="absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full h-2 w-2 bg-green-500"
+                ></div>
+              </div>
+              <span class="text-lg font-medium">Live</span>
+            </div>
+
+            <span class="text-sm text-gray-500">view link</span>
+          </div>
+          <div class="flex flex-col space-y-4 mt-6">
+            <div class="px-5 py-6 border rounded">fffdasfad</div>
+            <div class="px-5 py-6 border rounded">fffdasfad</div>
+            <div class="px-5 py-6 border rounded">fffdasfad</div>
+          </div>
         </div>
         <div class="flex-1 flex-col">
           <h4 class="text-2xl font-bold">Attendance Summary</h4>
@@ -197,7 +214,7 @@ const chart = reactive({
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "30%",
+        columnWidth: "40%",
         endingShape: "rounded",
       },
     },
