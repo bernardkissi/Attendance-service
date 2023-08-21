@@ -133,12 +133,51 @@
               <span class="text-lg font-medium">Live</span>
             </div>
 
-            <span class="text-sm text-gray-500">view link</span>
+            <span class="text-sm text-gray-500">View Live</span>
           </div>
           <div class="flex flex-col space-y-4 mt-6">
-            <div class="px-5 py-6 border rounded">fffdasfad</div>
-            <div class="px-5 py-6 border rounded">fffdasfad</div>
-            <div class="px-5 py-6 border rounded">fffdasfad</div>
+            <div
+              class="flex items-center justify-between px-6 py-4 border rounded"
+            >
+              <div class="flex flex-col items-start">
+                <div class="flex items-baseline space-x-5">
+                  <p class="text-sm pb-1">Live Checkins</p>
+                  <!-- <span class="text-xs text-gray-400">from 500</span> -->
+                </div>
+                <h4 class="text-2xl font-semibold">345</h4>
+              </div>
+              <CheckCircleIcon class="h-12 w-12 text-green-500" />
+            </div>
+            <div
+              class="flex items-center justify-between px-6 py-4 border rounded"
+            >
+              <div class="flex flex-col items-start">
+                <div class="flex items-baseline space-x-5">
+                  <p class="text-sm pb-1">Failed Checkins</p>
+                  <!-- <span class="text-xs text-gray-400">from 500</span> -->
+                </div>
+                <h4 class="text-2xl font-semibold">26</h4>
+              </div>
+              <XCircleIcon class="h-12 w-12 text-red-500" />
+            </div>
+            <div
+              class="flex items-center justify-between px-6 py-4 border rounded"
+            >
+              <div class="flex flex-col items-start">
+                <div class="flex items-baseline space-x-5">
+                  <p class="text-sm pb-1">Pending Checkins</p>
+                  <!-- <span class="text-xs text-gray-400">from 500</span> -->
+                </div>
+                <h4 class="text-2xl font-semibold">126</h4>
+              </div>
+              <UsersIcon class="h-12 w-12 text-gray-500" />
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-between py-3 text-sm text-gray-500"
+          >
+            <span>Sunday Service</span>
+            <span>34 minutes ago</span>
           </div>
         </div>
         <div class="flex-1 flex-col">
@@ -185,6 +224,8 @@ import {
   BellIcon,
   MagnifyingGlassIcon,
   AdjustmentsHorizontalIcon,
+  CheckCircleIcon,
+  XCircleIcon,
 } from "@heroicons/vue/24/outline";
 import { reactive } from "vue";
 import VueApexCharts from "vue3-apexcharts";
