@@ -158,7 +158,7 @@
                 </div>
                 <h4 class="text-2xl font-semibold">26</h4>
               </div>
-              <XCircleIcon class="h-12 w-12 text-red-500" />
+              <XCircleIcon class="h-12 w-12 text-red-300" />
             </div>
             <div
               class="flex items-center justify-between px-6 py-4 border rounded"
@@ -202,6 +202,146 @@
             :options="chart.chartOptions"
             :series="chartData.series"
           />
+          <!-- tables -->
+          <div class="flex space-x-8 mt-8">
+            <div class="flex-1">
+              <!-- header -->
+              <div class="flex items-start justify-between px-4 border-b pb-5">
+                <div class="flex flex-col">
+                  <h4 class="text-2xl font-semibold">Current Service</h4>
+                  <p class="text-sm">Members Attendancce Checkins</p>
+                </div>
+                <div class="flex flex-col">
+                  <div>...</div>
+                  <p class="text-sm">updated 2 mins ago</p>
+                </div>
+              </div>
+              <!-- end of header -->
+              <div class="px-4 divide-y">
+                <div class="flex items-start justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DevicePhoneMobileIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Zaire Mango</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="text-sm">
+                    <p>Sun Apr 30 2023</p>
+                    <p class="text-gray-400">17.233.74.227</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DevicePhoneMobileIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Zaire Mango</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="text-sm">
+                    <p>Sun Apr 30 2023</p>
+                    <p class="text-gray-400">17.233.74.227</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DevicePhoneMobileIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Zaire Mango</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="text-sm">
+                    <p>Sun Apr 30 2023</p>
+                    <p class="text-gray-400">17.233.74.227</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DeviceTabletIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Zaire Mango</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="text-sm">
+                    <p>Sun Apr 30 2023</p>
+                    <p class="text-gray-400">17.233.74.227</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <ComputerDesktopIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Zaire Mango</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="text-sm">
+                    <p>Sun Apr 30 2023</p>
+                    <p class="text-gray-400">17.233.74.227</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DeviceTabletIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Zaire Mango</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="text-sm">
+                    <p>Sun Apr 30 2023</p>
+                    <p class="text-gray-400">17.233.74.227</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DeviceTabletIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Zaire Mango</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="text-sm">
+                    <p>Sun Apr 30 2023</p>
+                    <p class="text-gray-400">17.233.74.227</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DeviceTabletIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Zaire Mango</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="text-sm">
+                    <p>Sun Apr 30 2023</p>
+                    <p class="text-gray-400">17.233.74.227</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DeviceTabletIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Zaire Mango</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="text-sm">
+                    <p>Sun Apr 30 2023</p>
+                    <p class="text-gray-400">17.233.74.227</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-2/4">stats</div>
+          </div>
         </div>
       </section>
     </main>
@@ -226,6 +366,9 @@ import {
   AdjustmentsHorizontalIcon,
   CheckCircleIcon,
   XCircleIcon,
+  DevicePhoneMobileIcon,
+  DeviceTabletIcon,
+  ComputerDesktopIcon,
 } from "@heroicons/vue/24/outline";
 import { reactive } from "vue";
 import VueApexCharts from "vue3-apexcharts";
