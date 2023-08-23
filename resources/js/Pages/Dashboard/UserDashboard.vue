@@ -73,7 +73,7 @@
         </ul>
       </div>
     </aside>
-    <main class="flex-1 flex-col bg-white rounded-md shadow">
+    <main class="flex-1 flex-col bg-white rounded-md shadow-md">
       <header
         class="flex items-center justify-between px-8 py-4 border-b border-dashed border-gray-200"
       >
@@ -100,10 +100,12 @@
       <section class="flex pt-8 px-8 space-x-8">
         <div class="flex flex-col w-64">
           <div
-            class="flex flex-col items-center p-4 w-64 mb-8 bg-gray-100 rounded"
+            class="flex flex-col items-center p-4 w-64 mb-8 bg-black rounded shadow-sm"
           >
             <div class="flex items-center justify-between space-x-8 pb-2">
-              <span class="text-sm font-semibold">24, April 2023</span>
+              <span class="text-sm text-white font-semibold"
+                >24, April 2023</span
+              >
               <div
                 class="flex items-center text-green-600 text-sm font-semibold space-x-2"
               >
@@ -112,16 +114,19 @@
               </div>
             </div>
             <img src="images/qrcode.png" alt="qrcode" class="h-48 w-48" />
-            <div class="pt-2">
-              <p class="text-sm font-medium">Expires after 4 hours</p>
+            <div class="pt-2 text-center">
+              <p class="text-sm text-white font-bold">General Sunday Service</p>
+              <p class="text-sm text-gray-300 font-medium">
+                Expires after 4 hours
+              </p>
               <p class="text-sm text-blue-400">http://sigmund.name</p>
             </div>
           </div>
           <div
             class="flex items-center justify-center space-x-2 border border-dashed border-gray-300 rounded py-3 px-2 hover:border-gray-600"
           >
-            <PlusCircleIcon class="h-6 w-6 text-gray-400" />
-            <span>Create Qrcode</span>
+            <ArrowSmallDownIcon class="h-6 w-6 text-gray-400" />
+            <span>Download Qrcode</span>
           </div>
           <div class="flex items-center justify-between mt-8">
             <div class="flex items-center space-x-2">
@@ -137,7 +142,7 @@
           </div>
           <div class="flex flex-col space-y-4 mt-6">
             <div
-              class="flex items-center justify-between px-6 py-4 border rounded"
+              class="flex items-center justify-between px-6 py-4 border rounded shadow-sm"
             >
               <div class="flex flex-col items-start">
                 <div class="flex items-baseline space-x-5">
@@ -149,7 +154,7 @@
               <CheckCircleIcon class="h-12 w-12 text-green-500" />
             </div>
             <div
-              class="flex items-center justify-between px-6 py-4 border rounded"
+              class="flex items-center justify-between px-6 py-4 border rounded shadow-sm"
             >
               <div class="flex flex-col items-start">
                 <div class="flex items-baseline space-x-5">
@@ -161,7 +166,7 @@
               <XCircleIcon class="h-12 w-12 text-red-300" />
             </div>
             <div
-              class="flex items-center justify-between px-6 py-4 border rounded"
+              class="flex items-center justify-between px-6 py-4 border rounded shadow-sm"
             >
               <div class="flex flex-col items-start">
                 <div class="flex items-baseline space-x-5">
@@ -173,22 +178,114 @@
               <UsersIcon class="h-12 w-12 text-gray-500" />
             </div>
           </div>
+
           <div
             class="flex items-center justify-between py-3 text-sm text-gray-500"
           >
             <span>Sunday Service</span>
             <span>34 minutes ago</span>
           </div>
+          <!-- upcoming -->
+          <div
+            class="flex items-center justify-between mt-8 pb-4 rounded shadow-sm"
+          >
+            <div class="flex items-center space-x-2">
+              <CalendarIcon class="h-5 w-5" />
+              <span class="text-lg font-medium">Upcoming</span>
+            </div>
+
+            <span class="text-sm text-gray-500">View</span>
+          </div>
+          <div
+            class="flex items-center justify-between px-6 py-4 border rounded"
+          >
+            <div class="flex flex-col items-start">
+              <div class="flex items-baseline space-x-5">
+                <p class="text-base font-semibold pb-1">Midweek Service</p>
+                <!-- <span class="text-xs text-gray-400">from 500</span> -->
+              </div>
+              <h4 class="text-sm text-gray-400">Starts in 12 mins</h4>
+            </div>
+            <ClockIcon class="h-8 w-8 text-gray-500" />
+          </div>
         </div>
         <div class="flex-1 flex-col">
-          <h4 class="text-2xl font-bold">Attendance Summary</h4>
+          <h4 class="text-2xl font-bold">Service Attendance Summary</h4>
           <div class="flex item-center justify-between py-6">
-            <div
-              class="bg-gray-50 px-3 py-3 text-sm font-semibold text-gray-500 rounded-md shadow-sm"
-            >
-              Dec 7, 2021 - Dec 2, 2021
+            <div class="flex items-start space-x-3">
+              <div
+                class="bg-white border border-gray-300 px-3 py-3 text-sm font-medium text-gray-500 rounded-md shadow-sm"
+              >
+                Dec 7, 2021 - Dec 2, 2021
+              </div>
+              <div
+                class="bg-white border border-gray-300 px-4 py-3 text-sm font-medium text-gray-500 rounded-md shadow-sm"
+              >
+                Youth Week Service
+              </div>
             </div>
+
             <div class="flex items-center space-x-5">
+              <div class="flex">
+                <span
+                  id="badge-dismiss-dark"
+                  class="inline-flex items-center px-2 py-1 mr-2 text-sm font-medium text-gray-800 bg-gray-100 rounded"
+                >
+                  Month - July
+                  <button
+                    type="button"
+                    class="inline-flex items-center p-1 ml-2 text-sm text-gray-400 bg-transparent rounded-sm hover:bg-gray-200 hover:text-gray-900"
+                    data-dismiss-target="#badge-dismiss-dark"
+                    aria-label="Remove"
+                  >
+                    <svg
+                      class="w-2 h-2"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 14"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                      />
+                    </svg>
+                    <span class="sr-only">Remove badge</span>
+                  </button>
+                </span>
+                <span
+                  id="badge-dismiss-dark"
+                  class="inline-flex items-center px-2 py-1 mr-2 text-sm font-medium text-gray-800 bg-gray-100 rounded"
+                >
+                  2 members
+                  <button
+                    type="button"
+                    class="inline-flex items-center p-1 ml-2 text-sm text-gray-400 bg-transparent rounded-sm hover:bg-gray-200 hover:text-gray-900"
+                    data-dismiss-target="#badge-dismiss-dark"
+                    aria-label="Remove"
+                  >
+                    <svg
+                      class="w-2 h-2"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 14"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                      />
+                    </svg>
+                    <span class="sr-only">Remove badge</span>
+                  </button>
+                </span>
+              </div>
               <CalendarIcon
                 class="h-10 w-10 bg-gray-50 rounded-full px-1 py-2 shadow-md"
               />
@@ -208,7 +305,7 @@
               <!-- header -->
               <div class="flex items-start justify-between px-4 border-b pb-5">
                 <div class="flex flex-col">
-                  <h4 class="text-2xl font-semibold">Current Service</h4>
+                  <h4 class="text-2xl font-semibold">Recent Checkins</h4>
                   <p class="text-sm text-gray-500">
                     Members Attendancce Checkins
                   </p>
@@ -356,31 +453,14 @@
               </div>
               <!-- stats cards -->
               <div class="flex flex-col divide-y">
-                <VueApexCharts
-                  height="300"
-                  :options="pie.chartOptions"
-                  :series="pieData.series"
-                />
-                <div class="flex items-center justify-between py-3">
-                  <div class="flex items-center space-x-5">
-                    <DevicePhoneMobileIcon class="h-6 w-6" />
-                    <div class="flex flex-col">
-                      <h4 class="font-medium">Service recurring</h4>
-                      <p class="text-xs text-gray-400">Ocurrences per month</p>
-                    </div>
-                  </div>
-                  <div class="sm:w-20 w-40 bg-gray-200 rounded-full h-1 mb-4">
-                    <div
-                      class="bg-blue-600 h-1 rounded-full dark:bg-blue-500"
-                      style="width: 70%"
-                    ></div>
-                  </div>
-                  <div class="flex flex-col items-end">
-                    <h4 class="text-xl font-semibold">3</h4>
-                    <span class="text-gray-400 text-xs">out of 3</span>
-                  </div>
+                <div class="pt-4">
+                  <h4 class="font-medium">Gender Attendance Distribution</h4>
+                  <VueApexCharts
+                    height="300"
+                    :options="pie.chartOptions"
+                    :series="pieData.series"
+                  />
                 </div>
-
                 <div class="flex items-center justify-between py-3">
                   <div class="flex items-center space-x-5">
                     <DevicePhoneMobileIcon class="h-6 w-6" />
@@ -397,7 +477,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="sm:w-20 w-40 bg-gray-200 rounded-full h-1 mb-4">
+                  <div
+                    class="sm:w-20 lg:w-40 bg-gray-200 rounded-full h-1 mb-4"
+                  >
                     <div
                       class="bg-blue-600 h-1 rounded-full dark:bg-green-500"
                       style="width: 40%"
@@ -424,7 +506,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="sm:w-20 w-40 bg-gray-200 rounded-full h-1 mb-4">
+                  <div
+                    class="sm:w-20 lg:w-40 bg-gray-200 rounded-full h-1 mb-4"
+                  >
                     <div
                       class="bg-blue-600 h-1 rounded-full dark:bg-red-500"
                       style="width: 60%"
@@ -433,6 +517,38 @@
                   <div class="flex flex-col items-end">
                     <h4 class="text-xl font-semibold">97</h4>
                     <span class="text-gray-400 text-xs">out of 300 </span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DevicePhoneMobileIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Service recurring</h4>
+                      <p class="text-xs text-gray-400">Ocurrences per month</p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col items-end">
+                    <h4 class="text-xl font-semibold">3</h4>
+                    <span class="text-gray-400 text-xs">out of 3 times</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DevicePhoneMobileIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Total Expected Attendance</h4>
+                      <p class="text-xs text-gray-400">
+                        Expected Attendance for the month
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col items-end">
+                    <h4 class="text-xl font-semibold">600</h4>
+                    <span class="text-gray-400 text-xs"
+                      >out of 600 head count</span
+                    >
                   </div>
                 </div>
               </div>
@@ -468,23 +584,37 @@ import {
   ComputerDesktopIcon,
   ArrowSmallUpIcon,
   ArrowSmallDownIcon,
+  ClockIcon,
 } from "@heroicons/vue/24/outline";
 import { reactive } from "vue";
 import VueApexCharts from "vue3-apexcharts";
 
-const pieData = reactive({ series: [45, 55] });
+const pieData = reactive({
+  series: [
+    {
+      name: "Male",
+      data: [44, 53],
+    },
+    {
+      name: "Female",
+      data: [76, 67],
+    },
+  ],
+});
 const pie = reactive({
   chartOptions: {
-    labels: ["Male", "Female"],
     chart: {
-      type: "donut",
+      type: "area",
     },
     plotOptions: {
-      pie: {
-        donut: {
-          size: "70%",
-        },
+      bar: {
+        horizontal: false,
+        columnWidth: "30%",
+        endingShape: "rounded",
       },
+    },
+    xaxis: {
+      categories: ["Apr", "May"],
     },
     responsive: [
       {
