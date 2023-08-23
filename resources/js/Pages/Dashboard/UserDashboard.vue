@@ -203,13 +203,15 @@
             :series="chartData.series"
           />
           <!-- tables -->
-          <div class="flex space-x-8 mt-8">
+          <div class="flex space-x-8 mt-6">
             <div class="flex-1">
               <!-- header -->
               <div class="flex items-start justify-between px-4 border-b pb-5">
                 <div class="flex flex-col">
                   <h4 class="text-2xl font-semibold">Current Service</h4>
-                  <p class="text-sm">Members Attendancce Checkins</p>
+                  <p class="text-sm text-gray-500">
+                    Members Attendancce Checkins
+                  </p>
                 </div>
                 <div class="flex flex-col">
                   <div>...</div>
@@ -340,7 +342,88 @@
               </div>
             </div>
 
-            <div class="w-2/4">stats</div>
+            <div class="flex flex-col w-2/4">
+              <div class="flex items-end justify-between">
+                <div class="flex flex-col">
+                  <h4 class="text-2xl font-semibold">Service Stats</h4>
+                  <p class="text-sm text-gray-500">
+                    Service statistics this month
+                  </p>
+                </div>
+                <div class="flex">
+                  <p class="text-sm text-gray-400">updated 3 days ago</p>
+                </div>
+              </div>
+              <!-- stats cards -->
+              <div class="flex flex-col divide-y mt-4">
+                <div class="flex items-center justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DevicePhoneMobileIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Service recurring</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="w-40 bg-gray-200 rounded-full h-1 mb-4">
+                    <div
+                      class="bg-blue-600 h-1 rounded-full dark:bg-blue-500"
+                      style="width: 70%"
+                    ></div>
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <h4 class="text-xl font-semibold">3</h4>
+                    <span class="text-gray-400 text-xs">out of 3 services</span>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DevicePhoneMobileIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Overall Attendance</h4>
+                      <p class="text-sm text-gray-400">Mobile</p>
+                    </div>
+                  </div>
+                  <div class="w-40 bg-gray-200 rounded-full h-1 mb-4">
+                    <div
+                      class="bg-blue-600 h-1 rounded-full dark:bg-green-500"
+                      style="width: 40%"
+                    ></div>
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <h4 class="text-xl font-semibold">137</h4>
+                    <span class="text-gray-400 text-xs"
+                      >out of 300 members</span
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center justify-between py-3">
+                  <div class="flex items-center space-x-5">
+                    <DevicePhoneMobileIcon class="h-6 w-6" />
+                    <div class="flex flex-col">
+                      <h4 class="font-medium">Total Absentees</h4>
+                      <div class="flex items-center space-x-3text-sm">
+                        <span class="text-green-500">2.5%</span>
+                        <span class="text-gray-500">vs Last Month</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-40 bg-gray-200 rounded-full h-1 mb-4">
+                    <div
+                      class="bg-blue-600 h-1 rounded-full dark:bg-red-500"
+                      style="width: 60%"
+                    ></div>
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <h4 class="text-xl font-semibold">97</h4>
+                    <span class="text-gray-400 text-xs"
+                      >out of 300 members</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- end stats cards -->
+            </div>
           </div>
         </div>
       </section>
