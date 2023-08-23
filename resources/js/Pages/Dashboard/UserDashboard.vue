@@ -343,7 +343,7 @@
             </div>
 
             <div class="flex flex-col w-2/4">
-              <div class="flex items-end justify-between">
+              <div class="flex items-end justify-between border-b pb-5">
                 <div class="flex flex-col">
                   <h4 class="text-2xl font-semibold">Service Stats</h4>
                   <p class="text-sm text-gray-500">
@@ -355,16 +355,21 @@
                 </div>
               </div>
               <!-- stats cards -->
-              <div class="flex flex-col divide-y mt-4">
+              <div class="flex flex-col divide-y">
+                <VueApexCharts
+                  height="300"
+                  :options="pie.chartOptions"
+                  :series="pieData.series"
+                />
                 <div class="flex items-center justify-between py-3">
                   <div class="flex items-center space-x-5">
                     <DevicePhoneMobileIcon class="h-6 w-6" />
                     <div class="flex flex-col">
                       <h4 class="font-medium">Service recurring</h4>
-                      <p class="text-sm text-gray-400">Mobile</p>
+                      <p class="text-xs text-gray-400">Ocurrences per month</p>
                     </div>
                   </div>
-                  <div class="w-40 bg-gray-200 rounded-full h-1 mb-4">
+                  <div class="sm:w-20 w-40 bg-gray-200 rounded-full h-1 mb-4">
                     <div
                       class="bg-blue-600 h-1 rounded-full dark:bg-blue-500"
                       style="width: 70%"
@@ -372,7 +377,7 @@
                   </div>
                   <div class="flex flex-col items-end">
                     <h4 class="text-xl font-semibold">3</h4>
-                    <span class="text-gray-400 text-xs">out of 3 services</span>
+                    <span class="text-gray-400 text-xs">out of 3</span>
                   </div>
                 </div>
 
@@ -381,10 +386,18 @@
                     <DevicePhoneMobileIcon class="h-6 w-6" />
                     <div class="flex flex-col">
                       <h4 class="font-medium">Overall Attendance</h4>
-                      <p class="text-sm text-gray-400">Mobile</p>
+                      <div class="flex items-center space-x-1 text-xs">
+                        <div
+                          class="flex items-center text-red-500 font-semibold"
+                        >
+                          <ArrowSmallDownIcon class="h-4 w-4" />
+                          <span>1.5%</span>
+                        </div>
+                        <span class="text-gray-400">vs Last Month</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="w-40 bg-gray-200 rounded-full h-1 mb-4">
+                  <div class="sm:w-20 w-40 bg-gray-200 rounded-full h-1 mb-4">
                     <div
                       class="bg-blue-600 h-1 rounded-full dark:bg-green-500"
                       style="width: 40%"
@@ -392,9 +405,7 @@
                   </div>
                   <div class="flex flex-col items-end">
                     <h4 class="text-xl font-semibold">137</h4>
-                    <span class="text-gray-400 text-xs"
-                      >out of 300 members</span
-                    >
+                    <span class="text-gray-400 text-xs">out of 300</span>
                   </div>
                 </div>
                 <div class="flex items-center justify-between py-3">
@@ -402,13 +413,18 @@
                     <DevicePhoneMobileIcon class="h-6 w-6" />
                     <div class="flex flex-col">
                       <h4 class="font-medium">Total Absentees</h4>
-                      <div class="flex items-center space-x-3text-sm">
-                        <span class="text-green-500">2.5%</span>
-                        <span class="text-gray-500">vs Last Month</span>
+                      <div class="flex items-center space-x-1 text-xs">
+                        <div
+                          class="flex items-center text-green-500 font-semibold"
+                        >
+                          <ArrowSmallUpIcon class="h-4 w-4" />
+                          <span>2.5%</span>
+                        </div>
+                        <span class="text-gray-400">vs Last Month</span>
                       </div>
                     </div>
                   </div>
-                  <div class="w-40 bg-gray-200 rounded-full h-1 mb-4">
+                  <div class="sm:w-20 w-40 bg-gray-200 rounded-full h-1 mb-4">
                     <div
                       class="bg-blue-600 h-1 rounded-full dark:bg-red-500"
                       style="width: 60%"
@@ -416,9 +432,7 @@
                   </div>
                   <div class="flex flex-col items-end">
                     <h4 class="text-xl font-semibold">97</h4>
-                    <span class="text-gray-400 text-xs"
-                      >out of 300 members</span
-                    >
+                    <span class="text-gray-400 text-xs">out of 300 </span>
                   </div>
                 </div>
               </div>
@@ -452,10 +466,41 @@ import {
   DevicePhoneMobileIcon,
   DeviceTabletIcon,
   ComputerDesktopIcon,
+  ArrowSmallUpIcon,
+  ArrowSmallDownIcon,
 } from "@heroicons/vue/24/outline";
 import { reactive } from "vue";
 import VueApexCharts from "vue3-apexcharts";
 
+const pieData = reactive({ series: [45, 55] });
+const pie = reactive({
+  chartOptions: {
+    labels: ["Male", "Female"],
+    chart: {
+      type: "donut",
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          size: "70%",
+        },
+      },
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  },
+});
 const chartData = reactive({
   series: [
     {
