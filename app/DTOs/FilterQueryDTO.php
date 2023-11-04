@@ -6,16 +6,16 @@ namespace App\DTOs;
 
 use Illuminate\Http\Request;
 
-readonly class FilterQueryDTO
+class FilterQueryDTO
 {
     public function __construct(
-        public string $year,
-        public string|array|null $month,
-        public string|array|null $dateRange,
-        public string|array|null $service,
-        public string|array|null $members,
-        public ?string $filter,
-        public ?string $groupBy,
+        public readonly string $year,
+        public readonly string|array|null $month,
+        public readonly string|array|null $dateRange,
+        public readonly string|array|null $service,
+        public readonly string|array|null $members,
+        public readonly ?string $filter,
+        public readonly ?string $groupBy,
 
     ) {
     }

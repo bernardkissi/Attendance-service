@@ -36,6 +36,6 @@ class ServiceOccurrenceSummary implements Statistics
                 $query->whereKey($this->service->id);
             })
             ->leftJoin('qrcodes', 'services.id', '=', 'qrcodes.service_id')
-            ->groupBy('services.id', 'month');
+            ->groupBy('services.id', 'services.name', 'month');
     }
 }

@@ -60,6 +60,6 @@
   </div>
 </template>
 <script setup>
-import { ArrowRightIcon } from "@heroicons/vue/24/solid";
-import { BuildingOffice2Icon } from "@heroicons/vue/24/outline";
+import { ArrowRightIcon } from '@heroicons/vue/24/solid'
+import { BuildingOffice2Icon } from '@heroicons/vue/24/outline'
 </script>

@@ -1,0 +1,74 @@
+<script setup>
+import SideBar from '@/Components/SideBar/SideBar.vue'
+import NavBar from '@/Components/NavBar/NavBar.vue'
+import LiveDetailCard from '@/Components/Cards/LiveDetailCard.vue'
+import LiveCard from '../../Components/Cards/LiveCard.vue'
+import StatsCard from '@/Components/Cards/StatsCard.vue'
+
+import {
+  UsersIcon,
+  ArrowTrendingUpIcon,
+  PaperAirplaneIcon,
+} from '@heroicons/vue/24/outline'
+const startDate = new Date()
+const endDate = new Date('2023-11-05T21:59:30')
+</script>
+
+<template>
+  <div class="flex min-h-screen w-full bg-gray-100 px-2 py-6">
+    <!-- sidebar -->
+    <SideBar></SideBar>
+    <!-- end sidebar -->
+    <main class="flex-1 flex-col rounded-md bg-white shadow-md">
+      <!-- navbar -->
+      <NavBar name="Dashboard"></NavBar>
+      <!-- end navbar -->
+      <section class="flex space-x-8 px-8 pt-8">
+        <div class="flex w-64 flex-col">
+          <StatsCard
+            :icon="UsersIcon"
+            title="Success Checkins"
+            value="45 M"
+            color="pink"
+            :has-trends="true"
+            :trend="{
+              icon: ArrowTrendingUpIcon,
+              value: '12%',
+              text: 'since last week',
+            }"
+          ></StatsCard>
+          <StatsCard
+            :icon="ArrowTrendingUpIcon"
+            title="Success Checkins"
+            value="45 M"
+            color="blue"
+          ></StatsCard>
+          <!-- live card -->
+          <LiveDetailCard
+            name="Sunday Service"
+            :start-date-time="startDate"
+            :end-date-time="endDate"
+            status="live"
+            qrcode="images/qrcode.png"
+            :start-immediately="true"
+            :tick="1000"
+          ></LiveDetailCard>
+          <!-- end -->
+          <!-- live card -->
+          <LiveCard
+            name="Children's service"
+            title="Ended Service"
+            value="0 M"
+            status="active"
+            :icon="PaperAirplaneIcon"
+          ></LiveCard>
+          <!-- end live card -->
+          <slot name="side-content"></slot>
+        </div>
+        <div class="flex-1 flex-col">
+          <slot name="main-content"></slot>
+        </div>
+      </section>
+    </main>
+  </div>
+</template>

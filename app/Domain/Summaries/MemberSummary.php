@@ -35,7 +35,7 @@ class MemberSummary implements Statistics
             ->when($this->member, function ($query) {
                 $query->whereKey($this->member->id);
             })
-            ->groupBy('members.id', 'services.id');
+            ->groupBy('members.id', 'members.name', 'members.identifier', 'services.name');
     }
 
     private function transform(Collection $collection): Collection
@@ -43,6 +43,7 @@ class MemberSummary implements Statistics
         return $collection->map(function ($member) {
             return [
                 'id' => $member->member_id,
+                'name' => $member->member_name,
                 'identifier' => $member->identifier,
                 'service' => $member->service_name,
                 'total_attendance' => $member->total_attendance,
