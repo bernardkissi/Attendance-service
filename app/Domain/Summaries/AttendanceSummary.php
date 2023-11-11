@@ -48,7 +48,7 @@ class AttendanceSummary implements Statistics
              */
             ->when(isset($filters->groupBy) && $filters->groupBy === 'year', function (Builder $query) {
                 $query->selectRaw('YEAR(recorded_at) AS year, services.name AS service');
-            }, fn (Builder $query) => $query->selectRaw('YEAR(recorded_at) AS year, MONTHNAME(recorded_at) AS month, services.name AS service'))
+            }, fn (Builder $query) => $query->selectRaw('YEAR(recorded_at) AS year, MONTH(recorded_at) AS month, services.name AS service'))
 
             ->selectRaw('COUNT(member_id) AS attendance')
             ->selectRaw('COUNT(DISTINCT qrcode_id) AS service_occurences_per_month')

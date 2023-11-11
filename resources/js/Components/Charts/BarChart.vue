@@ -1,6 +1,8 @@
 <script setup>
-import { onMounted, onUnmounted, reactive, ref } from 'vue'
+import { onMounted, onUnmounted, reactive, ref, computed } from 'vue'
 import VueApexCharts from 'vue3-apexcharts'
+
+const emit = defineEmits(['init'])
 
 const props = defineProps({
   chartData: {
@@ -14,9 +16,9 @@ const props = defineProps({
   },
 })
 const chartObject = ref(null)
-const data = reactive({
-  series: props.chartData,
-})
+const data = computed(() => props.chartData.series)
+
+// chart configurations
 const chart = reactive({
   options: {
     chart: {
@@ -74,19 +76,15 @@ const chart = reactive({
 })
 
 onMounted(() => {
-  populateChart()
+  initiateChart()
 })
 
 onUnmounted(() => {
   chartObject.value.destroy()
 })
 
-const populateChart = () => {
-  let mapData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-  props.chartData.values.map(
-    (point) => (mapData[point.month - 1] = point.value),
-  )
-  data.series.value = [{ data: mapData, name: props.title }]
+const initiateChart = () => {
+  emit('init')
 }
 </script>
 <template>
@@ -94,6 +92,6 @@ const populateChart = () => {
     ref="chartObject"
     height="300"
     :options="chart.options"
-    :series="data.series"
+    :series="data"
   />
 </template>
