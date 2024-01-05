@@ -25,13 +25,18 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  size: {
+    type: String,
+    default: 'w-full',
+  },
 })
 </script>
 
 <template>
   <div
     :id="target"
-    class="z-20 hidden w-full max-w-sm divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-700 dark:bg-gray-800"
+    :class="size"
+    class="z-20 hidden max-w-sm divide-y divide-gray-100 rounded-lg bg-white shadow-lg dark:divide-gray-700 dark:bg-gray-800"
     aria-labelledby="dropdownNotificationButton"
   >
     <slot></slot>

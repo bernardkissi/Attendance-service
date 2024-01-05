@@ -96,11 +96,11 @@ watch([tick, startDateTime, endDateTime, startImmediately], () => {
       <img :src="qrcode" alt="qrcode" class="h-48 w-48" />
     </div>
     <div id="footer" class="flex items-center justify-between px-6 py-4">
-      <div class="flex items-center space-x-2 text-sm">
+      <div class="flex items-center space-x-1 text-sm">
         <span class="text-gray-400">{{
           hasEnded ? 'Expired' : 'Expires in'
         }}</span>
-        <span v-if="!hasEnded" class="font-semibold text-gray-700"
+        <span v-if="!hasEnded" class="text-xs font-medium text-gray-700"
           >{{ `${remainingHours}h` }} : {{ `${remainingMinutes}m` }} :
           {{ `${remainingSeconds}s` }}</span
         >

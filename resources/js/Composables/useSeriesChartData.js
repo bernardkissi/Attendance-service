@@ -1,46 +1,64 @@
 import { ref, toValue } from 'vue'
-import { useYear } from './useYear'
 
-export function useSeriesChartData(data, keys, label) {
+// { identifier: 'month', keys: ['attendance', 'absence] }
+export function useSeriesChartData(data, options) {
   const series = ref(null)
+  const statsSeries = ref(null)
+  const chartKeys = ref(null)
 
   const extractMonthlyChartData = () => {
-    let values = Array(12).fill(0)
+    let chartSeries = []
+    let chartLabels = []
 
-    toValue(data).map((point) => {
-      const value = extractKeysFromObject(point, keys)
-      values[value[keys[0]] - 1] = value[keys[1]]
+    options.keys.map((key) => {
+      let values = Array(12).fill(0)
+      const labels = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ]
+      let chartlblKeys = []
+      toValue(data).map((point) => {
+        const value = extractKeyFromObject(point, key)
+        values[point[options.identifier] - 1] = value[key]
+        chartlblKeys[point[options.identifier] - 1] =
+          labels[point[options.identifier] - 1]
+      })
+      chartLabels = [...chartLabels, ...chartlblKeys]
+      chartSeries = [...chartSeries, { data: values, name: key }]
     })
 
-    series.value = [{ data: values, name: label }]
+    series.value = chartSeries
+    statsSeries.value = chartSeries.map((obj) => ({
+      ...obj,
+      data: obj.data.filter((num) => num !== 0),
+    }))
+    chartKeys.value = [...new Set(chartLabels)].filter(
+      (value) => value !== undefined,
+    )
   }
 
-  const extractYearlyChartData = () => {
-    const { previousYears } = useYear(5)
-    let values = Array(previousYears.length).fill(0)
-
-    toValue(data).map((point) => {
-      const value = extractKeysFromObject(point, keys)
-      values[value[keys[0]]] = value[keys[1]]
-    })
-
-    series.value = [{ data: values, name: label }]
-  }
-
-  const extractKeysFromObject = (obj, keysToExtract) => {
-    const extractedValues = {}
-
-    for (const key of keysToExtract) {
-      if (Object.hasOwn(obj, key)) {
-        extractedValues[key] = obj[key]
-      }
+  const extractKeyFromObject = (obj, key) => {
+    const extractedValue = {}
+    if (Object.hasOwn(obj, key)) {
+      extractedValue[key] = obj[key]
     }
-
-    return extractedValues
+    return extractedValue
   }
+
   return {
     extractMonthlyChartData,
-    extractYearlyChartData,
     series,
+    statsSeries,
+    chartKeys,
   }
 }

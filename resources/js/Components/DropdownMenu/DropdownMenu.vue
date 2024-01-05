@@ -32,7 +32,7 @@ const props = defineProps({
 <template>
   <div
     :id="props.target"
-    class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-700"
+    class="z-20 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-700"
   >
     <slot></slot>
   </div>

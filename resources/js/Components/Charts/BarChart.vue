@@ -1,22 +1,38 @@
 <script setup>
-import { onMounted, onUnmounted, reactive, ref, computed } from 'vue'
+import { onUnmounted, reactive, ref, computed } from 'vue'
 import VueApexCharts from 'vue3-apexcharts'
-
-const emit = defineEmits(['init'])
 
 const props = defineProps({
   chartData: {
     type: Array,
-    required: false,
     default: () => [],
   },
   seriesTitle: {
     type: String,
     required: true,
   },
+  seriesCategories: {
+    type: Array,
+    default: () => [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ],
+  },
 })
 const chartObject = ref(null)
-const data = computed(() => props.chartData.series)
+// chart data
+const chartSeries = computed(() => props.chartData)
+const seriesCategories = computed(() => props.seriesCategories)
 
 // chart configurations
 const chart = reactive({
@@ -27,7 +43,7 @@ const chart = reactive({
       },
       type: 'bar',
       stacked: false,
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: '"Public Sans", sans-serif',
     },
     plotOptions: {
       bar: {
@@ -42,24 +58,25 @@ const chart = reactive({
     stroke: {
       show: true,
       width: 2,
-      colors: ['transparent'],
     },
     xaxis: {
-      categories: [
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-      ],
+      categories: seriesCategories,
     },
     yaxis: {
       title: {
         text: 'Members',
+      },
+    },
+    legend: {
+      floating: false,
+      position: 'bottom',
+      horizontalAlign: 'center',
+      offsetX: 0,
+      offsetY: 3,
+      fontSize: '13px',
+      fontFamily: '"Public Sans", sans-serif',
+      labels: {
+        colors: 'bg-green-100',
       },
     },
     fill: {
@@ -75,23 +92,17 @@ const chart = reactive({
   },
 })
 
-onMounted(() => {
-  initiateChart()
-})
-
 onUnmounted(() => {
-  chartObject.value.destroy()
+  console.log('chart', chartObject.value)
 })
-
-const initiateChart = () => {
-  emit('init')
-}
 </script>
+
 <template>
   <VueApexCharts
     ref="chartObject"
-    height="300"
+    class="z-10"
+    height="350"
     :options="chart.options"
-    :series="data"
+    :series="chartSeries"
   />
 </template>
