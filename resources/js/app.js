@@ -10,8 +10,8 @@ createInertiaApp({
     color: '#29d',
     showSpinner: true,
   },
-  resolve: (name) =>
-    resolvePageComponent(
+  resolve: async (name) =>
+    await resolvePageComponent(
       `./Pages/${name}.vue`,
       import.meta.glob('./Pages/**/*.vue'),
     ),

@@ -8,8 +8,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    required: true,
-    default: 'pink',
+    default: () => 'gray',
   },
   title: {
     type: String,
@@ -33,6 +32,7 @@ const theme = computed(() => `text-${props.color}-500`)
 const themeBackground = computed(() => `bg-${props.color}-50`)
 </script>
 <template>
+  {{ theme }} {{ themeBackground }}
   <div
     class="mt-8 flex items-center justify-between rounded-md border px-6 py-4 shadow-sm"
   >
@@ -56,7 +56,7 @@ const themeBackground = computed(() => `bg-${props.color}-50`)
     <component
       :is="props.icon"
       class="h-10 w-10 rounded-full px-2 py-2"
-      :class="[theme, themeBackground]"
+      :class="[themeBackground, theme]"
     />
   </div>
 </template>

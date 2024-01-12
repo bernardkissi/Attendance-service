@@ -2,6 +2,29 @@
 import { onMounted, ref, watch, computed } from 'vue'
 import { Dropdown } from 'flowbite'
 
+const props = defineProps({
+  target: {
+    type: String,
+    required: true,
+  },
+  triggerEl: {
+    type: String,
+    required: true,
+  },
+  active: {
+    type: Boolean,
+    default: false,
+  },
+  size: {
+    type: String,
+    default: 'w-full',
+  },
+  close: {
+    type: Boolean,
+    default: false,
+  },
+})
+
 const demo = ref(null)
 const closeFilter = computed(() => props.close)
 
@@ -35,29 +58,6 @@ onMounted(() => {
 watch(closeFilter, () => {
   console.log('closing')
   demo.value.hide()
-})
-
-const props = defineProps({
-  target: {
-    type: String,
-    required: true,
-  },
-  triggerEl: {
-    type: String,
-    required: true,
-  },
-  active: {
-    type: Boolean,
-    default: false,
-  },
-  size: {
-    type: String,
-    default: 'w-full',
-  },
-  close: {
-    type: Boolean,
-    default: false,
-  },
 })
 </script>
 

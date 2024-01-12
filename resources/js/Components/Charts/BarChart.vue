@@ -76,7 +76,7 @@ const chart = reactive({
       fontSize: '13px',
       fontFamily: '"Public Sans", sans-serif',
       labels: {
-        colors: 'bg-green-100',
+        colors: 'bg-red-100',
       },
     },
     fill: {

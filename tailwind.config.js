@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,6 +9,12 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        emerald: colors.emerald,
+        indigo: colors.indigo,
+        rose: colors.rose,
+        cyan: colors.cyan,
+      },
       fontFamily: {
         sans: ['Public Sans', 'sans-serif'],
       },

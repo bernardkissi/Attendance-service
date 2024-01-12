@@ -11,7 +11,7 @@ const members = ref(false)
 <template>
   <div>
     <ul
-      class="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200"
+      class="divide-y divide-gray-100 p-3 text-sm text-gray-700 dark:text-gray-200"
       aria-labelledby="dropdownHelperButton"
     >
       <li>
@@ -36,7 +36,7 @@ const members = ref(false)
                 id="helper-checkbox-text-1"
                 class="text-xs font-normal text-gray-500 dark:text-gray-300"
               >
-                Filter by gender attendance.
+                Filter by attendance gender.
               </p>
             </label>
           </div>
