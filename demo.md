@@ -1207,3 +1207,185 @@ const chart = reactive({
   },
 })
 </script>
+
+
+
+
+<!-- <Table>
+            <TableCaption>
+              <div class="flex items-center justify-between space-x-5">
+                <div>
+                  <span>Monthly Service Statistics</span>
+                  <p class="py-2 text-base font-normal text-gray-500">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Perspiciatis asperiores maxime veritatis dolorem
+                  </p>
+                </div>
+
+                <div>
+                  <span>...</span>
+                </div>
+              </div>
+            </TableCaption>
+            <TableBody>
+              <TableRow>
+                <TableCell :col="2">
+                  <!-- chart -->
+                  <BarChart
+                    :chart-data="statsData"
+                    :series-categories="labels"
+                    series-title="Demo Test"
+                  ></BarChart>
+                  <!-- end of chart -->
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell class="flex items-center space-x-3">
+                  <DeviceTabletIcon
+                    class="h-6 w-6 text-gray-400"
+                  ></DeviceTabletIcon>
+                  <div class="flex flex-col">
+                    <span class="font-semibold">Monthly Attendance</span>
+                    <div class="flex items-start space-x-1 text-sm">
+                      <div
+                        class="flex items-center font-semibold text-green-500"
+                      >
+                        <ArrowSmallUpIcon class="h-4 w-4" />
+                        <span>2.5%</span>
+                      </div>
+                      <span class="text-gray-400"
+                        >more than previous Month</span
+                      >
+                    </div>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div class="flex flex-col">
+                    <span class="text-sm font-semibold">137 members</span>
+                    <span class="text-sm text-gray-400">Expected 245</span>
+                  </div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell class="flex items-center space-x-3">
+                  <DeviceTabletIcon
+                    class="h-6 w-6 text-gray-400"
+                  ></DeviceTabletIcon>
+                  <div class="flex flex-col">
+                    <span class="font-semibold">Monthly Absentees</span>
+                    <div class="flex items-center space-x-1 text-sm">
+                      <div class="flex items-start font-semibold text-red-500">
+                        <ArrowSmallUpIcon class="h-4 w-4" />
+                        <span>2.5%</span>
+                      </div>
+                      <span class="text-gray-400"
+                        >less than previous month</span
+                      >
+                    </div>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div class="flex flex-col">
+                    <span class="text-sm font-semibold">37 members</span>
+                    <span class="text-sm text-gray-400">out of 245</span>
+                  </div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell class="flex items-center space-x-3">
+                  <DeviceTabletIcon
+                    class="h-6 w-6 text-gray-400"
+                  ></DeviceTabletIcon>
+                  <div class="flex flex-col">
+                    <span class="font-semibold"
+                      >Monthly Service Recurrence</span
+                    >
+                    <span class="text-sm text-gray-400"
+                      >Number of times service occurred</span
+                    >
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div class="flex flex-col">
+                    <span class="text-sm font-semibold">3 times</span>
+                    <span class="text-sm text-gray-400">out of 3 times</span>
+                  </div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell class="flex items-center space-x-3">
+                  <DeviceTabletIcon
+                    class="h-6 w-6 text-gray-400"
+                  ></DeviceTabletIcon>
+                  <div class="flex flex-col">
+                    <span class="font-semibold"
+                      >Monthly Expected Attendance</span
+                    >
+                    <span class="text-sm text-gray-400"
+                      >Each member should attended service 3 times</span
+                    >
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div class="flex flex-col">
+                    <span class="text-sm font-semibold">245 counts</span>
+                    <span class="text-sm text-gray-400"
+                      >56 count per service</span
+                    >
+                  </div>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table> -->
+
+
+
+          <!-- history -->
+
+
+          <Table>
+            <TableCaption>
+              <div class="flex items-center justify-between space-x-5">
+                <div>
+                  <span>Recent Services Attendance</span>
+                  <p class="py-2 text-base font-normal text-gray-500">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Perspiciatis asperiores maxime veritatis dolorem
+                  </p>
+                </div>
+
+                <div>
+                  <span>...</span>
+                </div>
+              </div>
+            </TableCaption>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Service</TableHead>
+                <TableHead>Details</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell class="flex items-center space-x-3">
+                  <CalendarDaysIcon
+                    class="h-6 w-6 text-gray-400"
+                  ></CalendarDaysIcon>
+                  <div class="flex flex-col">
+                    <span class="font-semibold">Midweek Service</span>
+                    <span class="text-sm text-gray-400"
+                      >c9ccf79d-3a70-4811-a070-3b6df63b4bf2</span
+                    >
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div class="flex flex-col">
+                    <span class="text-sm font-bold text-yellow-500"
+                      >Cancelled</span
+                    >
+                    <span class="text-sm text-gray-500">Sun Apr 30 2023</span>
+                  </div>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>

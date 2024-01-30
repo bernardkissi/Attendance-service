@@ -21,15 +21,13 @@ defineProps({
       <!-- navbar -->
       <NavBar :name="title"></NavBar>
       <!-- end navbar -->
-      <section
-        class="flex space-x-8 divide-x divide-dashed divide-gray-100 px-8"
-      >
-        <div class="flex w-64 flex-col pb-8 pt-2">
+      <section class="flex space-x-4 px-4">
+        <div class="flex w-1/5 flex-col px-2 pb-8 pt-2">
           <!-- content side section -->
           <slot name="sidenav"></slot>
           <!-- end of content side section -->
         </div>
-        <div class="relative flex-1 flex-col space-y-8 px-3 pt-8">
+        <div class="flex w-4/5 flex-col space-y-8 px-2 py-8">
           <!-- main content section -->
           <slot name="content"></slot>
           <!-- end of main content section -->

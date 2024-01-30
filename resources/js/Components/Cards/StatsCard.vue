@@ -32,17 +32,18 @@ const theme = computed(() => `text-${props.color}-500`)
 const themeBackground = computed(() => `bg-${props.color}-50`)
 </script>
 <template>
-  {{ theme }} {{ themeBackground }}
   <div
-    class="mt-8 flex items-center justify-between rounded-md border px-6 py-4 shadow-sm"
+    class="mt-8 flex items-center justify-between rounded-md border px-4 py-3 shadow-sm"
   >
     <div class="flex flex-col items-start">
       <div class="flex items-baseline space-x-5">
-        <p class="pb-1 text-sm font-semibold text-gray-600">
+        <p class="pb-1 text-sm font-semibold text-gray-500">
           {{ props.title }}
         </p>
       </div>
-      <h4 class="text-4xl font-bold" :class="theme">{{ props.value }}</h4>
+      <h4 class="text-2xl font-bold xl:text-4xl" :class="theme">
+        {{ props.value }}
+      </h4>
       <p v-if="props.hasTrends" class="flex space-x-1 pt-2 text-xs">
         <component
           :is="props.trend.icon"

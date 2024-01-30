@@ -41,7 +41,7 @@ const chart = reactive({
       animations: {
         enabled: true,
       },
-      type: 'bar',
+      type: 'line',
       stacked: false,
       fontFamily: '"Public Sans", sans-serif',
     },

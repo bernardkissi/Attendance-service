@@ -57,7 +57,7 @@ const menuItems = reactive({
 </script>
 
 <template>
-  <aside class="relative w-64 px-6 py-4">
+  <aside class="relative w-[15rem] px-4 py-4">
     <!-- SideBar Header -->
     <SideBarHeader name="Attendanc"></SideBarHeader>
     <!-- End SideBar Header -->

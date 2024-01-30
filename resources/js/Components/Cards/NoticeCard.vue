@@ -16,7 +16,7 @@ const props = defineProps({
 </script>
 <template>
   <div
-    class="flex items-center justify-between space-x-2 rounded-md border px-6 py-4 shadow-sm"
+    class="flex items-center justify-between space-x-2 rounded-md border px-4 py-4 shadow-sm"
   >
     <div class="flex flex-col items-start">
       <div class="flex items-baseline space-x-5">

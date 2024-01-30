@@ -23,6 +23,10 @@ import TableRow from '@/Components/Tables/TableRow.vue'
 import TableBody from '@/Components/Tables/TableBody.vue'
 import TableCell from '@/Components/Tables/TableCell.vue'
 
+import DropdownMenu from '@/Components/DropdownMenu/DropdownMenu.vue'
+import DropdownMenuList from '@/Components/DropdownMenu/DropdownMenuList.vue'
+import DropdownMenuItem from '@/Components/DropdownMenu/DropdownMenuItem.vue'
+
 // demo api
 import { serviceApi, attendanceApi, genderStatisticsApi } from '@/Utils/api'
 
@@ -32,7 +36,7 @@ import { useSelectedService } from '@/Composables/useSelectedService'
 
 // For Demo purposes
 const startDate = new Date()
-const endDate = new Date('2024-01-09T11:59:30')
+const endDate = new Date('2024-01-18T11:59:30')
 
 // icon imports
 import {
@@ -44,9 +48,10 @@ import {
   ChevronDownIcon,
   AdjustmentsHorizontalIcon,
   CalendarDaysIcon,
-  DeviceTabletIcon,
   ArrowSmallUpIcon,
   ClockIcon,
+  ChartBarIcon,
+  EllipsisHorizontalIcon,
 } from '@heroicons/vue/24/outline'
 
 import { useElementVisibility } from '@vueuse/core'
@@ -121,42 +126,42 @@ onMounted(() => {
       <div class="-pb-2 mt-8 flex items-center justify-between rounded">
         <div class="flex items-center space-x-2">
           <CalendarIcon class="h-5 w-5" />
-          <span class="text-lg font-medium">Live Updates</span>
+          <span class="text-base font-bold">Live Updates</span>
         </div>
-        <span class="text-sm text-gray-500">View</span>
+        <a href="" class="text-sm text-blue-500">view</a>
       </div>
       <!-- end of heading -->
 
       <!-- successful checkin card -->
       <StatsCard
         :icon="CheckBadgeIcon"
-        title="Success Checkins"
-        value="45 M"
+        title="Checked In"
+        value="45"
         color="green"
       ></StatsCard>
       <!-- end card -->
       <!-- pending checkin card -->
       <StatsCard
         :icon="ExclamationCircleIcon"
-        title="Pending Checkins"
-        value="10 M"
+        title="Not Checked In"
+        value="10"
         color="gray"
       ></StatsCard>
       <!-- end card -->
       <!-- failed checkin card -->
       <StatsCard
         :icon="XCircleIcon"
-        title="Failed Checkins"
-        value="10 M"
-        color="rose"
+        title="CheckIn Failed"
+        value="10"
+        color="pink"
       ></StatsCard>
       <!-- end card -->
       <div class="mt-8 flex items-center justify-between rounded pb-6">
         <div class="flex items-center space-x-2">
           <CalendarIcon class="h-5 w-5" />
-          <span class="text-lg font-medium">Upcoming</span>
+          <span class="text-base font-bold">Upcoming</span>
         </div>
-        <span class="text-sm text-gray-500">View</span>
+        <a href="" class="text-sm text-blue-500">view</a>
       </div>
 
       <!-- upcoming service card -->
@@ -169,10 +174,10 @@ onMounted(() => {
     </template>
     <template #content>
       <!-- Analytics Filters -->
-      <div class="item-center flex justify-between px-5 py-1">
+      <div class="flex items-center justify-between px-5 py-1">
         <div>
           <h4 class="text-xl font-bold">Attendance Summary</h4>
-          <span class="text-gray-500"
+          <span class="text-sm text-gray-500"
             >Entire year's attendance analysis for a service</span
           >
         </div>
@@ -203,7 +208,7 @@ onMounted(() => {
               class="flex items-center space-x-2 rounded-md border border-gray-300 bg-white px-3 py-3 text-sm font-medium text-gray-500 shadow-sm"
             >
               <CalendarDaysIcon class="h-4 w-4"></CalendarDaysIcon>
-              <span>Dec 7, 2021 - Dec 2, 2021</span>
+              <span class="text-sm">Dec 7, 2021 - Dec 2, 2021</span>
               <ChevronDownIcon
                 v-if="!dateFilterDropdownVisible"
                 class="h-4 w-4"
@@ -223,7 +228,9 @@ onMounted(() => {
               type="button"
               class="flex items-center space-x-2 rounded-md border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-500 shadow-sm"
             >
-              <span>{{ selectedService ?? 'Select Service' }}</span>
+              <span class="text-sm">{{
+                selectedService ?? 'Select Service'
+              }}</span>
               <ChevronDownIcon
                 v-if="!targetIsVisible"
                 class="h-4 w-4"
@@ -252,72 +259,58 @@ onMounted(() => {
       <BarChart :chart-data="chartData" series-title="Demo Test"></BarChart>
       <!-- end of chart -->
 
-      <div class="flex items-start justify-between space-x-8">
-        <!-- Service stats table -->
-        <div class="w-2/4 py-3">
+      <!--Tables Sections -->
+      <div class="flex items-start justify-between space-x-5">
+        <!-- table-analytics -->
+        <div class="w-1/2">
           <Table>
             <TableCaption>
               <div class="flex items-center justify-between space-x-5">
                 <div>
                   <span>Monthly Service Statistics</span>
-                  <p class="py-2 text-base font-normal text-gray-500">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Perspiciatis asperiores maxime veritatis dolorem
+                  <p class="text-sm font-normal text-gray-500">
+                    Service statistics for the current month.
                   </p>
                 </div>
 
                 <div>
-                  <span>...</span>
+                  <EllipsisHorizontalIcon
+                    class="h-8 w-8 rounded-md border border-gray-100 px-1 py-1 hover:bg-gray-50 hover:text-gray-400"
+                  ></EllipsisHorizontalIcon>
                 </div>
               </div>
             </TableCaption>
-            <TableBody>
+            <TableHeader>
               <TableRow>
-                <TableCell :col="2">
-                  <!-- chart -->
-                  <BarChart
+                <TableHead class="flex items-center space-x-1">
+                  <span>Metrics: </span>
+                  <span
+                    class="rounded-lg bg-amber-50 px-2 py-1 text-xs font-bold text-amber-500"
+                  >
+                    Sunday Service</span
+                  >
+                </TableHead>
+                <TableHead>Values</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <!-- <TableRow>
+                <TableCell :col="2"> -->
+              <!-- chart -->
+              <!-- <BarChart
                     :chart-data="statsData"
                     :series-categories="labels"
                     series-title="Demo Test"
-                  ></BarChart>
-                  <!-- end of chart -->
-                </TableCell>
-              </TableRow>
+                  ></BarChart> -->
+              <!-- end of chart -->
+              <!-- </TableCell>
+              </TableRow> -->
               <TableRow>
                 <TableCell class="flex items-center space-x-3">
-                  <DeviceTabletIcon
-                    class="h-6 w-6 text-gray-400"
-                  ></DeviceTabletIcon>
+                  <ChartBarIcon class="h-6 w-6 text-gray-400"></ChartBarIcon>
                   <div class="flex flex-col">
                     <span class="font-semibold">Monthly Attendance</span>
-                    <div class="flex items-start space-x-1 text-sm">
-                      <div
-                        class="flex items-center font-semibold text-green-500"
-                      >
-                        <ArrowSmallUpIcon class="h-4 w-4" />
-                        <span>2.5%</span>
-                      </div>
-                      <span class="text-gray-400"
-                        >more than previous Month</span
-                      >
-                    </div>
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <div class="flex flex-col">
-                    <span class="text-sm font-semibold">137 members</span>
-                    <span class="text-sm text-gray-400">Expected 245</span>
-                  </div>
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell class="flex items-center space-x-3">
-                  <DeviceTabletIcon
-                    class="h-6 w-6 text-gray-400"
-                  ></DeviceTabletIcon>
-                  <div class="flex flex-col">
-                    <span class="font-semibold">Monthly Absentees</span>
-                    <div class="flex items-center space-x-1 text-sm">
+                    <div class="flex items-center space-x-1 text-xs">
                       <div class="flex items-start font-semibold text-red-500">
                         <ArrowSmallUpIcon class="h-4 w-4" />
                         <span>2.5%</span>
@@ -331,20 +324,43 @@ onMounted(() => {
                 <TableCell>
                   <div class="flex flex-col">
                     <span class="text-sm font-semibold">37 members</span>
-                    <span class="text-sm text-gray-400">out of 245</span>
+                    <span class="text-xs text-gray-400">out of 245</span>
                   </div>
                 </TableCell>
               </TableRow>
               <TableRow>
                 <TableCell class="flex items-center space-x-3">
-                  <DeviceTabletIcon
-                    class="h-6 w-6 text-gray-400"
-                  ></DeviceTabletIcon>
+                  <ChartBarIcon class="h-6 w-6 text-gray-400"></ChartBarIcon>
+                  <div class="flex flex-col">
+                    <span class="font-semibold">Monthly Absentees</span>
+                    <div class="flex items-center space-x-1 text-xs">
+                      <div
+                        class="flex items-start font-semibold text-green-500"
+                      >
+                        <ArrowSmallUpIcon class="h-4 w-4" />
+                        <span>2.5%</span>
+                      </div>
+                      <span class="text-gray-400"
+                        >less than previous month</span
+                      >
+                    </div>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div class="flex flex-col">
+                    <span class="text-sm font-semibold">37 members</span>
+                    <span class="text-xs text-gray-400">out of 245</span>
+                  </div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell class="flex items-center space-x-3">
+                  <ChartBarIcon class="h-6 w-6 text-gray-400"></ChartBarIcon>
                   <div class="flex flex-col">
                     <span class="font-semibold"
                       >Monthly Service Recurrence</span
                     >
-                    <span class="text-sm text-gray-400"
+                    <span class="text-xs text-gray-400"
                       >Number of times service occurred</span
                     >
                   </div>
@@ -352,28 +368,26 @@ onMounted(() => {
                 <TableCell>
                   <div class="flex flex-col">
                     <span class="text-sm font-semibold">3 times</span>
-                    <span class="text-sm text-gray-400">out of 3 times</span>
+                    <span class="text-xs text-gray-400">out of 3 times</span>
                   </div>
                 </TableCell>
               </TableRow>
               <TableRow>
                 <TableCell class="flex items-center space-x-3">
-                  <DeviceTabletIcon
-                    class="h-6 w-6 text-gray-400"
-                  ></DeviceTabletIcon>
+                  <ChartBarIcon class="h-6 w-6 text-gray-400"></ChartBarIcon>
                   <div class="flex flex-col">
                     <span class="font-semibold"
                       >Monthly Expected Attendance</span
                     >
-                    <span class="text-sm text-gray-400"
-                      >Each member should attended service 3 times</span
+                    <span class="text-xs text-gray-400"
+                      >Recurring attendance count 3</span
                     >
                   </div>
                 </TableCell>
                 <TableCell>
                   <div class="flex flex-col">
                     <span class="text-sm font-semibold">245 counts</span>
-                    <span class="text-sm text-gray-400"
+                    <span class="text-xs text-gray-400"
                       >56 count per service</span
                     >
                   </div>
@@ -382,58 +396,162 @@ onMounted(() => {
             </TableBody>
           </Table>
         </div>
-        <!-- end of service stats table -->
 
-        <!-- service history tables -->
-        <!-- table demo -->
-        <Table class="flex-1">
-          <TableCaption>
-            <div class="flex items-center justify-between space-x-5">
-              <div>
-                <span>Recent Services Attendance</span>
-                <p class="py-2 text-base font-normal text-gray-500">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Perspiciatis asperiores maxime veritatis dolorem
-                </p>
-              </div>
+        <!-- table-history-->
+        <div class="w-1/2">
+          <Table>
+            <TableCaption>
+              <div class="flex items-center justify-between space-x-5">
+                <div>
+                  <span>Recent Services Attendance</span>
+                  <p class="text-sm font-normal text-gray-500">
+                    History of the recent services.
+                  </p>
+                </div>
 
-              <div>
-                <span>...</span>
+                <div>
+                  <button
+                    id="tableDropdown"
+                    type="button"
+                    class="text-lg hover:text-gray-400"
+                  >
+                    <EllipsisHorizontalIcon
+                      class="h-8 w-8 rounded-md border border-gray-100 px-1 py-1 hover:bg-gray-50 hover:text-gray-400"
+                    ></EllipsisHorizontalIcon>
+                  </button>
+                  <DropdownMenu target="tableStats" trigger-el="tableDropdown">
+                    <DropdownMenuList>
+                      <template #header>
+                        <div
+                          class="bg-gray-50 px-4 py-3 text-sm text-gray-900 dark:text-white"
+                        >
+                          <div class="truncate font-medium">
+                            Sort Services By
+                          </div>
+                        </div>
+                      </template>
+                      <DropdownMenuItem
+                        name="Latest"
+                        link="/account"
+                      ></DropdownMenuItem>
+                      <DropdownMenuItem
+                        name="Oldest"
+                        link="/settings"
+                      ></DropdownMenuItem>
+                      <DropdownMenuItem
+                        name="Active"
+                        link="/settings"
+                      ></DropdownMenuItem>
+                    </DropdownMenuList>
+                  </DropdownMenu>
+                </div>
               </div>
-            </div>
-          </TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Service</TableHead>
-              <TableHead>Details</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell class="flex items-center space-x-3">
-                <CalendarDaysIcon
-                  class="h-6 w-6 text-gray-400"
-                ></CalendarDaysIcon>
-                <div class="flex flex-col">
-                  <span class="font-semibold">Midweek Service</span>
-                  <span class="text-sm text-gray-400"
-                    >c9ccf79d-3a70-4811-a070-3b6df63b4bf2</span
-                  >
-                </div>
-              </TableCell>
-              <TableCell>
-                <div class="flex flex-col">
-                  <span class="text-sm font-bold text-yellow-500"
-                    >Cancelled</span
-                  >
-                  <span class="text-sm text-gray-500">Sun Apr 30 2023</span>
-                </div>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+            </TableCaption>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Services</TableHead>
+                <TableHead>Status</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell class="flex items-center space-x-3">
+                  <CalendarDaysIcon
+                    class="h-6 w-6 text-gray-400"
+                  ></CalendarDaysIcon>
+                  <div class="flex flex-col">
+                    <span class="font-semibold">Koninonia Service</span>
+                    <div class="flex items-center space-x-1 text-sws">
+                      <span class="text-gray-400"
+                        >c9ccf79d-3a70-4811-a070-3b6df63b4bf2</span
+                      >
+                    </div>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div class="flex flex-col">
+                    <span class="text-sm font-semibold text-green-500"
+                      >Running</span
+                    >
+                    <span class="text-xs text-gray-400">12.04.2024</span>
+                  </div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell class="flex items-center space-x-3">
+                  <CalendarDaysIcon
+                    class="h-6 w-6 text-gray-400"
+                  ></CalendarDaysIcon>
+                  <div class="flex flex-col">
+                    <span class="font-semibold">Havila Praise Week</span>
+                    <div class="flex items-center space-x-1 text-xs">
+                      <span class="text-gray-400"
+                        >c9ccf79d-3a70-4811-a070-3b6df63b4bf2</span
+                      >
+                    </div>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div class="flex flex-col">
+                    <span class="text-sm font-semibold text-red-500"
+                      >Ended</span
+                    >
+                    <span class="text-xs text-gray-400">11.04.2024</span>
+                  </div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell class="flex items-center space-x-3">
+                  <CalendarDaysIcon
+                    class="h-6 w-6 text-gray-400"
+                  ></CalendarDaysIcon>
+                  <div class="flex flex-col">
+                    <span class="font-semibold">Midweek Service</span>
+                    <div class="flex items-center space-x-1 text-xs">
+                      <span class="text-gray-400"
+                        >c9ccf79d-3a70-4811-a070-3b6df63b4bf2</span
+                      >
+                    </div>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div class="flex flex-col">
+                    <span class="text-sm font-semibold text-red-500"
+                      >Ended</span
+                    >
+                    <span class="text-xs text-gray-400">09.01.2024</span>
+                  </div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell class="flex items-center space-x-3">
+                  <CalendarDaysIcon
+                    class="h-6 w-6 text-gray-400"
+                  ></CalendarDaysIcon>
+                  <div class="flex flex-col">
+                    <span class="font-semibold">Sunday Service</span>
+                    <div class="flex items-center space-x-1 text-xs">
+                      <span class="text-gray-400"
+                        >c9ccf79d-3a70-4811-a070-3b6df63b4bf2</span
+                      >
+                    </div>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div class="flex flex-col">
+                    <span class="text-sm font-semibold text-red-500"
+                      >Ended</span
+                    >
+                    <span class="text-xs text-gray-400">09.01.2024</span>
+                  </div>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
         <!-- end of service history -->
       </div>
+      <!-- end of tables section -->
     </template>
   </BaseLayout>
 </template>

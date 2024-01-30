@@ -145,3 +145,61 @@ export const genderStatisticsApi = [
     female: 28,
   },
 ]
+
+export const churchServicesAPI = [
+  {
+     id: 1,
+     name:'Midweek Service',
+     type: 'recurring',
+     recurring_day: 'Wednesday',
+     startDate: null,
+     endDate: null,
+     startTime: '6:30pm',
+     endTime: '8:30pm',
+     status:'Ended'
+  },
+  {
+    id: 2,
+    name:'Sunday Service',
+    type: 'recurring',
+    recurring_day: 'Sunday',
+    startDate: null,
+    endDate: null,
+    startTime: '6:30pm',
+    endTime: '8:30pm',
+    status:'Paused'
+ },
+ {
+  id: 3,
+  name:'Havilia Praise Retreat',
+  type: 'Time Bound',
+  recurring_day: null,
+  startDate: '21.01.2024',
+  endDate: '23.01.2024',
+  startTime: '6:30pm',
+  endTime: '8:30pm',
+  status:'Active'
+},
+{
+  id: 4,
+  name:'New Bible',
+  type: 'Recurring',
+  recurring_day: 'Friday',
+  startDate: null,
+  endDate: null,
+  startTime: '6:30pm',
+  endTime: '8:30pm',
+  status:'Active'
+},
+{
+  id: 5,
+  name:'Church Choir Praise',
+  type: 'One Time',
+  recurring_day: null,
+  startDate: '21.01.2024',
+  endDate: '23.01.2024',
+  startTime: '6:30pm',
+  endTime: '8:30pm',
+  status:'Active'
+}
+]

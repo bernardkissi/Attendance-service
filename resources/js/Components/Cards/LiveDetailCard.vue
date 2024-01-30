@@ -69,7 +69,7 @@ watch([tick, startDateTime, endDateTime, startImmediately], () => {
 <template>
   <div class="mt-5 flex flex-col divide-y rounded-md border shadow-sm">
     <div id="header" class="px-6 py-4">
-      <div class="flex items-end justify-between">
+      <div class="flex items-center justify-between">
         <span class="pt-1 text-sm font-semibold">{{ name }}</span>
         <div
           :class="textColor"
@@ -85,20 +85,26 @@ watch([tick, startDateTime, endDateTime, startImmediately], () => {
               class="relative h-2 w-2 rounded-full text-xs"
             ></span>
           </div>
-          <span>{{ serviceState }}</span>
+          <!-- <span>{{ serviceState }}</span> -->
         </div>
       </div>
       <span class="text-xs text-gray-500">{{
         startDateTime.toDateString()
       }}</span>
+      <div :class="textColor" class="text-sm font-bold">
+        {{ serviceState }}
+      </div>
     </div>
-    <div class="container mx-auto px-6 py-4">
-      <img :src="qrcode" alt="qrcode" class="h-48 w-48" />
-    </div>
-    <div id="footer" class="flex items-center justify-between px-6 py-4">
+    <!-- <div class="container mx-auto px-6 py-4">
+      <img :src="qrcode" alt="qrcode" class="h-32 w-32" />
+    </div> -->
+    <div
+      id="footer"
+      class="flex items-center justify-between bg-gray-50 px-6 py-4"
+    >
       <div class="flex items-center space-x-1 text-sm">
         <span class="text-gray-400">{{
-          hasEnded ? 'Expired' : 'Expires in'
+          hasEnded ? 'Expired' : '&#128338; '
         }}</span>
         <span v-if="!hasEnded" class="text-xs font-medium text-gray-700"
           >{{ `${remainingHours}h` }} : {{ `${remainingMinutes}m` }} :

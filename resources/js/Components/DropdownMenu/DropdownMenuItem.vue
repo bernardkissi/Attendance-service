@@ -21,10 +21,11 @@ defineProps({
 <template>
   <li>
     <Link
+      as="button"
       :href="link"
-      class="group flex items-center space-x-2 px-4 py-2 hover:bg-gray-100"
+      class="group flex w-full items-center space-x-2 px-4 py-2 hover:bg-gray-100"
     >
-      <!-- <component :is="icon" class="h-6 w-6 text-gray-400"></component> -->
+      <component :is="icon" class="h-6 w-6 text-blue-400"></component>
       <span>{{ name }}</span>
     </Link>
   </li>
