@@ -36,7 +36,7 @@ import { useSelectedService } from '@/Composables/useSelectedService'
 
 // For Demo purposes
 const startDate = new Date()
-const endDate = new Date('2024-01-18T11:59:30')
+const endDate = new Date('2024-02-28T11:59:30')
 
 // icon imports
 import {
@@ -115,7 +115,7 @@ onMounted(() => {
         name="Sunday Service"
         :start-date-time="startDate"
         :end-date-time="endDate"
-        status="live"
+        status="Live"
         qrcode="images/qrcode.png"
         :start-immediately="true"
         :tick="1000"
@@ -461,7 +461,7 @@ onMounted(() => {
                   ></CalendarDaysIcon>
                   <div class="flex flex-col">
                     <span class="font-semibold">Koninonia Service</span>
-                    <div class="flex items-center space-x-1 text-sws">
+                    <div class="text-sws flex items-center space-x-1">
                       <span class="text-gray-400"
                         >c9ccf79d-3a70-4811-a070-3b6df63b4bf2</span
                       >

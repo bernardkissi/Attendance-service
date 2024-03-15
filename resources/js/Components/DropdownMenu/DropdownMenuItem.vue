@@ -25,7 +25,7 @@ defineProps({
       :href="link"
       class="group flex w-full items-center space-x-2 px-4 py-2 hover:bg-gray-100"
     >
-      <component :is="icon" class="h-6 w-6 text-blue-400"></component>
+      <component :is="icon" class="h-5 w-5 text-blue-400"></component>
       <span>{{ name }}</span>
     </Link>
   </li>

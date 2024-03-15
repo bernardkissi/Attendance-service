@@ -3,7 +3,8 @@ import { ref, computed } from 'vue'
 
 import BaseLayout from '@/Layouts/BaseLayout.vue'
 import StatsCard from '@/Components/Cards/StatsCard.vue'
-// import LiveDetailCard from '@/Components/Cards/LiveDetailCard.vue'
+import NoticeCard from '@/Components/Cards/NoticeCard.vue'
+import LiveDetailCard from '@/Components/Cards/LiveDetailCard.vue'
 
 import DropdownMenu from '@/Components/DropdownMenu/DropdownMenu.vue'
 import DropdownMenuList from '@/Components/DropdownMenu/DropdownMenuList.vue'
@@ -37,7 +38,15 @@ import {
   TrashIcon,
   ChevronDownIcon,
   MagnifyingGlassIcon,
+  ClockIcon,
+  CalendarIcon,
+  PencilSquareIcon,
+  EyeIcon,
 } from '@heroicons/vue/24/outline'
+
+// For Demo purposes
+const startDate = new Date()
+const endDate = new Date('2024-02-28T11:59:30')
 
 const data = ref(churchServicesAPI)
 const selectedServices = ref([])
@@ -59,6 +68,17 @@ const toggle = () => {
 <template>
   <BaseLayout title="Services">
     <template #sidenav>
+      <!-- Live Service -->
+      <LiveDetailCard
+        name="Sunday Service"
+        :start-date-time="startDate"
+        :end-date-time="endDate"
+        status="Live"
+        qrcode="images/qrcode.png"
+        :start-immediately="true"
+        :tick="1000"
+      ></LiveDetailCard>
+      <!-- End of Service -->
       <!-- successful checkin card -->
       <StatsCard
         :icon="CheckBadgeIcon"
@@ -80,6 +100,21 @@ const toggle = () => {
         value="5"
         color="gray"
       ></StatsCard>
+      <!-- end card -->
+      <div class="mt-8 flex items-center justify-between rounded pb-6">
+        <div class="flex items-center space-x-2">
+          <CalendarIcon class="h-5 w-5" />
+          <span class="text-base font-bold">Upcoming</span>
+        </div>
+        <a href="" class="text-sm text-blue-500">view</a>
+      </div>
+
+      <!-- upcoming service card -->
+      <NoticeCard
+        title="Havlia Praise Service"
+        name="starts in 9 mins"
+        :icon="ClockIcon"
+      ></NoticeCard>
     </template>
     <template #content>
       <div class="flex items-end justify-end space-x-3">
@@ -216,7 +251,41 @@ const toggle = () => {
               ></TableCell
             >
             <TableCell>
-              <EllipsisHorizontalIcon class="h-6 w-6"></EllipsisHorizontalIcon>
+              <button
+                :id="'editServiceDropdown' + service.id"
+                type="button"
+                class="border-none p-1 hover:rounded-full hover:bg-gray-100 active:bg-slate-200"
+              >
+                <EllipsisHorizontalIcon
+                  class="h-6 w-6"
+                ></EllipsisHorizontalIcon>
+                <!-- dropdown trigger for the actions -->
+                <DropdownMenu
+                  :target="'edit' + service.id"
+                  :trigger-el="'editServiceDropdown' + service.id"
+                >
+                  <DropdownMenuList>
+                    <!-- <template #header>
+                      <div
+                        class="bg-gray-50 px-4 py-3 text-sm text-gray-900 dark:text-white"
+                      >
+                        <div class="truncate font-medium">Actions</div>
+                      </div>
+                    </template> -->
+                    <DropdownMenuItem
+                      :icon="EyeIcon"
+                      name="View"
+                      link="/services/detail"
+                    ></DropdownMenuItem>
+                    <DropdownMenuItem
+                      :icon="PencilSquareIcon"
+                      name="Edit"
+                      link="/services/detail"
+                    ></DropdownMenuItem>
+                  </DropdownMenuList>
+                </DropdownMenu>
+                <!-- end of trigger -->
+              </button>
             </TableCell>
           </TableRow>
           <!-- end of table content -->

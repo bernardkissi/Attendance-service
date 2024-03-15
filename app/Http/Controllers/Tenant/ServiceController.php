@@ -11,4 +11,9 @@ class ServiceController extends Controller
     {
         return inertia('Tenant/TenantServices', []);
     }
+
+    public function show(): Response
+    {
+        return inertia('Tenant/TenantServiceDetail', []);
+    }
 }

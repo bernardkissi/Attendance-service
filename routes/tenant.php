@@ -24,7 +24,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('home');
-Route::get('/services', [ServiceController::class, 'index'])->name('services');
+Route::get('/services', [ServiceController::class, 'index'])->name('service.index');
+Route::get('/services/detail', [ServiceController::class, 'show'])->name('service.show');
 
 Route::get('attendance-summary', function (Request $request) {
     $dto = FilterQueryDTO::fromRequest($request);
