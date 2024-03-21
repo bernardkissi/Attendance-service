@@ -13,24 +13,11 @@ const props = defineProps({
   },
   seriesCategories: {
     type: Array,
-    default: () => [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-    ],
+    default: () => [],
   },
   chartType: {
     type: String,
-    default: 'area',
+    default: 'scatter',
   },
 })
 const chartObject = ref(null)
@@ -52,7 +39,7 @@ const chart = reactive({
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: '40%',
+        columnWidth: '60%',
         endingShape: 'rounded',
       },
     },
@@ -64,6 +51,13 @@ const chart = reactive({
       width: 2,
     },
     xaxis: {
+      title: {
+        text: 'Attendance CheckIn Time',
+      },
+      type: 'datetime',
+      labels: {
+        format: 'hh:mm:tt',
+      },
       categories: seriesCategories,
     },
     yaxis: {
@@ -89,8 +83,11 @@ const chart = reactive({
     tooltip: {
       y: {
         formatter: function (val) {
-          return val + ' Members'
+          return `${val} Members`
         },
+      },
+      x: {
+        format: 'hh:mm:tt',
       },
     },
   },

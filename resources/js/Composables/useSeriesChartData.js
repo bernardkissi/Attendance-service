@@ -4,7 +4,7 @@ import { ref, toValue } from 'vue'
 export function useSeriesChartData(data, options) {
   const series = ref(null)
   const statsSeries = ref(null)
-  const chartKeys = ref(null)
+  const chartKeys = ref(null) 
 
   const extractMonthlyChartData = () => {
     let chartSeries = []

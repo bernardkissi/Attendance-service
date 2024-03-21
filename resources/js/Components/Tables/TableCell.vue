@@ -10,8 +10,7 @@ defineProps({
     default: () => 1,
   },
   valueData: {
-    type: String,
-    default: '',
+    type: Number,
   },
 })
 </script>

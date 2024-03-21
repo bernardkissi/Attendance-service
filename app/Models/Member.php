@@ -14,8 +14,8 @@ use Laravel\Scout\Searchable;
 
 class Member extends Authenticatable
 {
-    use HasFactory,
-        HasApiTokens,
+    use HasApiTokens,
+        HasFactory,
         Searchable,
         Tenantable;
 

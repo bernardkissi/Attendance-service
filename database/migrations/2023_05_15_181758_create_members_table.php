@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('memberId')->unique();
             $table->string('name');
             $table->string('phone');
+            $table->string('sex');
             $table->integer('pin')->unique();
             $table->timestamps();
         });

@@ -3,7 +3,7 @@
 <template>
   <slot name="header"></slot>
   <ul
-    class="py-2 text-sm text-gray-700 dark:text-gray-200"
+    class="flex flex-col divide-y divide-dashed text-sm text-gray-700 dark:text-gray-200"
     aria-labelledby="dropdownDefaultButton"
   >
     <slot></slot>

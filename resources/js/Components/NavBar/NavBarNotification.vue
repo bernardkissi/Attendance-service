@@ -37,7 +37,7 @@ import { BellIcon } from '@heroicons/vue/24/outline'
         <NotificationMessage
           time="3 seconds ago"
           sender="System"
-          message="300 members attendded church service today"
+          message="300 members attended                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   dded church service today"
         ></NotificationMessage>
       </NotificationList>
       <NotificationFooter></NotificationFooter>

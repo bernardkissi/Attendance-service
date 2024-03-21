@@ -25,4 +25,16 @@ class ManageMember implements Action
         //TODO: check if the user is the owner
         Member::whereIn('id', $ids)->delete();
     }
+
+    public function switchMemberBranch(Member $member): void
+    {
+        //TODO: switch member from one branch to another
+        // what happens to their existing branch data
+
+        // replicate the existing member and create a new one 
+        // and record the transition in branch transition table
+
+        // mark the old member as deleted... this is ensure the previous activity is not distrupted.
+
+    }
 }

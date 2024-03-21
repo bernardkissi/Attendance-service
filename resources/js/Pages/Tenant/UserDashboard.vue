@@ -92,7 +92,7 @@ const onInitStatsChart = () => {
       keys: ['male', 'female'],
     })
   extractMonthlyChartData()
-  console.log('keyz', chartKeys)
+ 
   statsData.value = statsSeries.value
   labels.value = chartKeys.value
 }

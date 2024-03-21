@@ -203,3 +203,310 @@ export const churchServicesAPI = [
   status:'Active'
 }
 ]
+
+export const qrcodesAPI = [
+	{
+		id: 1,
+		identifier: 'cc2a87ad-0abc-4a50-8b0e-ecc4a4ca5ea3',
+		branch_id: 1,
+		service_id: 5,
+		active_at: '13:00:00',
+		expires_at: '16:00:00',
+		expired_on: '2023-07-18T01:13:06.000000Z',
+		service_date: '2023-08-19',
+		'qrcode_image_string': null,
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'distance_threshold': 4,
+		'checks': {
+			'time': true,
+			'service': true,
+			'location': true,
+			'membership': true
+		},
+		'expected_attendees': 20,
+		'allow_visiting_members': false,
+		'created_at': '2023-07-18T01:13:06.000000Z',
+		'updated_at': '2023-07-18T01:13:06.000000Z'
+	},
+	{
+		'id': 2,
+		'identifier': '8224f814-e438-4c6b-9b1b-d910e8085d53',
+		'branch_id': 1,
+		'service_id': 1,
+		'active_at': '13:00:00',
+		'expires_at': '16:00:00',
+		'expired_on': null,
+		'service_date': '2023-08-19',
+		'qrcode_image_string': null,
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'distance_threshold': 4,
+		'checks': {
+			'time': true,
+			'service': true,
+			'location': true,
+			'membership': true
+		},
+		'expected_attendees': 39,
+		'allow_visiting_members': false,
+		'created_at': '2023-07-18T01:13:06.000000Z',
+		'updated_at': '2023-07-18T01:13:06.000000Z'
+	},
+	{
+		'id': 3,
+		'identifier': 'e02506b2-42a8-490d-99cd-da60ccddd01b',
+		'branch_id': 1,
+		'service_id': 1,
+		'active_at': '13:00:00',
+		'expires_at': '16:00:00',
+		'expired_on': null,
+		'service_date': '2023-08-19',
+		'qrcode_image_string': null,
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'distance_threshold': 4,
+		'checks': {
+			'time': true,
+			'service': true,
+			'location': true,
+			'membership': true
+		},
+		'expected_attendees': 39,
+		'allow_visiting_members': false,
+		'created_at': '2023-06-18T01:13:06.000000Z',
+		'updated_at': '2023-07-18T01:13:06.000000Z'
+	},
+	{
+		'id': 4,
+		'identifier': 'dcbb8677-65f2-4afe-ae24-74ae49f427dd',
+		'branch_id': 1,
+		'service_id': 1,
+		'active_at': '13:00:00',
+		'expires_at': '16:00:00',
+		'expired_on': '2023-07-18T01:13:06.000000Z',
+		'service_date': '2023-08-19',
+		'qrcode_image_string': null,
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'distance_threshold': 4,
+		'checks': {
+			'time': true,
+			'service': true,
+			'location': true,
+			'membership': true
+		},
+		'expected_attendees': 39,
+		'allow_visiting_members': false,
+		'created_at': '2023-07-18T01:13:06.000000Z',
+		'updated_at': '2023-07-18T01:13:06.000000Z'
+	},
+	{
+		'id': 5,
+		'identifier': '56203764-d8a4-44de-aa24-f1cc7ffbf003',
+		'branch_id': 1,
+		'service_id': 5,
+		'active_at': '13:00:00',
+		'expires_at': '16:00:00',
+		'expired_on': '2023-07-18T01:13:06.000000Z',
+		'service_date': '2023-08-19',
+		'qrcode_image_string': null,
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'distance_threshold': 4,
+		'checks': {
+			'time': true,
+			'service': true,
+			'location': true,
+			'membership': true
+		},
+		'expected_attendees': 39,
+		'allow_visiting_members': false,
+		'created_at': '2023-07-18T01:13:06.000000Z',
+		'updated_at': '2023-07-18T01:13:06.000000Z'
+	}
+]
+
+export const QrcodeCheckInsApi = [
+  {
+		'id': 3,
+		'qrcode_id': 4,
+		'branch_id': 1,
+		'value': 3,
+		'service_id': 1,
+		'recorded_at': '2023-07-18T11:14:09.000000Z',
+		'device': 'web',
+		'user_agent': 'test',
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'recorded_by_user_id': null,
+		'ip_address': null,
+		'visitor_branch_id': null,
+		'created_at': null,
+		'updated_at': null
+	},
+	{
+		'id': 4,
+		'qrcode_id': 4,
+		'branch_id': 1,
+		'value': 8,
+		'service_id': 1,
+		'recorded_at': '2023-07-18T10:14:09.000000Z',
+		'device': 'web',
+		'user_agent': 'test',
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'recorded_by_user_id': null,
+		'ip_address': null,
+		'visitor_branch_id': null,
+		'created_at': null,
+		'updated_at': null
+	},
+	{
+		'id': 5,
+		'qrcode_id': 4,
+		'branch_id': 1,
+		'value': 7,
+		'service_id': 1,
+		'recorded_at': '2023-07-18T12:29:34.000000Z',
+		'device': 'web',
+		'user_agent': 'test',
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'recorded_by_user_id': null,
+		'ip_address': null,
+		'visitor_branch_id': null,
+		'created_at': null,
+		'updated_at': null
+	},
+	{
+		'id': 6,
+		'qrcode_id': 1,
+		'branch_id': 1,
+		'value': 15,
+		'service_id': 5,
+		'recorded_at': '2023-07-18T13:30:51.000000Z',
+		'device': 'web',
+		'user_agent': 'test',
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'recorded_by_user_id': null,
+		'ip_address': null,
+		'visitor_branch_id': null,
+		'created_at': null,
+		'updated_at': null
+	},
+	{
+		'id': 9,
+		'qrcode_id': 1,
+		'branch_id': 1,
+		'value': 22,
+		'service_id': 5,
+		'recorded_at': '2023-07-18T12:30:51.000000Z',
+		'device': 'web',
+		'user_agent': 'test',
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'recorded_by_user_id': null,
+		'ip_address': null,
+		'visitor_branch_id': null,
+		'created_at': null,
+		'updated_at': null
+	},
+	{
+		'id': 10,
+		'qrcode_id': 2,
+		'branch_id': 1,
+		'value': 7,
+		'service_id': 1,
+		'recorded_at': '2023-07-18T12:29:34.000000Z',
+		'device': 'web',
+		'user_agent': 'test',
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'recorded_by_user_id': null,
+		'ip_address': null,
+		'visitor_branch_id': null,
+		'created_at': null,
+		'updated_at': null
+	},
+	{
+		'id': 11,
+		'qrcode_id': 3,
+		'branch_id': 1,
+		'value': 7,
+		'service_id': 1,
+		'recorded_at': '2023-07-18T12:29:34.000000Z',
+		'device': 'web',
+		'user_agent': 'test',
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'recorded_by_user_id': null,
+		'ip_address': null,
+		'visitor_branch_id': null,
+		'created_at': null,
+		'updated_at': null
+	},
+	{
+		'id': 12,
+		'qrcode_id': 3,
+		'branch_id': 1,
+		'value': 3,
+		'service_id': 1,
+		'recorded_at': '2023-07-18T14:29:34.000000Z',
+		'device': 'web',
+		'user_agent': 'test',
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'recorded_by_user_id': null,
+		'ip_address': null,
+		'visitor_branch_id': null,
+		'created_at': null,
+		'updated_at': null
+	},
+	{
+		'id': 13,
+		'qrcode_id': 5,
+		'branch_id': 1,
+		'value': 3,
+		'service_id': 5,
+		'recorded_at': '2023-07-18T12:29:34.000000Z',
+		'device': 'web',
+		'user_agent': 'test',
+		'location': {
+			'latitude': 50.9406717,
+			'longitude': 7.0623543
+		},
+		'recorded_by_user_id': null,
+		'ip_address': null,
+		'visitor_branch_id': null,
+		'created_at': null,
+		'updated_at': null
+	}
+]

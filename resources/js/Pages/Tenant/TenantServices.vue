@@ -206,6 +206,7 @@ const toggle = () => {
             <TableHead>Commence On</TableHead>
             <TableHead>Ends On</TableHead>
             <TableHead>Status</TableHead>
+            <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

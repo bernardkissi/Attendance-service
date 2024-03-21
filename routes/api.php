@@ -93,3 +93,7 @@ Route::post('/member/import', function (Request $request) {
     CreateMember::importMembersFromCsv($request->file('file'));
     // return Excel::toCollection(new MembersImport, filePath: $request->file, readerType: \Maatwebsite\Excel\Excel::CSV);
 });
+
+Route::get('/members', function (Request $request) {
+    return Attendance::all();
+});
