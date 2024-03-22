@@ -19,7 +19,7 @@ export function useSelectCheckBoxes(data) {
     }
 
     const toggleAllCheckBoxes = () => {
-        console.log('count',selectedCheckedBoxes.value)
+        
         if(selectedCheckedBoxes.value.length > 0) {
             console.log('deselecting all checkboxes')
             return deSelectAllCheckBoxes()

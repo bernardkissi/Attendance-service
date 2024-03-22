@@ -8,6 +8,10 @@ import StatsCard from '@/Components/Cards/StatsCard.vue'
 
 import TimeSeriesChart from '@/Components/Charts/TimeSeriesChart.vue'
 
+import DropdownMenu from '@/Components/DropdownMenu/DropdownMenu.vue'
+import DropdownMenuList from '@/Components/DropdownMenu/DropdownMenuList.vue'
+import DropdownMenuItem from '@/Components/DropdownMenu/DropdownMenuItem.vue'
+
 // Table component
 import Table from '@/Components/Tables/BaseTable.vue'
 import TableHeader from '@/Components/Tables/TableHeader.vue'
@@ -23,22 +27,29 @@ import Pagination from '@/Components/Pagination/DefaultPagination.vue'
 
 import PrimaryButton from '@/Components/Button/PrimaryButton.vue'
 
-import { QrcodeCheckInsApi, qrcodesAPI } from '@/Utils/api'
+import { QrcodeCheckInsApi } from '@/Utils/api'
 
 import { useTimeSeriesChartData } from '@/Composables/useTimeSeriesChartData'
+import { useSelectCheckBoxes } from '@/Composables/useSelectCheckBoxes'
+
 // icon imports
 import {
   ExclamationCircleIcon,
   CheckBadgeIcon,
   ArrowDownTrayIcon,
   EllipsisHorizontalIcon,
-  //   EyeIcon,
-  //   PencilSquareIcon,
+  EyeIcon,
+  PencilSquareIcon,
   Cog8ToothIcon,
+  MagnifyingGlassIcon,
 } from '@heroicons/vue/24/outline'
+
+import { CheckCircleIcon } from '@heroicons/vue/24/solid'
 
 const chartData = ref([])
 const labels = ref([])
+
+const selectedServices = ref([])
 
 const attrs = ref([
   {
@@ -57,9 +68,16 @@ const onInitCheckInsChart = () => {
       keys: ['value'],
     })
   extractCheckInsChartData()
-  console.log(series, chartKeys)
+
   chartData.value = series.value
   labels.value = chartKeys.value
+}
+
+const toggle = () => {
+  const { toggleAllCheckBoxes, selectedCheckedBoxes } =
+    useSelectCheckBoxes(data)
+  toggleAllCheckBoxes()
+  selectedServices.value = selectedCheckedBoxes.value
 }
 
 onMounted(() => {
@@ -99,7 +117,7 @@ onMounted(() => {
       <!-- end of pending card -->
     </template>
     <template #content>
-      <div class="flex items-center justify-between">
+      <div class="flex items-start justify-between">
         <PrimaryButton class="relative flex items-center space-x-1">
           <div class="flex items-center">
             <span
@@ -112,11 +130,11 @@ onMounted(() => {
           >
         </PrimaryButton>
         <div class="flex items-center space-x-3 text-sm">
-          <PrimaryButton class="bg-gray-800 text-white">
+          <PrimaryButton selector="export" class="bg-gray-800 text-white">
             <ArrowDownTrayIcon class="h-5 w-5"></ArrowDownTrayIcon>
-            <span>Export</span>
+            <span>Download Qrcode</span>
           </PrimaryButton>
-          <PrimaryButton class="bg-gray-800 text-white">
+          <PrimaryButton selector="manage" class="bg-gray-800 text-white">
             <Cog8ToothIcon class="h-5 w-5"></Cog8ToothIcon>
             <span>Manage</span>
           </PrimaryButton>
@@ -147,27 +165,27 @@ onMounted(() => {
               <ul class="space-y-2 font-semibold">
                 <li class="flex items-center justify-between">
                   <span>Location</span>
-                  <CheckBadgeIcon
+                  <CheckCircleIcon
                     class="h-5 w-5 rounded-full bg-green-50 text-green-500"
-                  ></CheckBadgeIcon>
+                  ></CheckCircleIcon>
                 </li>
                 <li class="flex items-center justify-between">
                   <span>Time</span>
-                  <CheckBadgeIcon
+                  <CheckCircleIcon
                     class="h-5 w-5 rounded-full bg-green-50 text-green-500"
-                  ></CheckBadgeIcon>
+                  ></CheckCircleIcon>
                 </li>
                 <li class="flex items-center justify-between">
                   <span>Distance</span>
-                  <CheckBadgeIcon
+                  <CheckCircleIcon
                     class="h-5 w-5 rounded-full bg-green-50 text-green-500"
-                  ></CheckBadgeIcon>
+                  ></CheckCircleIcon>
                 </li>
                 <li class="flex items-center justify-between">
                   <span>Membership</span>
-                  <CheckBadgeIcon
-                    class="h-5 w-5 rounded-full bg-green-50 text-green-500"
-                  ></CheckBadgeIcon>
+                  <CheckCircleIcon
+                    class="h-5 w-5 rounded-full bg-gray-50 text-gray-400"
+                  ></CheckCircleIcon>
                 </li>
               </ul>
             </div>
@@ -177,9 +195,21 @@ onMounted(() => {
               </h4>
               <div class="flex items-center justify-between">
                 <span class="font-semibold">Allow visiting members</span>
-                <CheckBadgeIcon
+                <CheckCircleIcon
                   class="h-5 w-5 rounded-full bg-green-50 text-green-500"
-                ></CheckBadgeIcon>
+                ></CheckCircleIcon>
+              </div>
+            </div>
+            <div class="mt-4">
+              <h4 class="py-3 text-xs font-semibold uppercase text-gray-500">
+                Service
+              </h4>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold">Sunday Service</span>
+                <span
+                  class="rounded-lg bg-green-50 px-2 py-1 text-xs font-bold text-green-600"
+                  >Active</span
+                >
               </div>
             </div>
           </div>
@@ -189,67 +219,63 @@ onMounted(() => {
       <!-- Services Table -->
       <Table>
         <TableCaption>
-          <div class="flex items-center justify-between space-x-5">
+          <div class="flex items-start justify-between space-x-5">
             <div>
-              <span>Service Attendance</span>
-              <p class="py-2 text-base font-normal text-gray-500">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Perspiciatis asperiores maxime veritatis dolorem
-              </p>
+              <h3 class="text-xl font-bold">Service Attendance</h3>
+              <span class="py-2 text-sm font-normal text-gray-500">
+                Members who attended the service
+              </span>
             </div>
 
-            <div>
-              <span>...</span>
+            <div class="relative flex space-x-4">
+              <input
+                type="text"
+                placeholder="Search for Member eg. Derrick"
+                class="relative w-72 rounded-md border border-gray-200 py-[0.9rem] pl-12 text-sm placeholder-gray-400"
+              />
+              <MagnifyingGlassIcon
+                class="absolute inset-x-0 top-0 mt-4 h-5 w-5 text-gray-400"
+              ></MagnifyingGlassIcon>
             </div>
           </div>
         </TableCaption>
         <TableHeader>
           <TableRow>
-            <TableCell cell-type="checkbox" @click="toggle"></TableCell>
+            <TableCell cell-type="checkbox" @change="toggle"></TableCell>
             <TableHead>Name</TableHead>
-            <TableHead>Service Date</TableHead>
-            <TableHead>Active At</TableHead>
-            <TableHead>Expires At</TableHead>
-            <TableHead>Status</TableHead>
+            <TableHead>Recorded At</TableHead>
+            <TableHead>Device Used</TableHead>
+            <TableHead>IP Address</TableHead>
             <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           <!-- Actual table content -->
-          <TableRow v-for="qrcode in qrcodesAPI" :key="qrcode.id" :class="{}">
+          <TableRow
+            v-for="checkIn in QrcodeCheckInsApi"
+            :key="checkIn.id"
+            :class="{}"
+          >
             <TableCell
               v-model="selectedServices"
               cell-type="checkbox"
-              :value-data="qrcode.id"
+              :value-data="checkIn.id"
             ></TableCell>
             <TableCell>
-              <span class="font-semibold">{{ qrcode.identifier }}</span>
+              <span class="font-semibold">{{ checkIn.member }}</span>
             </TableCell>
-            <TableCell>{{ qrcode.service_date }}</TableCell>
+            <TableCell>{{ checkIn.recorded_at }}</TableCell>
             <TableCell>
-              <span class="text-gray-400">{{ qrcode.active_at ?? '--' }}</span>
+              <span class="text-gray-400">{{ checkIn.device }}</span>
             </TableCell>
             <TableCell>
-              <span class="text-gray-400">{{ qrcode.expires_at ?? '--' }}</span>
+              <span class="text-gray-400">{{
+                checkIn.ip_address ?? '172.168.0.9'
+              }}</span>
             </TableCell>
-            <TableCell
-              :class="{
-                'text-green-500': qrcode.expired_on == null,
-                'text-red-500': qrcode.expired_on != null,
-              }"
-              class="text-xs font-bold"
-              ><span
-                :class="{
-                  'bg-green-50': qrcode.expired_on == null,
-                  'bg-red-50': qrcode.expired_on != null,
-                }"
-                class="rounded-md bg-gray-50 px-2 py-1"
-                >{{ !qrcode.expired_on ? 'Active' : 'Ended' }}</span
-              ></TableCell
-            >
             <TableCell>
               <button
-                :id="'editServiceDropdown' + qrcode.id"
+                :id="'qrcodeDropdown' + checkIn.id"
                 type="button"
                 class="border-none p-1 hover:rounded-full hover:bg-gray-100 active:bg-slate-200"
               >
@@ -258,8 +284,8 @@ onMounted(() => {
                 ></EllipsisHorizontalIcon>
                 <!-- dropdown trigger for the actions -->
                 <DropdownMenu
-                  :target="'edit' + qrcode.id"
-                  :trigger-el="'editServiceDropdown' + qrcode.id"
+                  :target="'edit' + checkIn.id"
+                  :trigger-el="'qrcodeDropdown' + checkIn.id"
                 >
                   <DropdownMenuList>
                     <DropdownMenuItem
@@ -297,18 +323,3 @@ onMounted(() => {
   padding-right: 20px;
 }
 </style>
-<!-- 
-// information to be displayed
-// 1.checks that were run
-//. service it belongs to
-// expected attendancess
-// allowing visitors
-// download qrcode
-// edit qrcode time
-// distance threshold
-// qrcode image
-// memebers associated with qrcode
-
-// summary
-// CheckIns
-// Not Checked In -->

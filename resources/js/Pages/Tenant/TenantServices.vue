@@ -60,7 +60,6 @@ const toggle = () => {
   const { toggleAllCheckBoxes, selectedCheckedBoxes } =
     useSelectCheckBoxes(data)
   toggleAllCheckBoxes()
-  console.log(selectedCheckedBoxes.value)
   selectedServices.value = selectedCheckedBoxes.value
 }
 </script>
@@ -200,7 +199,7 @@ const toggle = () => {
         </TableCaption>
         <TableHeader>
           <TableRow>
-            <TableCell cell-type="checkbox" @click="toggle"></TableCell>
+            <TableCell cell-type="checkbox" @change="toggle"></TableCell>
             <TableHead>Service Name</TableHead>
             <TableHead>Recurring On</TableHead>
             <TableHead>Commence On</TableHead>

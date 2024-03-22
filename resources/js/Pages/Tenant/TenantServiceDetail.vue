@@ -50,18 +50,18 @@ import {
 // state
 const chartData = ref([])
 const selectedServices = ref([])
-const data = ref(attendanceApi)
+const data = ref(qrcodesAPI)
+const graphData = ref(attendanceApi)
 
 const toggle = () => {
   const { toggleAllCheckBoxes, selectedCheckedBoxes } =
     useSelectCheckBoxes(data)
   toggleAllCheckBoxes()
-  console.log(selectedCheckedBoxes.value)
   selectedServices.value = selectedCheckedBoxes.value
 }
 
 const onInitBaseChart = () => {
-  const { extractMonthlyChartData, series } = useSeriesChartData(data, {
+  const { extractMonthlyChartData, series } = useSeriesChartData(graphData, {
     identifier: 'month',
     keys: ['attendance', 'absence'],
   })
@@ -117,7 +117,10 @@ onMounted(() => {
 
     <template #content>
       <div class="flex items-center justify-between">
-        <PrimaryButton class="relative mx-4 flex items-center space-x-1">
+        <PrimaryButton
+          selector="service"
+          class="relative mx-4 flex items-center space-x-1"
+        >
           <div class="-mt-2 flex">
             <span
               class="absolute h-2 w-2 animate-ping rounded-full bg-green-500 opacity-75"
@@ -241,7 +244,7 @@ onMounted(() => {
         </TableCaption>
         <TableHeader>
           <TableRow>
-            <TableCell cell-type="checkbox" @click="toggle"></TableCell>
+            <TableCell cell-type="checkbox" @change="toggle"></TableCell>
             <TableHead>Qrcode Identifier</TableHead>
             <TableHead>Service Date</TableHead>
             <TableHead>Active At</TableHead>
