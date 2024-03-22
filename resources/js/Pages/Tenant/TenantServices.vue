@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
 
 import BaseLayout from '@/Layouts/BaseLayout.vue'
 import StatsCard from '@/Components/Cards/StatsCard.vue'
@@ -44,7 +45,6 @@ import {
   EyeIcon,
   XMarkIcon,
 } from '@heroicons/vue/24/outline'
-import { initFlowbite } from 'flowbite'
 
 // For Demo purposes
 const startDate = new Date()
@@ -52,6 +52,7 @@ const endDate = new Date('2024-02-28T11:59:30')
 
 const data = ref(churchServicesAPI)
 const selectedServices = ref([])
+const service_type = ref('time_bound')
 
 // computed properties
 const disableOptions = computed(() => {
@@ -180,7 +181,6 @@ onMounted(() => {
         <!-- end of trigger -->
 
         <!-- Offcanvas Start -->
-
         <button
           id="staticFilter"
           type="button"
@@ -194,10 +194,9 @@ onMounted(() => {
           <span>Create Service</span>
         </button>
 
-        <!-- Offcanvas content -->
         <div
           id="drawer-right-example"
-          class="fixed right-0 top-0 z-40 h-screen w-[30%] translate-x-full overflow-y-auto bg-white p-4 transition-transform dark:bg-gray-800"
+          class="fixed right-0 top-0 z-40 h-screen w-[35%] translate-x-full overflow-y-auto bg-white p-4 transition-transform dark:bg-gray-800"
           tabindex="-1"
           aria-labelledby="drawer-right-label"
         >
@@ -223,14 +222,29 @@ onMounted(() => {
 
           <div class="mt-4 flex flex-col gap-10">
             <div class="flex flex-col gap-4">
-              <div class="flex flex-col items-start gap-2">
-                <label for="name" class="text-sm"> Name </label>
-                <input
-                  id="name"
-                  type="text"
-                  placeholder="Koinonia service"
-                  class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
-                />
+              <div class="flex items-end gap-3">
+                <div class="flex w-2/3 flex-col gap-2">
+                  <label for="name" class="text-sm"> Name </label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Koinonia service"
+                    class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
+                  />
+                </div>
+                <div class="flex w-1/3 flex-col gap-2">
+                  <label for="service_type">Service Type</label>
+                  <select
+                    name="service_type"
+                    id="service_type"
+                    v-model="service_type"
+                    class="rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm text-gray-400"
+                  >
+                    <option value="time_bound">Time bound</option>
+                    <option value="recurring">Recurring</option>
+                    <option value="one_time">One Time</option>
+                  </select>
+                </div>
               </div>
               <div class="flex flex-col items-start gap-2">
                 <label for="description" class="text-sm"> Description </label>
@@ -245,26 +259,50 @@ onMounted(() => {
 
             <div class="flex flex-col gap-4">
               <div class="flex items-center gap-3">
-                <div class="flex w-full flex-col gap-2">
-                  <label for="start_date" class="text-sm"> Start date: </label>
+                <div
+                  v-if="service_type != 'recurring'"
+                  class="flex w-full flex-col gap-2"
+                >
+                  <label for="start_date" class="text-sm"> Start date </label>
                   <input
                     id="start_date"
                     type="date"
                     class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
                   />
                 </div>
-                <div class="flex w-full flex-col gap-2">
-                  <label for="end_date" class="text-sm"> End date: </label>
+                <div v-else class="flex w-full flex-col gap-2">
+                  <label for="day" class="text-sm"> Day </label>
+                  <select
+                    name="day"
+                    id="day"
+                    class="w-[50%] rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm text-gray-400"
+                  >
+                    <option value="sunday">Sunday</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                  </select>
+                </div>
+
+                <div
+                  v-if="service_type != 'recurring'"
+                  class="flex w-full flex-col gap-2"
+                >
+                  <label for="end_date" class="text-sm"> End date </label>
                   <input
                     id="end_date"
                     type="date"
                     class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
                   />
                 </div>
+                <div v-else></div>
               </div>
               <div class="flex items-center gap-3">
                 <div class="flex w-full flex-col gap-2">
-                  <label for="start_time" class="text-sm"> Start time: </label>
+                  <label for="start_time" class="text-sm"> Start time </label>
                   <input
                     id="start_time"
                     type="time"
@@ -272,7 +310,7 @@ onMounted(() => {
                   />
                 </div>
                 <div class="flex w-full flex-col gap-2">
-                  <label for="end_time" class="text-sm"> End time: </label>
+                  <label for="end_time" class="text-sm"> End time </label>
                   <input
                     id="end_time"
                     type="time"
@@ -282,6 +320,7 @@ onMounted(() => {
               </div>
             </div>
           </div>
+
           <div class="absolute bottom-4 end-2.5 flex w-full gap-4 pl-5">
             <button
               type="button"
@@ -298,7 +337,6 @@ onMounted(() => {
             </button>
           </div>
         </div>
-
         <!-- Offcanvas End -->
       </div>
       <!-- Services Table -->
