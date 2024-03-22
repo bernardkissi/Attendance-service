@@ -367,13 +367,14 @@ onMounted(() => {
                 Cancel
               </button>
               <button
-                class="flex w-full items-center justify-center rounded-md border border-gray-200 bg-green-300 px-4 py-3 text-green-950"
-              >
-                Save Changes
-              </button>
+              class="flex w-full items-center justify-center rounded-md border border-gray-200 bg-gray-800 px-4 py-3 text-gray-50"
+            >
+              Save Changes
+            </button>
             </div>
           </div>
           <!-- Offcanvas End -->
+
         </div>
       </div>
       <!-- chart area-->
