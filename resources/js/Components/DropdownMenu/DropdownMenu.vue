@@ -2,6 +2,17 @@
 import { onMounted } from 'vue'
 import { Dropdown } from 'flowbite'
 
+const props = defineProps({
+  target: {
+    type: String,
+    required: true,
+  },
+  triggerEl: {
+    type: String,
+    required: true,
+  },
+})
+
 onMounted(() => {
   const targetEl = document.getElementById(props.target)
   const triggerEl = document.getElementById(props.triggerEl)
@@ -16,16 +27,6 @@ onMounted(() => {
     const dropdown = new Dropdown(targetEl, triggerEl, options)
     dropdown.hide()
   }
-})
-const props = defineProps({
-  target: {
-    type: String,
-    required: true,
-  },
-  triggerEl: {
-    type: String,
-    required: true,
-  },
 })
 </script>
 

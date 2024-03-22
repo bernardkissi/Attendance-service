@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
 import BaseLayout from '@/Layouts/BaseLayout.vue'
 import StatsCard from '@/Components/Cards/StatsCard.vue'
@@ -42,7 +42,9 @@ import {
   CalendarIcon,
   PencilSquareIcon,
   EyeIcon,
+  XMarkIcon,
 } from '@heroicons/vue/24/outline'
+import { initFlowbite } from 'flowbite'
 
 // For Demo purposes
 const startDate = new Date()
@@ -62,6 +64,10 @@ const toggle = () => {
   toggleAllCheckBoxes()
   selectedServices.value = selectedCheckedBoxes.value
 }
+
+onMounted(() => {
+  initFlowbite()
+})
 </script>
 
 <template>
@@ -115,6 +121,7 @@ const toggle = () => {
         :icon="ClockIcon"
       ></NoticeCard>
     </template>
+
     <template #content>
       <div class="flex items-end justify-end space-x-3">
         <div class="relative flex space-x-2">
@@ -171,14 +178,128 @@ const toggle = () => {
           </DropdownMenuList>
         </DropdownMenu>
         <!-- end of trigger -->
+
+        <!-- Offcanvas Start -->
+
         <button
           id="staticFilter"
           type="button"
           class="flex items-center space-x-3 rounded-md bg-gray-800 px-4 py-3 text-white"
+          data-drawer-target="drawer-right-example"
+          data-drawer-show="drawer-right-example"
+          data-drawer-placement="right"
+          aria-controls="drawer-right-example"
         >
           <PlusIcon class="h-4 w-4 text-white"></PlusIcon>
           <span>Create Service</span>
         </button>
+
+        <!-- Offcanvas content -->
+        <div
+          id="drawer-right-example"
+          class="fixed right-0 top-0 z-40 h-screen w-[30%] translate-x-full overflow-y-auto bg-white p-4 transition-transform dark:bg-gray-800"
+          tabindex="-1"
+          aria-labelledby="drawer-right-label"
+        >
+          <div class="border-b border-dashed">
+            <h5
+              id="drawer-right-label"
+              class="mb-4 inline-flex items-center text-lg font-semibold text-gray-700 dark:text-gray-400"
+            >
+              <div class="flex items-center">
+                <span>Create Service</span>
+              </div>
+            </h5>
+            <button
+              type="button"
+              data-drawer-hide="drawer-right-example"
+              aria-controls="drawer-right-example"
+              class="absolute end-2.5 top-2.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+            >
+              <XMarkIcon class="h-4 w-4 text-gray-950" />
+              <span class="sr-only">Close menu</span>
+            </button>
+          </div>
+
+          <div class="mt-4 flex flex-col gap-10">
+            <div class="flex flex-col gap-4">
+              <div class="flex flex-col items-start gap-2">
+                <label for="name" class="text-sm"> Name </label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Koinonia service"
+                  class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
+                />
+              </div>
+              <div class="flex flex-col items-start gap-2">
+                <label for="description" class="text-sm"> Description </label>
+                <textarea
+                  id="description"
+                  type="text"
+                  placeholder="Koinonia service which is held every sunday evening"
+                  class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center gap-3">
+                <div class="flex w-full flex-col gap-2">
+                  <label for="start_date" class="text-sm"> Start date: </label>
+                  <input
+                    id="start_date"
+                    type="date"
+                    class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
+                  />
+                </div>
+                <div class="flex w-full flex-col gap-2">
+                  <label for="end_date" class="text-sm"> End date: </label>
+                  <input
+                    id="end_date"
+                    type="date"
+                    class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
+                  />
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="flex w-full flex-col gap-2">
+                  <label for="start_time" class="text-sm"> Start time: </label>
+                  <input
+                    id="start_time"
+                    type="time"
+                    class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
+                  />
+                </div>
+                <div class="flex w-full flex-col gap-2">
+                  <label for="end_time" class="text-sm"> End time: </label>
+                  <input
+                    id="end_time"
+                    type="time"
+                    class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-4 end-2.5 flex w-full gap-4 pl-5">
+            <button
+              type="button"
+              data-drawer-hide="drawer-right-example"
+              aria-controls="drawer-right-example"
+              class="flex w-full items-center justify-center rounded-md border border-gray-200 bg-gray-100 px-4 py-3 text-green-950"
+            >
+              Cancel
+            </button>
+            <button
+              class="flex w-full items-center justify-center rounded-md border border-gray-200 bg-green-300 px-4 py-3 text-green-950"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+
+        <!-- Offcanvas End -->
       </div>
       <!-- Services Table -->
       <Table>
