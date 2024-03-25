@@ -783,7 +783,7 @@ export const totalAttendanceV2 = [
   {
     userId: 3,
     serviceId: 1,
-    total_service_attendance: 29,
+    total_service_attendance: 30,
     total_service_occurences: 43,
     user_attendance: [
       {
@@ -1014,6 +1014,126 @@ export const totalAttendanceV2 = [
           [1, '9AM', true],
           [8, '9AM', true],
           [15, '9AM', false],
+          [22, '9AM', true],
+          [29, '9AM', true],
+        ],
+      },
+    ],
+  },
+  {
+    userId: 5,
+    serviceId: 1,
+    total_service_attendance: 43,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', true],
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          [4, '9AM', true],
+          [11, '9AM', true],
+          [18, '9AM', true],
+          [25, '9AM', true],
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          [3, '9AM', true],
+          [10, '9AM', true],
+          [17, '9AM', true],
+          [24, '9AM', true],
+          [31, '9AM', true],
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', true],
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          [5, '9AM', true],
+          [12, '9AM', true],
+          [19, '9AM', true],
+          [26, '9AM', true],
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          [2, '9AM', true],
+          [9, '9AM', true],
+          [16, '9AM', true],
+          [23, '9AM', true],
+          [30, '9AM', true],
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', true],
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          [4, '9AM', true],
+          [11, '9AM', true],
+          [18, '9AM', true],
+          [25, '9AM', true],
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          [1, '9AM', true],
+          [8, '9AM', true],
+          [15, '9AM', true],
+          [22, '9AM', true],
+          [29, '9AM', true],
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          [6, '9AM', true],
+          [13, '9AM', true],
+          [20, '9AM', true],
+          [27, '9AM', true],
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          [3, '9AM', true],
+          [10, '9AM', true],
+          [17, '9AM', true],
+          [24, '9AM', true],
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          [1, '9AM', true],
+          [8, '9AM', true],
+          [15, '9AM', true],
           [22, '9AM', true],
           [29, '9AM', true],
         ],

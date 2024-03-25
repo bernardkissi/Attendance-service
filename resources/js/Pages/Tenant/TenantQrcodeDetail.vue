@@ -61,7 +61,6 @@ const attrs = ref([
 ])
 
 const data = ref(QrcodeCheckInsApi)
-const service_type = ref('time_bound')
 
 const onInitCheckInsChart = () => {
   const { extractCheckInsChartData, series, chartKeys } =
@@ -185,90 +184,36 @@ onMounted(() => {
 
             <div class="mt-4 flex flex-col gap-10">
               <div class="flex flex-col gap-4">
-                <div class="flex items-end gap-3">
-                  <div class="flex w-2/3 flex-col gap-2">
-                    <label for="name" class="text-sm"> Name </label>
-                    <input
-                      id="name"
-                      type="text"
-                      placeholder="Koinonia service"
-                      class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
-                    />
+                <div class="flex items-center gap-3">
+                  <div class="flex w-full items-center gap-5">
+                    <label for="is_time" class="text-sm"> Time</label>
+                    <input id="is_time" type="checkbox" checked="true" />
                   </div>
-                  <div class="flex w-1/3 flex-col gap-2">
-                    <label for="service_type">Service Type</label>
-                    <select
-                      name="service_type"
-                      id="service_type"
-                      v-model="service_type"
-                      class="rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm text-gray-400"
+                  <div class="flex w-full items-center gap-5">
+                    <label for="is_service" class="text-sm"> Service</label>
+                    <input id="is_service" type="checkbox" checked="true" />
+                  </div>
+                  <div class="flex w-full items-center gap-5">
+                    <label for="is_location" class="text-sm"> Location</label>
+                    <input id="is_location" type="checkbox" checked="true" />
+                  </div>
+                  <div class="flex w-full items-center gap-5">
+                    <label for="is_membership" class="text-sm">
+                      Membership</label
                     >
-                      <option value="time_bound">Time bound</option>
-                      <option value="recurring">Recurring</option>
-                      <option value="one_time">One Time</option>
-                    </select>
+                    <input id="is_membership" type="checkbox" checked="true" />
                   </div>
-                </div>
-                <div class="flex flex-col items-start gap-2">
-                  <label for="description" class="text-sm"> Description </label>
-                  <textarea
-                    id="description"
-                    type="text"
-                    placeholder="Koinonia service which is held every sunday evening"
-                    class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
-                  />
                 </div>
               </div>
 
               <div class="flex flex-col gap-4">
-                <div class="flex items-center gap-3">
-                  <div
-                    v-if="service_type != 'recurring'"
-                    class="flex w-full flex-col gap-2"
-                  >
-                    <label for="start_date" class="text-sm"> Start date </label>
-                    <input
-                      id="start_date"
-                      type="date"
-                      class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
-                    />
-                  </div>
-                  <div v-else class="flex w-full flex-col gap-2">
-                    <label for="day" class="text-sm"> Day </label>
-                    <select
-                      name="day"
-                      id="day"
-                      class="w-[50%] rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm text-gray-400"
-                    >
-                      <option value="sunday">Sunday</option>
-                      <option value="monday">Monday</option>
-                      <option value="tuesday">Tuesday</option>
-                      <option value="wednesday">Wednesday</option>
-                      <option value="thursday">Thursday</option>
-                      <option value="friday">Friday</option>
-                      <option value="saturday">Saturday</option>
-                    </select>
-                  </div>
-
-                  <div
-                    v-if="service_type != 'recurring'"
-                    class="flex w-full flex-col gap-2"
-                  >
-                    <label for="end_date" class="text-sm"> End date </label>
-                    <input
-                      id="end_date"
-                      type="date"
-                      class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
-                    />
-                  </div>
-                  <div v-else></div>
-                </div>
                 <div class="flex items-center gap-3">
                   <div class="flex w-full flex-col gap-2">
                     <label for="start_time" class="text-sm"> Start time </label>
                     <input
                       id="start_time"
                       type="time"
+                      value="09:00"
                       class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
                     />
                   </div>
@@ -277,6 +222,7 @@ onMounted(() => {
                     <input
                       id="end_time"
                       type="time"
+                      value="12:00"
                       class="relative w-full rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
                     />
                   </div>
