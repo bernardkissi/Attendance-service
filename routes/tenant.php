@@ -5,7 +5,9 @@ use App\Domain\Summaries\MemberSummary;
 use App\Domain\Summaries\QrcodeSummary;
 use App\Domain\Summaries\ServiceOccurrenceSummary;
 use App\DTOs\FilterQueryDTO;
+use App\Http\Controllers\Tenant\AttendanceController;
 use App\Http\Controllers\Tenant\DashboardController;
+use App\Http\Controllers\Tenant\MemberController;
 use App\Http\Controllers\Tenant\QrcodeController;
 use App\Http\Controllers\Tenant\ServiceController;
 use App\Models\Member;
@@ -30,6 +32,11 @@ Route::get('/services/detail', [ServiceController::class, 'show'])->name('servic
 
 Route::get('/qrcodes', [QrcodeController::class, 'index'])->name('qrcode.index');
 Route::get('/qrcodes/detail', [QrcodeController::class, 'show'])->name('qrcode.show');
+
+Route::get('/members', [MemberController::class, 'index'])->name('members.index');
+Route::get('/members/detail', [MemberController::class, 'show'])->name('members.show');
+
+Route::get('/attendance', [AttendanceController::class, 'index'])->name('attendance.index');
 
 // Route::get('attendance-summary', function (Request $request) {
 //     $dto = FilterQueryDTO::fromRequest($request);

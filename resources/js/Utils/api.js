@@ -519,3 +519,24 @@ export const QrcodeCheckInsApi = [
 		'updated_at': null
 	}
 ]
+
+
+export const membersAttendanceAPI = [
+	{
+		'name': 'Sunday Service',
+		'total_attendance': 56,
+		'total_absence': 44,
+		'total_occurrences': 30
+	},
+	{
+		'name': 'Midweek Service',
+		'total_attendance': 30,
+		'total_absence': 70,
+	},
+	{
+		'name': 'Youth Service',
+		'total_attendance': 62,
+		'total_absence': 38,
+	},
+
+]

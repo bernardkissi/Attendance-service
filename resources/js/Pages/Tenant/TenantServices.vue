@@ -110,7 +110,7 @@ const toggle = () => {
 
       <!-- upcoming service card -->
       <NoticeCard
-        title="Havlia Praise Service"
+        title="Havlia Praise"
         name="starts in 9 mins"
         :icon="ClockIcon"
       ></NoticeCard>

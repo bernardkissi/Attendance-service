@@ -24,7 +24,6 @@ import TableCell from '@/Components/Tables/TableCell.vue'
 import Pagination from '@/Components/Pagination/DefaultPagination.vue'
 
 // utilities
-
 import PrimaryButton from '@/Components/Button/PrimaryButton.vue'
 
 import { QrcodeCheckInsApi } from '@/Utils/api'
@@ -89,6 +88,7 @@ onMounted(() => {
   <BaseLayout title="Qrcode-Detail">
     <template #sidenav>
       <Calendar
+        :disable-page-swipe="true"
         title-position="left"
         view="weekly"
         class="mt-5"
@@ -117,6 +117,7 @@ onMounted(() => {
       <!-- end of pending card -->
     </template>
     <template #content>
+      <!-- Action area -->
       <div class="flex items-start justify-between">
         <PrimaryButton class="relative flex items-center space-x-1">
           <div class="flex items-center">
@@ -140,6 +141,7 @@ onMounted(() => {
           </PrimaryButton>
         </div>
       </div>
+      <!-- end action area -->
       <!-- stats area -->
       <div class="flex items-start justify-between space-x-6">
         <div class="flex-1 rounded-md border border-gray-100 px-4 py-3">
@@ -291,7 +293,7 @@ onMounted(() => {
                     <DropdownMenuItem
                       :icon="EyeIcon"
                       name="View"
-                      link="/qrcodes/detail"
+                      link="/members/detail"
                     ></DropdownMenuItem>
                     <DropdownMenuItem
                       :icon="PencilSquareIcon"

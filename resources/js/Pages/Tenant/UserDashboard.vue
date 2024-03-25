@@ -43,7 +43,6 @@ import {
   ExclamationCircleIcon,
   XCircleIcon,
   CheckBadgeIcon,
-  CalendarIcon,
   ChevronUpIcon,
   ChevronDownIcon,
   AdjustmentsHorizontalIcon,
@@ -92,7 +91,7 @@ const onInitStatsChart = () => {
       keys: ['male', 'female'],
     })
   extractMonthlyChartData()
- 
+
   statsData.value = statsSeries.value
   labels.value = chartKeys.value
 }
@@ -125,7 +124,7 @@ onMounted(() => {
       <!-- card heading -->
       <div class="-pb-2 mt-8 flex items-center justify-between rounded">
         <div class="flex items-center space-x-2">
-          <CalendarIcon class="h-5 w-5" />
+          <CalendarDaysIcon class="h-5 w-5" />
           <span class="text-base font-bold">Live Updates</span>
         </div>
         <a href="" class="text-sm text-blue-500">view</a>
@@ -158,7 +157,7 @@ onMounted(() => {
       <!-- end card -->
       <div class="mt-8 flex items-center justify-between rounded pb-6">
         <div class="flex items-center space-x-2">
-          <CalendarIcon class="h-5 w-5" />
+          <CalendarDaysIcon class="h-5 w-5" />
           <span class="text-base font-bold">Upcoming</span>
         </div>
         <a href="" class="text-sm text-blue-500">view</a>
@@ -166,7 +165,7 @@ onMounted(() => {
 
       <!-- upcoming service card -->
       <NoticeCard
-        title="Havlia Praise Service"
+        title="Havlia Praise"
         name="starts in 9 mins"
         :icon="ClockIcon"
       ></NoticeCard>

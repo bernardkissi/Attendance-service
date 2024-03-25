@@ -1,12 +1,10 @@
 <script setup>
 import SideBarHeader from './SideBarHeader.vue'
 import SideBarFooter from './SideBarFooter.vue'
-import SideBarActionButton from './SideBarActionButton.vue'
 import SideBarMenuLink from './SideBarMenuLink.vue'
 import SideBarMenuList from './SideBarMenuList.vue'
 
 import {
-  InformationCircleIcon,
   HomeIcon,
   CalendarIcon,
   UsersIcon,
@@ -76,14 +74,6 @@ const menuItems = reactive({
       ></SideBarMenuLink>
     </SideBarMenuList>
     <!-- Main Sidebar Items -->
-
-    <h4 class="mb-4 mt-12 text-xs font-bold text-gray-400">ACTIONS</h4>
-    <!-- Action Button -->
-    <SideBarActionButton
-      name="Create Qrcode"
-      :icon="InformationCircleIcon"
-    ></SideBarActionButton>
-    <!-- End Action Button -->
 
     <!-- Bottom SideBar Items -->
     <SideBarFooter name="hello">
