@@ -4,7 +4,7 @@ import { initFlowbite } from 'flowbite'
 
 import BaseLayout from '@/Layouts/BaseLayout.vue'
 // API
-import { totalAttendance } from '@/Utils/api'
+import { totalAttendanceV2 } from '@/Utils/api'
 
 // icon imports
 import {
@@ -184,7 +184,7 @@ onMounted(() => {
           </thead>
           <tbody>
             <tr
-              v-for="entry in totalAttendance"
+              v-for="entry in totalAttendanceV2"
               :key="entry.userId"
               class="divide-x divide-y divide-gray-100"
             >
@@ -194,12 +194,12 @@ onMounted(() => {
                 {{ entry.userId }}
               </td>
               <td class="bg-gray-50 px-4 py-2 text-sm">
-                {{ entry.attendance[0].totalAttendance }} /
-                {{ entry.attendance[0].totalOccurences }}
+                {{ entry.total_service_attendance }} /
+                {{ entry.total_service_occurences }}
               </td>
               <!-- Subsequent columns (Attendance) content -->
               <td
-                v-for="monthlyAttendance in entry.attendance[0].attendance"
+                v-for="monthlyAttendance in entry.user_attendance"
                 :key="monthlyAttendance.month"
                 class="bg-white px-4 py-2"
               >
@@ -207,12 +207,12 @@ onMounted(() => {
                   <span
                     v-for="(day, index) in monthlyAttendance.days"
                     :key="index"
-                    :data-popover-target="`popover-default-${monthlyAttendance.month}-${index}`"
+                    :data-popover-target="`popover-default-${monthlyAttendance.month}-${entry.userId}-${index}`"
                     class="h-2 w-2 rounded-full"
                     :class="[day[2] ? 'bg-green-500' : 'bg-red-400']"
                   >
                     <div
-                      :id="`popover-default-${monthlyAttendance.month}-${index}`"
+                      :id="`popover-default-${monthlyAttendance.month}-${entry.userId}-${index}`"
                       data-popover
                       role="tooltip"
                       class="invisible absolute z-10 inline-block w-64 rounded-lg border border-gray-200 bg-white text-sm text-gray-500 opacity-0 shadow-sm transition-opacity duration-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400"

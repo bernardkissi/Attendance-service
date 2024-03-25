@@ -539,499 +539,483 @@ export const membersAttendanceAPI = [
   },
 ]
 
-export const totalAttendance = [
+export const totalAttendanceV2 = [
   {
     userId: 1,
-    attendance: [
+    serviceId: 1,
+    total_service_attendance: 31,
+    total_service_occurences: 43,
+    user_attendance: [
       {
-        serviceId: 1,
-		totalAttendance: 31,
-		totalOccurences: 43,
-        attendance: [
-          {
-            month: 'Jan',
-            days: [
-              [7, '9AM', true],
-              [14, '9AM', true],
-              [21, '9AM', true],
-              [28, '9AM', false],
-            ],
-          },
-          {
-            month: 'Feb',
-            days: [
-              [4, '9AM', true],
-              [11, '9AM', true],
-              [18, '9AM', false],
-              [25, '9AM', true],
-            ],
-          },
-          {
-            month: 'Mar',
-            days: [
-              [3, '9AM', false],
-              [10, '9AM', true],
-              [17, '9AM', false],
-              [24, '9AM', true],
-              [31, '9AM', true],
-            ],
-          },
-          {
-            month: 'Apr',
-            days: [
-              [7, '9AM', true],
-              [14, '9AM', true],
-              [21, '9AM', true],
-              [28, '9AM', true],
-            ],
-          },
-          {
-            month: 'May',
-            days: [
-              [5, '9AM', true],
-              [12, '9AM', true],
-              [19, '9AM', false],
-              [26, '9AM', true],
-            ],
-          },
-          {
-            month: 'Jun',
-            days: [
-              [2, '9AM', true],
-              [9, '9AM', true],
-              [16, '9AM', true],
-              [23, '9AM', true],
-              [30, '9AM', true],
-            ],
-          },
-          {
-            month: 'Jul',
-            days: [
-              [7, '9AM', false],
-              [14, '9AM', true],
-              [21, '9AM', true],
-              [28, '9AM', true],
-            ],
-          },
-          {
-            month: 'Aug',
-            days: [
-              [4, '9AM', true],
-              [11, '9AM', false],
-              [18, '9AM', true],
-              [25, '9AM', false],
-            ],
-          },
-          {
-            month: 'Sep',
-            days: [
-              [1, '9AM', true],
-              [8, '9AM', true],
-              [15, '9AM', true],
-              [22, '9AM', true],
-              [29, '9AM', false],
-            ],
-          },
-          {
-            month: 'Oct',
-            days: [
-              [6, '9AM', true],
-              [13, '9AM', true],
-              [20, '9AM', false],
-              [27, '9AM', true],
-            ],
-          },
-          {
-            month: 'Nov',
-            days: [
-              [3, '9AM', true],
-              [10, '9AM', false],
-              [17, '9AM', true],
-              [24, '9AM', true],
-            ],
-          },
-          {
-            month: 'Dec',
-            days: [
-              [1, '9AM', false],
-              [8, '9AM', true],
-              [15, '9AM', true],
-              [22, '9AM', true],
-              [29, '9AM', true],
-            ],
-          },
+        month: 'Jan',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', false],
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          [4, '9AM', true],
+          [11, '9AM', true],
+          [18, '9AM', false],
+          [25, '9AM', true],
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          [3, '9AM', false],
+          [10, '9AM', true],
+          [17, '9AM', false],
+          [24, '9AM', true],
+          [31, '9AM', true],
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', true],
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          [5, '9AM', true],
+          [12, '9AM', true],
+          [19, '9AM', false],
+          [26, '9AM', true],
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          [2, '9AM', true],
+          [9, '9AM', true],
+          [16, '9AM', true],
+          [23, '9AM', true],
+          [30, '9AM', true],
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          [7, '9AM', false],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', true],
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          [4, '9AM', true],
+          [11, '9AM', false],
+          [18, '9AM', true],
+          [25, '9AM', false],
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          [1, '9AM', true],
+          [8, '9AM', true],
+          [15, '9AM', true],
+          [22, '9AM', true],
+          [29, '9AM', false],
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          [6, '9AM', true],
+          [13, '9AM', true],
+          [20, '9AM', false],
+          [27, '9AM', true],
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          [3, '9AM', true],
+          [10, '9AM', false],
+          [17, '9AM', true],
+          [24, '9AM', true],
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          [1, '9AM', false],
+          [8, '9AM', true],
+          [15, '9AM', true],
+          [22, '9AM', true],
+          [29, '9AM', true],
         ],
       },
     ],
   },
   {
     userId: 2,
-    attendance: [
+    serviceId: 1,
+    total_service_attendance: 26,
+    total_service_occurences: 43,
+    user_attendance: [
       {
-        serviceId: 1,
-		totalAttendance: 26,
-		totalOccurences: 43,
-        attendance: [
-          {
-            month: 'Jan',
-            days: [
-              [7, '9AM', false],
-              [14, '9AM', true],
-              [21, '9AM', true],
-              [28, '9AM', false],
-            ],
-          },
-          {
-            month: 'Feb',
-            days: [
-              [4, '9AM', true],
-              [11, '9AM', false],
-              [18, '9AM', true],
-              [25, '9AM', true],
-            ],
-          },
-          {
-            month: 'Mar',
-            days: [
-              [3, '9AM', false],
-              [10, '9AM', true],
-              [17, '9AM', true],
-              [24, '9AM', false],
-              [31, '9AM', false],
-            ],
-          },
-          {
-            month: 'Apr',
-            days: [
-              [7, '9AM', false],
-              [14, '9AM', false],
-              [21, '9AM', false],
-              [28, '9AM', false],
-            ],
-          },
-          {
-            month: 'May',
-            days: [
-              [5, '9AM', true],
-              [12, '9AM', true],
-              [19, '9AM', false],
-              [26, '9AM', true],
-            ],
-          },
-          {
-            month: 'Jun',
-            days: [
-              [2, '9AM', true],
-              [9, '9AM', true],
-              [16, '9AM', true],
-              [23, '9AM', false],
-              [30, '9AM', true],
-            ],
-          },
-          {
-            month: 'Jul',
-            days: [
-              [7, '9AM', true],
-              [14, '9AM', true],
-              [21, '9AM', true],
-              [28, '9AM', true],
-            ],
-          },
-          {
-            month: 'Aug',
-            days: [
-              [4, '9AM', true],
-              [11, '9AM', true],
-              [18, '9AM', false],
-              [25, '9AM', true],
-            ],
-          },
-          {
-            month: 'Sep',
-            days: [
-              [1, '9AM', false],
-              [8, '9AM', true],
-              [15, '9AM', false],
-              [22, '9AM', true],
-              [29, '9AM', false],
-            ],
-          },
-          {
-            month: 'Oct',
-            days: [
-              [6, '9AM', true],
-              [13, '9AM', true],
-              [20, '9AM', true],
-              [27, '9AM', true],
-            ],
-          },
-          {
-            month: 'Nov',
-            days: [
-              [3, '9AM', true],
-              [10, '9AM', true],
-              [17, '9AM', true],
-              [24, '9AM', true],
-            ],
-          },
-          {
-            month: 'Dec',
-            days: [
-              [1, '9AM', false],
-              [8, '9AM', true],
-              [15, '9AM', true],
-              [22, '9AM', true],
-              [29, '9AM', true],
-            ],
-          },
+        month: 'Jan',
+        days: [
+          [7, '9AM', false],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', false],
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          [4, '9AM', true],
+          [11, '9AM', false],
+          [18, '9AM', true],
+          [25, '9AM', true],
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          [3, '9AM', false],
+          [10, '9AM', true],
+          [17, '9AM', true],
+          [24, '9AM', false],
+          [31, '9AM', false],
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          [7, '9AM', false],
+          [14, '9AM', false],
+          [21, '9AM', false],
+          [28, '9AM', false],
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          [5, '9AM', true],
+          [12, '9AM', true],
+          [19, '9AM', false],
+          [26, '9AM', true],
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          [2, '9AM', true],
+          [9, '9AM', true],
+          [16, '9AM', true],
+          [23, '9AM', false],
+          [30, '9AM', true],
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', true],
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          [4, '9AM', true],
+          [11, '9AM', true],
+          [18, '9AM', false],
+          [25, '9AM', true],
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          [1, '9AM', false],
+          [8, '9AM', true],
+          [15, '9AM', false],
+          [22, '9AM', true],
+          [29, '9AM', false],
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          [6, '9AM', true],
+          [13, '9AM', true],
+          [20, '9AM', true],
+          [27, '9AM', true],
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          [3, '9AM', true],
+          [10, '9AM', true],
+          [17, '9AM', true],
+          [24, '9AM', true],
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          [1, '9AM', false],
+          [8, '9AM', true],
+          [15, '9AM', true],
+          [22, '9AM', true],
+          [29, '9AM', true],
         ],
       },
     ],
   },
   {
     userId: 3,
-    attendance: [
+    serviceId: 1,
+    total_service_attendance: 29,
+    total_service_occurences: 43,
+    user_attendance: [
       {
-        serviceId: 1,
-		totalAttendance: 29,
-		totalOccurences: 43,
-        attendance: [
-          {
-            month: 'Jan',
-            days: [
-              [7, '9AM', true],
-              [14, '9AM', true],
-              [21, '9AM', true],
-              [28, '9AM', false],
-            ],
-          },
-          {
-            month: 'Feb',
-            days: [
-              [4, '9AM', true],
-              [11, '9AM', true],
-              [18, '9AM', false],
-              [25, '9AM', true],
-            ],
-          },
-          {
-            month: 'Mar',
-            days: [
-              [3, '9AM', false],
-              [10, '9AM', true],
-              [17, '9AM', false],
-              [24, '9AM', true],
-              [31, '9AM', true],
-            ],
-          },
-          {
-            month: 'Apr',
-            days: [
-              [7, '9AM', true],
-              [14, '9AM', true],
-              [21, '9AM', true],
-              [28, '9AM', true],
-            ],
-          },
-          {
-            month: 'May',
-            days: [
-              [5, '9AM', true],
-              [12, '9AM', true],
-              [19, '9AM', false],
-              [26, '9AM', true],
-            ],
-          },
-          {
-            month: 'Jun',
-            days: [
-              [2, '9AM', true],
-              [9, '9AM', true],
-              [16, '9AM', true],
-              [23, '9AM', true],
-              [30, '9AM', true],
-            ],
-          },
-          {
-            month: 'Jul',
-            days: [
-              [7, '9AM', false],
-              [14, '9AM', true],
-              [21, '9AM', true],
-              [28, '9AM', true],
-            ],
-          },
-          {
-            month: 'Aug',
-            days: [
-              [4, '9AM', true],
-              [11, '9AM', false],
-              [18, '9AM', true],
-              [25, '9AM', false],
-            ],
-          },
-          {
-            month: 'Sep',
-            days: [
-              [1, '9AM', true],
-              [8, '9AM', true],
-              [15, '9AM', true],
-              [22, '9AM', true],
-              [29, '9AM', false],
-            ],
-          },
-          {
-            month: 'Oct',
-            days: [
-              [6, '9AM', true],
-              [13, '9AM', true],
-              [20, '9AM', false],
-              [27, '9AM', true],
-            ],
-          },
-          {
-            month: 'Nov',
-            days: [
-              [3, '9AM', true],
-              [10, '9AM', false],
-              [17, '9AM', true],
-              [24, '9AM', true],
-            ],
-          },
-          {
-            month: 'Dec',
-            days: [
-              [1, '9AM', false],
-              [8, '9AM', true],
-              [15, '9AM', false],
-              [22, '9AM', true],
-              [29, '9AM', true],
-            ],
-          },
+        month: 'Jan',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', false],
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          [4, '9AM', true],
+          [11, '9AM', true],
+          [18, '9AM', false],
+          [25, '9AM', true],
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          [3, '9AM', false],
+          [10, '9AM', true],
+          [17, '9AM', false],
+          [24, '9AM', true],
+          [31, '9AM', true],
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', true],
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          [5, '9AM', true],
+          [12, '9AM', true],
+          [19, '9AM', false],
+          [26, '9AM', true],
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          [2, '9AM', true],
+          [9, '9AM', true],
+          [16, '9AM', true],
+          [23, '9AM', true],
+          [30, '9AM', true],
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          [7, '9AM', false],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', true],
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          [4, '9AM', true],
+          [11, '9AM', false],
+          [18, '9AM', true],
+          [25, '9AM', false],
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          [1, '9AM', true],
+          [8, '9AM', true],
+          [15, '9AM', true],
+          [22, '9AM', true],
+          [29, '9AM', false],
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          [6, '9AM', true],
+          [13, '9AM', true],
+          [20, '9AM', false],
+          [27, '9AM', true],
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          [3, '9AM', true],
+          [10, '9AM', false],
+          [17, '9AM', true],
+          [24, '9AM', true],
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          [1, '9AM', false],
+          [8, '9AM', true],
+          [15, '9AM', false],
+          [22, '9AM', true],
+          [29, '9AM', true],
         ],
       },
     ],
   },
   {
     userId: 4,
-    attendance: [
+    serviceId: 1,
+    total_service_attendance: 27,
+    total_service_occurences: 43,
+    user_attendance: [
       {
-        serviceId: 1,
-		totalAttendance: 26,
-		totalOccurences: 43,
-        attendance: [
-          {
-            month: 'Jan',
-            days: [
-              [7, '9AM', false],
-              [14, '9AM', true],
-              [21, '9AM', true],
-              [28, '9AM', false],
-            ],
-          },
-          {
-            month: 'Feb',
-            days: [
-              [4, '9AM', true],
-              [11, '9AM', false],
-              [18, '9AM', true],
-              [25, '9AM', true],
-            ],
-          },
-          {
-            month: 'Mar',
-            days: [
-              [3, '9AM', false],
-              [10, '9AM', true],
-              [17, '9AM', true],
-              [24, '9AM', false],
-              [31, '9AM', false],
-            ],
-          },
-          {
-            month: 'Apr',
-            days: [
-              [7, '9AM', true],
-              [14, '9AM', true],
-              [21, '9AM', false],
-              [28, '9AM', false],
-            ],
-          },
-          {
-            month: 'May',
-            days: [
-              [5, '9AM', true],
-              [12, '9AM', true],
-              [19, '9AM', false],
-              [26, '9AM', true],
-            ],
-          },
-          {
-            month: 'Jun',
-            days: [
-              [2, '9AM', true],
-              [9, '9AM', true],
-              [16, '9AM', true],
-              [23, '9AM', false],
-              [30, '9AM', true],
-            ],
-          },
-          {
-            month: 'Jul',
-            days: [
-              [7, '9AM', true],
-              [14, '9AM', true],
-              [21, '9AM', true],
-              [28, '9AM', true],
-            ],
-          },
-          {
-            month: 'Aug',
-            days: [
-              [4, '9AM', true],
-              [11, '9AM', true],
-              [18, '9AM', false],
-              [25, '9AM', true],
-            ],
-          },
-          {
-            month: 'Sep',
-            days: [
-              [1, '9AM', false],
-              [8, '9AM', true],
-              [15, '9AM', false],
-              [22, '9AM', true],
-              [29, '9AM', false],
-            ],
-          },
-          {
-            month: 'Oct',
-            days: [
-              [6, '9AM', true],
-              [13, '9AM', true],
-              [20, '9AM', false],
-              [27, '9AM', true],
-            ],
-          },
-          {
-            month: 'Nov',
-            days: [
-              [3, '9AM', true],
-              [10, '9AM', true],
-              [17, '9AM', false],
-              [24, '9AM', true],
-            ],
-          },
-          {
-            month: 'Dec',
-            days: [
-              [1, '9AM', true],
-              [8, '9AM', true],
-              [15, '9AM', false],
-              [22, '9AM', true],
-              [29, '9AM', true],
-            ],
-          },
+        month: 'Jan',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', false],
+          [21, '9AM', true],
+          [28, '9AM', true],
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          [4, '9AM', true],
+          [11, '9AM', false],
+          [18, '9AM', true],
+          [25, '9AM', true],
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          [3, '9AM', false],
+          [10, '9AM', true],
+          [17, '9AM', true],
+          [24, '9AM', false],
+          [31, '9AM', false],
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', true],
+          [21, '9AM', false],
+          [28, '9AM', false],
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          [5, '9AM', false],
+          [12, '9AM', true],
+          [19, '9AM', true],
+          [26, '9AM', true],
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          [2, '9AM', true],
+          [9, '9AM', true],
+          [16, '9AM', true],
+          [23, '9AM', false],
+          [30, '9AM', true],
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          [7, '9AM', true],
+          [14, '9AM', true],
+          [21, '9AM', true],
+          [28, '9AM', true],
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          [4, '9AM', true],
+          [11, '9AM', true],
+          [18, '9AM', false],
+          [25, '9AM', true],
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          [1, '9AM', false],
+          [8, '9AM', true],
+          [15, '9AM', false],
+          [22, '9AM', true],
+          [29, '9AM', false],
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          [6, '9AM', true],
+          [13, '9AM', true],
+          [20, '9AM', false],
+          [27, '9AM', true],
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          [3, '9AM', true],
+          [10, '9AM', true],
+          [17, '9AM', false],
+          [24, '9AM', true],
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          [1, '9AM', true],
+          [8, '9AM', true],
+          [15, '9AM', false],
+          [22, '9AM', true],
+          [29, '9AM', true],
         ],
       },
     ],
