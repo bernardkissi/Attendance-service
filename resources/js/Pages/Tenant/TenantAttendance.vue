@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 
-import BaseLayout from '@/Layouts/BaseLayout.vue'
+import AttendanceBaseLayout from '@/Layouts/AttendanceBaseLayout.vue'
 // API
 import { totalAttendanceV2 } from '@/Utils/api'
 
@@ -11,6 +11,7 @@ import {
   ChevronUpIcon,
   ChevronDownIcon,
   CalendarDaysIcon,
+  MagnifyingGlassIcon,
 } from '@heroicons/vue/24/outline'
 
 onMounted(() => {
@@ -19,8 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <BaseLayout title="Attendance">
-    <template #sidenav> </template>
+  <AttendanceBaseLayout title="Attendance">
     <template #content>
       <!-- Analytics Filters -->
       <div class="flex items-center justify-between px-5 py-1">
@@ -30,9 +30,19 @@ onMounted(() => {
             >Provided attendance based on year and service selected</span
           >
         </div>
-        <!-- chart filters -->
+        <!-- Attendance filters -->
         <div class="flex items-center space-x-5">
           <div class="flex items-start space-x-3">
+            <div class="relative flex space-x-2">
+              <input
+                type="text"
+                placeholder="Search member eg. Frederick"
+                class="relative w-64 rounded-md border border-gray-200 px-8 py-[0.9rem] text-sm placeholder-gray-400"
+              />
+              <MagnifyingGlassIcon
+                class="absolute inset-x-0 top-0 mt-4 h-5 w-5 text-gray-400"
+              ></MagnifyingGlassIcon>
+            </div>
             <button
               id="filterDate"
               type="button"
@@ -209,7 +219,7 @@ onMounted(() => {
                     :key="index"
                     :data-popover-target="`popover-default-${monthlyAttendance.month}-${entry.userId}-${index}`"
                     class="h-2 w-2 rounded-full"
-                    :class="[day[2] ? 'bg-green-500' : 'bg-red-400']"
+                    :class="[day.attended ? 'bg-green-500' : 'bg-red-400']"
                   >
                     <div
                       :id="`popover-default-${monthlyAttendance.month}-${entry.userId}-${index}`"
@@ -221,12 +231,13 @@ onMounted(() => {
                         class="rounded-t-lg border-b border-gray-200 bg-gray-100 px-3 py-2 dark:border-gray-600 dark:bg-gray-700"
                       >
                         <h3 class="font-semibold text-gray-900 dark:text-white">
-                          {{ monthlyAttendance.month }} / {{ day[0] }} /
-                          {{ day[1] }}
+                          {{ day.date }}
                         </h3>
                       </div>
                       <div class="px-3 py-2">
-                        <p v-if="day[2]">Arrived at 8:30AM</p>
+                        <p v-if="day.attended">
+                          Arrived at {{ day.checkedInOn }}
+                        </p>
                         <p v-else>Absent - No reason given</p>
                       </div>
                       <div data-popper-arrow></div>
@@ -241,5 +252,5 @@ onMounted(() => {
         </table>
       </div>
     </template>
-  </BaseLayout>
+  </AttendanceBaseLayout>
 </template>
