@@ -2181,3 +2181,42 @@ export const totalAttendanceV2 = [
     ],
   },
 ]
+
+export const membersDataAPI = [
+  {
+    member_id: 1,
+    member_name: 'Frederick Aziebu',
+    contact: '0550815604',
+    status: 'Active',
+  },
+  {
+    member_id: 2,
+    member_name: 'Frederick Aziebu',
+    contact: '0550815604',
+    status: 'Transferred',
+  },
+  {
+    member_id: 3,
+    member_name: 'Frederick Aziebu',
+    contact: '0550815604',
+    status: 'Active',
+  },
+  {
+    member_id: 4,
+    member_name: 'Frederick Aziebu',
+    contact: '0550815604',
+    status: 'Transferred',
+  },
+  {
+    member_id: 5,
+    member_name: 'Frederick Aziebu',
+    contact: '0550815604',
+    status: 'Active',
+  },
+  {
+    member_id: 6,
+    member_name: 'Frederick Aziebu',
+    contact: '0550815604',
+    status: 'Active',
+  }
+]
