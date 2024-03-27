@@ -164,13 +164,11 @@ onMounted(() => {
       <!-- end of filters -->
 
       <div class="overflow-x-auto">
-        <table class="table-fixed">
+        <table class="table-fixed w-full">
           <thead>
             <tr>
               <th class="bg-gray-100"></th>
-              <th :colspan="13" class="w-full bg-gray-100 py-2 text-center">
-                Months
-              </th>
+              <th :colspan="13" class="bg-gray-100 py-2 text-center">Months</th>
             </tr>
             <tr class="divide-x divide-gray-100">
               <!-- First column (User) -->

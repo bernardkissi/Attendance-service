@@ -2180,6 +2180,4926 @@ export const totalAttendanceV2 = [
       },
     ],
   },
+  {
+    userId: 6,
+    serviceId: 1,
+    total_service_attendance: 31,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:30:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-14:08:50:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:00:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-28:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:08:55:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:09:30:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-21:09:20:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:55:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:09:30:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:20:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-23:09:00:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-07-07:09:00:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:47:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:08:59:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:01:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: false,
+            checkedInOn: '2024-11-10:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-07:08:21:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:08:45:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-21:09:11:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:03:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:21:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 7,
+    serviceId: 1,
+    total_service_attendance: 26,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-07:08:40:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-14:08:51:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:00:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-07:08:50:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-14:09:10:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-21:09:20:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-28:09:30:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:20:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:40:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:08:50:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-10:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-07:08:25:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:08:49:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-21:09:15:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:07:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:25:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 8,
+    serviceId: 1,
+    total_service_attendance: 30,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:45:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-14:09:05:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:15:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-28:09:25:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:08:40:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:08:40:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-21:09:10:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:20:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-07-14:09:00:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:09:20:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:20:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-07:08:21:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:08:45:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-21:09:11:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:03:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:21:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 9,
+    serviceId: 1,
+    total_service_attendance: 27,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:33:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-14:08:52:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:05:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-28:09:19:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:09:00:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:08:59:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-21:09:01:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:30:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:50:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:09:00:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-08:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-01:08:21:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-08:08:45:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-15:09:11:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:03:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:21:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 10,
+    serviceId: 1,
+    total_service_attendance: 42,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:25:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-14:08:55:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:08:55:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-28:09:15:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:09:00:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:09:20:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-21:09:30:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-28:09:40:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:50:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:30:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:09:10:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-01:08:31:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-08:08:55:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-15:09:01:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-22:09:13:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-29:09:11:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-10:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-07:09:01:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:09:11:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-21:08:31:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-22:09:13:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-29:08:55:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 11,
+    serviceId: 1,
+    total_service_attendance: 31,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:30:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-14:08:50:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:00:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-28:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:08:55:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:09:30:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-21:09:20:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:55:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:09:30:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:20:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-23:09:00:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-07-07:09:00:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:47:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:08:59:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:01:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: false,
+            checkedInOn: '2024-11-10:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-07:08:21:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:08:45:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-21:09:11:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:03:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:21:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 12,
+    serviceId: 1,
+    total_service_attendance: 26,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-07:08:40:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-14:08:51:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:00:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-07:08:50:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-14:09:10:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-21:09:20:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-28:09:30:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:20:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:40:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:08:50:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-10:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-07:08:25:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:08:49:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-21:09:15:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:07:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:25:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 13,
+    serviceId: 1,
+    total_service_attendance: 30,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:45:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-14:09:05:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:15:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-28:09:25:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:08:40:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:08:40:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-21:09:10:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:20:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-07-14:09:00:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:09:20:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:20:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-07:08:21:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:08:45:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-21:09:11:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:03:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:21:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 14,
+    serviceId: 1,
+    total_service_attendance: 27,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:33:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-14:08:52:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:05:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-28:09:19:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:09:00:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:08:59:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-21:09:01:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:30:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:50:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:09:00:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-08:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-01:08:21:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-08:08:45:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-15:09:11:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:03:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:21:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 15,
+    serviceId: 1,
+    total_service_attendance: 42,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:25:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-14:08:55:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:08:55:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-28:09:15:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:09:00:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:09:20:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-21:09:30:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-28:09:40:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:50:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:30:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:09:10:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-01:08:31:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-08:08:55:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-15:09:01:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-22:09:13:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-29:09:11:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-10:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-07:09:01:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:09:11:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-21:08:31:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-22:09:13:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-29:08:55:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 16,
+    serviceId: 1,
+    total_service_attendance: 31,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:30:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-14:08:50:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:00:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-28:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:08:55:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:09:30:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-21:09:20:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:55:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:09:30:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:20:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-23:09:00:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-07-07:09:00:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:47:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:08:59:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:01:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: false,
+            checkedInOn: '2024-11-10:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-07:08:21:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:08:45:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-21:09:11:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:03:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:21:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 17,
+    serviceId: 1,
+    total_service_attendance: 26,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-07:08:40:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-14:08:51:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:00:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-07:08:50:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-14:09:10:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-21:09:20:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-28:09:30:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:20:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:40:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:08:50:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-10:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-07:08:25:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:08:49:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-21:09:15:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:07:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:25:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 18,
+    serviceId: 1,
+    total_service_attendance: 30,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:45:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-14:09:05:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:15:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-28:09:25:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:08:40:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:08:40:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-21:09:10:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:20:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-07-14:09:00:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:09:20:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:20:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-07:08:21:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:08:45:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-21:09:11:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:03:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:21:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 19,
+    serviceId: 1,
+    total_service_attendance: 27,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:33:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-01-14:08:52:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:09:05:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-28:09:19:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:09:00:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:08:59:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-21:09:01:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:30:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:50:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:09:00:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-07:08:21:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-14:08:45:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-21:09:11:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-28:09:03:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-09-28:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-08:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-01:08:21:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-08:08:45:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-12-15:09:11:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:03:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-28:09:21:00Z',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    userId: 20,
+    serviceId: 1,
+    total_service_attendance: 42,
+    total_service_occurences: 43,
+    user_attendance: [
+      {
+        month: 'Jan',
+        days: [
+          {
+            date: '2024-01-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-07:08:25:00Z',
+          },
+          {
+            date: '2024-01-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-14:08:55:00Z',
+          },
+          {
+            date: '2024-01-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-21:08:55:00Z',
+          },
+          {
+            date: '2024-01-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-01-28:09:15:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Feb',
+        days: [
+          {
+            date: '2024-02-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-04:08:30:00Z',
+          },
+          {
+            date: '2024-02-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-11:08:50:00Z',
+          },
+          {
+            date: '2024-02-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-18:09:00:00Z',
+          },
+          {
+            date: '2024-02-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-02-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Mar',
+        days: [
+          {
+            date: '2024-03-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-03:08:21:00Z',
+          },
+          {
+            date: '2024-03-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-10:08:45:00Z',
+          },
+          {
+            date: '2024-03-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-17:09:11:00Z',
+          },
+          {
+            date: '2024-03-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-24:09:03:00Z',
+          },
+          {
+            date: '2024-03-31:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-03-31:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Apr',
+        days: [
+          {
+            date: '2024-04-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-07:09:00:00Z',
+          },
+          {
+            date: '2024-04-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-14:09:20:00Z',
+          },
+          {
+            date: '2024-04-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-04-21:09:30:00Z',
+          },
+          {
+            date: '2024-04-28:09:00:00Z',
+            attended: false,
+            checkedInOn: '2024-04-28:09:40:00Z',
+          },
+        ],
+      },
+      {
+        month: 'May',
+        days: [
+          {
+            date: '2024-05-05:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-05:08:55:00Z',
+          },
+          {
+            date: '2024-05-12:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-12:09:30:00Z',
+          },
+          {
+            date: '2024-05-19:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-19:09:20:00Z',
+          },
+          {
+            date: '2024-05-26:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-05-26:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jun',
+        days: [
+          {
+            date: '2024-06-02:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-02:08:21:00Z',
+          },
+          {
+            date: '2024-06-09:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-09:08:45:00Z',
+          },
+          {
+            date: '2024-06-16:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-16:09:11:00Z',
+          },
+          {
+            date: '2024-06-23:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-23:09:03:00Z',
+          },
+          {
+            date: '2024-06-30:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-06-30:09:21:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Jul',
+        days: [
+          {
+            date: '2024-07-07:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-07:08:50:00Z',
+          },
+          {
+            date: '2024-07-14:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-14:08:30:00Z',
+          },
+          {
+            date: '2024-07-21:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-21:09:10:00Z',
+          },
+          {
+            date: '2024-07-28:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-07-28:09:00:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Aug',
+        days: [
+          {
+            date: '2024-08-04:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-04:08:30:00Z',
+          },
+          {
+            date: '2024-08-11:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-11:08:50:00Z',
+          },
+          {
+            date: '2024-08-18:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-18:09:00:00Z',
+          },
+          {
+            date: '2024-08-25:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-08-25:09:10:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Sep',
+        days: [
+          {
+            date: '2024-09-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-01:08:31:00Z',
+          },
+          {
+            date: '2024-09-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-08:08:55:00Z',
+          },
+          {
+            date: '2024-09-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-15:09:01:00Z',
+          },
+          {
+            date: '2024-09-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-22:09:13:00Z',
+          },
+          {
+            date: '2024-09-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-09-29:09:11:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Oct',
+        days: [
+          {
+            date: '2024-10-06:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-06:08:21:00Z',
+          },
+          {
+            date: '2024-10-13:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-13:08:45:00Z',
+          },
+          {
+            date: '2024-10-20:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-20:09:11:00Z',
+          },
+          {
+            date: '2024-10-27:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-10-27:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Nov',
+        days: [
+          {
+            date: '2024-11-03:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-03:08:21:00Z',
+          },
+          {
+            date: '2024-11-08:10:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-10:08:45:00Z',
+          },
+          {
+            date: '2024-11-17:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-17:09:11:00Z',
+          },
+          {
+            date: '2024-11-24:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-11-24:09:03:00Z',
+          },
+        ],
+      },
+      {
+        month: 'Dec',
+        days: [
+          {
+            date: '2024-12-01:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-07:09:01:00Z',
+          },
+          {
+            date: '2024-12-08:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-14:09:11:00Z',
+          },
+          {
+            date: '2024-12-15:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-21:08:31:00Z',
+          },
+          {
+            date: '2024-12-22:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-22:09:13:00Z',
+          },
+          {
+            date: '2024-12-29:09:00:00Z',
+            attended: true,
+            checkedInOn: '2024-12-29:08:55:00Z',
+          },
+        ],
+      },
+    ],
+  },
 ]
 
 export const membersDataAPI = [
